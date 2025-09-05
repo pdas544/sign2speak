@@ -30,7 +30,7 @@ class Config:
     dropout = 0.1
     
     # Training parameters
-    batch_size = 32
+    batch_size = 16  # Reduced to handle memory issues
     learning_rate = 0.0001
     num_epochs = 50
     weight_decay = 0.01
@@ -38,6 +38,7 @@ class Config:
     # Data parameters
     max_seq_length = 150
     num_classes = 16
+    input_features = 1629  # From your metadata
     gloss_to_idx = {
         'teacher': 0, 'happy': 1, 'nice': 2, 'good': 3, 'sorry': 4, 
         'no': 5, 'go': 6, 'what': 7, 'like': 8, 'hello': 9,
@@ -71,27 +72,49 @@ class SignLanguageTransformer(nn.Module):
         super(SignLanguageTransformer, self).__init__()
         self.config = config
         
-        # Input projection
-        self.input_projection = nn.Linear(2 * 21 * 3, config.d_model)  # Assuming 21 keypoints with 3 coordinates
+        # Input projection with batch normalization
+        self.input_projection = nn.Linear(config.input_features, config.d_model)
+        self.bn1 = nn.BatchNorm1d(config.d_model)
+        
+        # Additional feature extraction layers
+        self.feature_extractor = nn.Sequential(
+            nn.Linear(config.d_model, config.d_model),
+            nn.ReLU(),
+            nn.Dropout(config.dropout),
+            nn.Linear(config.d_model, config.d_model),
+            nn.ReLU(),
+            nn.Dropout(config.dropout),
+        )
         
         # Positional encoding
         self.pos_encoder = PositionalEncoding(config.d_model, config.dropout)
         
-        # Transformer
-        self.transformer = nn.Transformer(
+        # Transformer encoder
+        encoder_layer = nn.TransformerEncoderLayer(
             d_model=config.d_model,
             nhead=config.nhead,
-            num_encoder_layers=config.num_encoder_layers,
-            num_decoder_layers=config.num_decoder_layers,
             dim_feedforward=config.dim_feedforward,
-            dropout=config.dropout
+            dropout=config.dropout,
+            batch_first=True
+        )
+        self.transformer_encoder = nn.TransformerEncoder(
+            encoder_layer,
+            num_layers=config.num_encoder_layers
         )
         
-        # Output layers
-        self.classifier = nn.Linear(config.d_model, config.num_classes)
+        # Attention pooling instead of just using CLS token
+        self.attention_pool = nn.Sequential(
+            nn.Linear(config.d_model, 1),
+            nn.Tanh()
+        )
         
-        # Learnable classification token
-        self.cls_token = nn.Parameter(torch.randn(1, 1, config.d_model))
+        # Output layers with more capacity
+        self.classifier = nn.Sequential(
+            nn.Linear(config.d_model, config.d_model // 2),
+            nn.ReLU(),
+            nn.Dropout(config.dropout),
+            nn.Linear(config.d_model // 2, config.num_classes)
+        )
         
         self._reset_parameters()
 
@@ -101,27 +124,36 @@ class SignLanguageTransformer(nn.Module):
                 nn.init.xavier_uniform_(p)
 
     def forward(self, src, src_key_padding_mask=None):
+        batch_size, seq_len, _ = src.shape
+        
         # Project input to d_model dimension
         src = self.input_projection(src)
         
-        # Add classification token
-        cls_tokens = self.cls_token.expand(src.size(0), -1, -1)
-        src = torch.cat((cls_tokens, src), dim=1)
+        # Apply batch norm across features
+        src = src.transpose(1, 2)
+        src = self.bn1(src)
+        src = src.transpose(1, 2)
+        
+        # Additional feature extraction
+        src = self.feature_extractor(src)
         
         # Add positional encoding
-        src = self.pos_encoder(src)
+        src = self.pos_encoder(src.transpose(0, 1)).transpose(0, 1)
         
-        # Transformer expects (seq_len, batch_size, d_model)
-        src = src.transpose(0, 1)
+        # Pass through transformer encoder
+        encoded = self.transformer_encoder(src, src_key_padding_mask=src_key_padding_mask)
         
-        # Pass through transformer
-        output = self.transformer.encoder(src, src_key_padding_mask=src_key_padding_mask)
+        # Attention pooling
+        attention_weights = self.attention_pool(encoded).squeeze(-1)
+        if src_key_padding_mask is not None:
+            attention_weights = attention_weights.masked_fill(src_key_padding_mask, -1e9)
+        attention_weights = F.softmax(attention_weights, dim=-1)
         
-        # Use the classification token for prediction
-        cls_output = output[0, :, :]  # First token is the classification token
+        # Weighted sum of all tokens
+        pooled = torch.sum(encoded * attention_weights.unsqueeze(-1), dim=1)
         
         # Classify
-        logits = self.classifier(cls_output)
+        logits = self.classifier(pooled)
         
         return logits
 
@@ -141,12 +173,15 @@ class SignLanguageDataset(Dataset):
         keypoints_path = row['file_path']
         
         # Load keypoints
-        keypoints = torch.load(keypoints_path, weights_only=True)  # Shape: (sequence_length, 21, 3)
+        keypoints = torch.load(keypoints_path, weights_only=True)
         
-        # Flatten the keypoints (sequence_length, num_keypoints * 3)
-        # Assuming keypoints shape is (seq_len, 21, 3)
-        seq_len = keypoints.shape[0]
-        keypoints = keypoints.view(seq_len, -1)
+        # Get sequence length and ensure it's 2D
+        if keypoints.dim() == 1:
+            # Handle 1D tensors by reshaping
+            seq_len = 1
+            keypoints = keypoints.unsqueeze(0)
+        else:
+            seq_len = keypoints.shape[0]
         
         # Get label
         label = config.gloss_to_idx[row['label']]
@@ -164,7 +199,8 @@ def collate_fn(batch):
     max_len = keypoints_padded.shape[1]
     padding_mask = torch.zeros(len(keypoints_padded), max_len, dtype=torch.bool)
     for i, seq_len in enumerate(seq_lens):
-        padding_mask[i, seq_len:] = True
+        if seq_len < max_len:
+            padding_mask[i, seq_len:] = True
     
     labels = torch.tensor(labels)
     
@@ -178,15 +214,15 @@ def create_dataloaders(metadata_path, keypoints_dir, batch_size):
     
     train_loader = DataLoader(
         train_dataset, batch_size=batch_size, shuffle=True, 
-        collate_fn=collate_fn, num_workers=4
+        collate_fn=collate_fn, num_workers=2
     )
     val_loader = DataLoader(
         val_dataset, batch_size=batch_size, shuffle=False, 
-        collate_fn=collate_fn, num_workers=4
+        collate_fn=collate_fn, num_workers=2
     )
     test_loader = DataLoader(
         test_dataset, batch_size=batch_size, shuffle=False, 
-        collate_fn=collate_fn, num_workers=4
+        collate_fn=collate_fn, num_workers=2
     )
     
     return train_loader, val_loader, test_loader
@@ -219,6 +255,8 @@ def train_model(model, train_loader, val_loader, optimizer, scheduler, num_epoch
             loss = criterion(outputs, labels)
             
             loss.backward()
+            # Gradient clipping to prevent exploding gradients
+            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
             optimizer.step()
             
             running_loss += loss.item()
@@ -268,7 +306,10 @@ def train_model(model, train_loader, val_loader, optimizer, scheduler, num_epoch
         val_accs.append(val_acc)
         
         # Update learning rate
-        scheduler.step(val_loss)
+        if isinstance(scheduler, torch.optim.lr_scheduler.ReduceLROnPlateau):
+            scheduler.step(val_loss)
+        else:
+            scheduler.step()
         
         # Save best model
         if val_acc > best_val_acc:
@@ -304,14 +345,18 @@ def evaluate_model(model, test_loader):
     accuracy = accuracy_score(all_labels, all_preds)
     print(f'Test Accuracy: {accuracy * 100:.2f}%')
     
+    # Get the unique classes that appear in the predictions and labels
+    unique_labels = np.unique(all_labels + all_preds)
+    
     # Classification report
     print("\nClassification Report:")
     print(classification_report(all_labels, all_preds, 
+                               labels=list(range(config.num_classes)),
                                target_names=list(config.gloss_to_idx.keys())))
     
     # Confusion matrix
     plt.figure(figsize=(10, 8))
-    cm = confusion_matrix(all_labels, all_preds)
+    cm = confusion_matrix(all_labels, all_preds, labels=list(range(config.num_classes)))
     sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
                 xticklabels=list(config.gloss_to_idx.keys()),
                 yticklabels=list(config.gloss_to_idx.keys()))
@@ -349,7 +394,7 @@ def plot_training_history(train_losses, val_losses, train_accs, val_accs):
     ax2.grid(True)
     
     plt.tight_layout()
-    plt.savefig('training_history.png')
+    plt.savefig('outputs/training_history.png')
     plt.show()
 
 # Inference function
@@ -437,7 +482,7 @@ def main():
     plot_training_history(train_losses, val_losses, train_accs, val_accs)
     
     # Load best model
-    model.load_state_dict(torch.load("best_model.pth"))
+    model.load_state_dict(torch.load("outputs/best_model.pth", map_location=device))
     
     # Evaluate on test set
     test_accuracy = evaluate_model(model, test_loader)
