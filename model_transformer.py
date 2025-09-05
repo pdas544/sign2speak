@@ -482,7 +482,7 @@ def main():
     plot_training_history(train_losses, val_losses, train_accs, val_accs)
     
     # Load best model
-    model.load_state_dict(torch.load("outputs/best_model.pth", map_location=device))
+    model.load_state_dict(torch.load("best_model.pth", map_location=device))
     
     # Evaluate on test set
     test_accuracy = evaluate_model(model, test_loader)
