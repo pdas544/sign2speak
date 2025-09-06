@@ -12,6 +12,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 from tqdm import tqdm
+from TTS.api import TTS
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -424,23 +425,16 @@ def predict_sign(model, keypoints):
 # TTS Integration (Coqui TTS)
 def text_to_speech(text, output_path="output.wav"):
     try:
-        # Import Coqui TTS
-        from TTS.api import TTS
         
         # Initialize TTS
-        tts = TTS(model_name="tts_models/en/ljspeech/tacotron2-DDC", 
-                  vocoder_name="vocoder_models/en/ljspeech/hifigan_v2",
-                  gpu=True if torch.cuda.is_available() else False)
+        tts = TTS("tts_models/en/ljspeech/glow-tts",progress_bar=True).to(device)
         
         # Generate speech
         tts.tts_to_file(text=text, file_path=output_path)
         
         print(f"Speech generated and saved to {output_path}")
         return output_path
-        
-    except ImportError:
-        print("Coqui TTS not installed. Please install it with: pip install TTS")
-        return None
+
     except Exception as e:
         print(f"Error in TTS: {e}")
         return None
@@ -498,13 +492,13 @@ def main():
     print(f"Confidence: {confidence[0].max():.4f}")
     
     # Convert to speech
-    if test_accuracy >= 0.8:  # Only use TTS if model is accurate enough
-        print("\nGenerating speech...")
-        tts_output = text_to_speech(predicted_gloss)
-        if tts_output:
-            print(f"Speech saved to {tts_output}")
+
+    print("\nGenerating speech...")
+    tts_output = text_to_speech(predicted_gloss)
+    if tts_output:
+        print(f"Speech saved to {tts_output}")
     else:
-        print("Model accuracy is below 80%, skipping TTS generation.")
+        print("Speech generation failed")
 
 if __name__ == "__main__":
     main()
