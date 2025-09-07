@@ -38,12 +38,12 @@ class Config:
     
     # Data parameters
     max_seq_length = 150
-    num_classes = 16
+    num_classes = 15
     input_features = 1629  # From your metadata
     gloss_to_idx = {
-        'teacher': 0, 'happy': 1, 'nice': 2, 'good': 3, 'sorry': 4, 
-        'no': 5, 'go': 6, 'what': 7, 'like': 8, 'hello': 9,
-        'white': 10, 'friend': 11, 'big': 12, 'beautiful': 13, 'boy': 14, 'sister': 15
+        'teacher': 0, 'happy': 1, 'nice': 2, 'good': 3,
+        'no': 4, 'go': 5, 'what': 6, 'like': 7, 'hello': 8,
+        'white': 9, 'friend': 10, 'big': 11, 'beautiful': 12, 'boy': 13, 'sister': 14
     }
     idx_to_gloss = {v: k for k, v in gloss_to_idx.items()}
 
@@ -235,7 +235,7 @@ def train_model(model, train_loader, val_loader, optimizer, scheduler, num_epoch
     train_accs, val_accs = [], []
     
     best_val_acc = 0.0
-    best_model_path = "best_model.pth"
+    best_model_path = "outputs/models/model_transformer.pth"
     
     for epoch in range(num_epochs):
         # Training phase
@@ -464,7 +464,7 @@ def main():
         weight_decay=config.weight_decay
     )
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode='min', factor=0.5, patience=5, verbose=True
+        optimizer, mode='min', factor=0.5, patience=5
     )
     
     # Train model
@@ -476,7 +476,7 @@ def main():
     plot_training_history(train_losses, val_losses, train_accs, val_accs)
     
     # Load best model
-    model.load_state_dict(torch.load("best_model.pth", map_location=device))
+    model.load_state_dict(torch.load("outputs/models/model_transformer.pth", map_location=device))
     
     # Evaluate on test set
     test_accuracy = evaluate_model(model, test_loader)
