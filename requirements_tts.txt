@@ -1,0 +1,2 @@
+pyttsx3>=2.90
+googletrans>=3.1.0a0

@@ -367,7 +367,7 @@ def evaluate_model(model, test_loader):
     plt.xticks(rotation=45)
     plt.yticks(rotation=0)
     plt.tight_layout()
-    plt.savefig('confusion_matrix.png')
+    plt.savefig('outputs/confusion_matrix.png')
     plt.show()
     
     return accuracy
@@ -423,11 +423,12 @@ def predict_sign(model, keypoints):
         return gloss, outputs.softmax(dim=1).cpu().numpy()
 
 # TTS Integration (Coqui TTS)
-def text_to_speech(text, output_path="output.wav"):
+def text_to_speech(text, output_path="outputs/output.wav"):
     try:
+
         
         # Initialize TTS
-        tts = TTS("tts_models/en/ljspeech/glow-tts",progress_bar=True).to(device)
+        tts = TTS("tts_models/en/ljspeech/glow-tts",progress_bar=True)
         
         # Generate speech
         tts.tts_to_file(text=text, file_path=output_path)

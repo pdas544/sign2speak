@@ -6,13 +6,11 @@ def text_to_speech(text, output_path="outputs/output.wav"):
         from TTS.api import TTS
 
         # Get device
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-
-        print(TTS().list_models())  # List available models
+       
         
         # Initialize TTS
         
-        tts = TTS("tts_models/en/ljspeech/glow-tts",progress_bar=True).to(device)
+        tts = TTS("tts_models/en/ljspeech/glow-tts",progress_bar=True)
         # tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2",progress_bar=True).to(device)
         
         # Generate speech
@@ -28,9 +26,9 @@ def text_to_speech(text, output_path="outputs/output.wav"):
         print(f"Error in TTS: {e}")
         return None
 
-tts_output = text_to_speech("beautiful")
-if tts_output:
-    print(f"Speech saved to {tts_output}")
-else:
-    print("TTS generation failed.")
+# tts_output = text_to_speech("beautiful")
+# if tts_output:
+#     print(f"Speech saved to {tts_output}")
+# else:
+#     print("TTS generation failed.")
 # text_to_speech("Teacher")
