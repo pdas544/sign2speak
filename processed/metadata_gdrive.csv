@@ -1,0 +1,696 @@
+video_id,filename,file_path,label,split,status,num_frames,num_features
+jQb9NL9_S6U,jQb9NL9_S6U_LASL - Ch. 6 Vocab.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_jQb9NL9_S6U.pt,happy,train,success,76,1629
+_HOx2QkkTsg,_HOx2QkkTsg_teacher - ASL sign for teacher.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher__HOx2QkkTsg.pt,teacher,train,success,46,1629
+_HOx2QkkTsg,_HOx2QkkTsg_teacher - ASL sign for teacher.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher__HOx2QkkTsg.pt,teacher,train,skipped (already processed),,
+htsdwxJ-fTo,htsdwxJ-fTo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_htsdwxJ-fTo.pt,like,train,success,78,1629
+htsdwxJ-fTo,htsdwxJ-fTo_Basic ASL Vocabulary for Babies.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_htsdwxJ-fTo.pt,sister,train,success,55,1629
+bCVQXygujmo,bCVQXygujmo_Happy.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_bCVQXygujmo.pt,happy,train,success,120,1629
+K8c-np9zNT8,K8c-np9zNT8_Mastering ASL Unit 3 Vocabulary signed by Dr. Wooten.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_K8c-np9zNT8.pt,white,train,success,128,1629
+K8c-np9zNT8,K8c-np9zNT8_Mastering ASL Unit 3 Vocabulary signed by Dr. Wooten.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_K8c-np9zNT8.pt,white,train,skipped (already processed),,
+v8h6mw4zGys,v8h6mw4zGys.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_v8h6mw4zGys.pt,white,train,success,91,1629
+c2W6TVd_xh4,c2W6TVd_xh4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_c2W6TVd_xh4.pt,like,train,success,135,1629
+uLjkLwFvFtw,uLjkLwFvFtw_white.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_uLjkLwFvFtw.pt,white,train,success,61,1629
+pkzfT9cYvH0,pkzfT9cYvH0_NO-[opposite-of-yes].mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_pkzfT9cYvH0.pt,no,train,success,91,1629
+mC0lNJ6iz-s,mC0lNJ6iz-s_ASL 1： Unit 5 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_mC0lNJ6iz-s.pt,nice,train,success,149,1629
+RWYus9H4YrQ,RWYus9H4YrQ_Mastering ASL Unit 7 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_RWYus9H4YrQ.pt,nice,train,success,72,1629
+RWYus9H4YrQ,RWYus9H4YrQ_Mastering ASL Unit 7 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_RWYus9H4YrQ.pt,nice,train,skipped (already processed),,
+1Cpk9lgwvuo,1Cpk9lgwvuo_ASL： Boy ילד.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_1Cpk9lgwvuo.pt,boy,train,success,149,1629
+3aXS3keR8oY,3aXS3keR8oY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_3aXS3keR8oY.pt,nice,train,success,94,1629
+glJmYf137OM,glJmYf137OM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_glJmYf137OM.pt,sister,train,success,91,1629
+cqyB9f32GuI,cqyB9f32GuI_Teacher.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_cqyB9f32GuI.pt,teacher,train,success,139,1629
+q8FmbxAC2VA,q8FmbxAC2VA_How to sign Happy - ASL Vocabulary Series.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_q8FmbxAC2VA.pt,happy,train,success,70,1629
+_NqL43yWhUk,_NqL43yWhUk.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher__NqL43yWhUk.pt,teacher,train,success,88,1629
+sErq0TJMKEo,sErq0TJMKEo_Unit 10 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_sErq0TJMKEo.pt,what,train,success,135,1629
+sErq0TJMKEo,sErq0TJMKEo_Unit 10 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_sErq0TJMKEo.pt,nice,train,success,99,1629
+sErq0TJMKEo,sErq0TJMKEo_Unit 10 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/big_sErq0TJMKEo.pt,big,train,success,116,1629
+y3Vd7SZ_bp4,y3Vd7SZ_bp4_Chores & Duties ｜ ASL - American Sign Language.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_y3Vd7SZ_bp4.pt,nice,train,success,52,1629
+y3Vd7SZ_bp4,y3Vd7SZ_bp4_Chores & Duties ｜ ASL - American Sign Language.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_y3Vd7SZ_bp4.pt,nice,train,skipped (already processed),,
+y3Vd7SZ_bp4,y3Vd7SZ_bp4_Chores & Duties ｜ ASL - American Sign Language.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_y3Vd7SZ_bp4.pt,nice,train,skipped (already processed),,
+fKjsdtMU3fc,fKjsdtMU3fc_Unit 6 Vocabulary.mp4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_fKjsdtMU3fc.pt,happy,train,success,83,1629
+fKjsdtMU3fc,fKjsdtMU3fc_Unit 6 Vocabulary.mp4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_fKjsdtMU3fc.pt,happy,train,skipped (already processed),,
+fKjsdtMU3fc,fKjsdtMU3fc_Unit 6 Vocabulary.mp4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_fKjsdtMU3fc.pt,happy,train,skipped (already processed),,
+fKjsdtMU3fc,fKjsdtMU3fc.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_fKjsdtMU3fc.pt,like,train,success,128,1629
+fKjsdtMU3fc,fKjsdtMU3fc.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_fKjsdtMU3fc.pt,like,train,skipped (already processed),,
+hJZhwVjk-eo,hJZhwVjk-eo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_hJZhwVjk-eo.pt,teacher,train,success,106,1629
+L-Pqbf0SSBk,L-Pqbf0SSBk_white.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_L-Pqbf0SSBk.pt,white,train,success,42,1629
+L-Pqbf0SSBk,L-Pqbf0SSBk_white.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_L-Pqbf0SSBk.pt,white,train,skipped (already processed),,
+L-Pqbf0SSBk,L-Pqbf0SSBk_white.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_L-Pqbf0SSBk.pt,white,train,skipped (already processed),,
+L-Pqbf0SSBk,L-Pqbf0SSBk_white.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_L-Pqbf0SSBk.pt,white,train,skipped (already processed),,
+QTbj2GM5ohs,QTbj2GM5ohs_First 100 ADJECTIVES.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/big_QTbj2GM5ohs.pt,big,train,success,95,1629
+QTbj2GM5ohs,QTbj2GM5ohs_First 100 ADJECTIVES.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_QTbj2GM5ohs.pt,happy,train,success,121,1629
+QTbj2GM5ohs,QTbj2GM5ohs_First 100 ADJECTIVES.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_QTbj2GM5ohs.pt,nice,train,success,113,1629
+QTbj2GM5ohs,QTbj2GM5ohs_First 100 ADJECTIVES.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_QTbj2GM5ohs.pt,white,train,success,116,1629
+my4mxg6lXYQ,my4mxg6lXYQ_Unit 2 Vocabulary ｜ ASL Level 1 - American Sign Language.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_my4mxg6lXYQ.pt,teacher,train,success,78,1629
+my4mxg6lXYQ,my4mxg6lXYQ_Unit 2 Vocabulary ｜ ASL Level 1 - American Sign Language.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_my4mxg6lXYQ.pt,what,train,success,102,1629
+PECnHSUMRO0,PECnHSUMRO0_Sign for BOY from page 13.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_PECnHSUMRO0.pt,boy,train,success,53,1629
+LPyvlWpL-xk,LPyvlWpL-xk_Unit 10 Vocabulary - Part 2.mp4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_LPyvlWpL-xk.pt,nice,train,success,91,1629
+LPyvlWpL-xk,LPyvlWpL-xk_Unit 10 Vocabulary - Part 2.mp4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_LPyvlWpL-xk.pt,nice,train,skipped (already processed),,
+LPyvlWpL-xk,LPyvlWpL-xk_Unit 10 Vocabulary - Part 2.mp4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/big_LPyvlWpL-xk.pt,big,train,success,57,1629
+LPyvlWpL-xk,LPyvlWpL-xk_Unit 10 Vocabulary - Part 2.mp4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/big_LPyvlWpL-xk.pt,big,train,skipped (already processed),,
+FHqEKmOxDVQ,FHqEKmOxDVQ_ASL Vocabulary ＂sister＂.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_FHqEKmOxDVQ.pt,sister,train,success,81,1629
+FHqEKmOxDVQ,FHqEKmOxDVQ_ASL Vocabulary ＂sister＂.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_FHqEKmOxDVQ.pt,sister,train,skipped (already processed),,
+Wuyexm8oBFk,Wuyexm8oBFk_pretty - ASL sign for pretty.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_Wuyexm8oBFk.pt,beautiful,train,success,107,1629
+Wuyexm8oBFk,Wuyexm8oBFk_pretty - ASL sign for pretty.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_Wuyexm8oBFk.pt,beautiful,train,skipped (already processed),,
+Wuyexm8oBFk,Wuyexm8oBFk_pretty - ASL sign for pretty.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_Wuyexm8oBFk.pt,beautiful,train,skipped (already processed),,
+MZboKry8fo0,MZboKry8fo0_White.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_MZboKry8fo0.pt,white,train,success,120,1629
+mfrGIHTnKvI,mfrGIHTnKvI_ASL Signs for family and basic school related words.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_mfrGIHTnKvI.pt,boy,train,success,65,1629
+mfrGIHTnKvI,mfrGIHTnKvI_ASL Signs for family and basic school related words.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_mfrGIHTnKvI.pt,sister,train,success,47,1629
+mfrGIHTnKvI,mfrGIHTnKvI_ASL Signs for family and basic school related words.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_mfrGIHTnKvI.pt,teacher,train,success,62,1629
+mfrGIHTnKvI,mfrGIHTnKvI_ASL Signs for family and basic school related words.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_mfrGIHTnKvI.pt,no,train,success,61,1629
+mfrGIHTnKvI,mfrGIHTnKvI_ASL Signs for family and basic school related words.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_mfrGIHTnKvI.pt,white,train,success,48,1629
+TwkGS9TjUX8,TwkGS9TjUX8_ASL 1： Unit 4 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_TwkGS9TjUX8.pt,boy,train,success,179,1629
+TwkGS9TjUX8,TwkGS9TjUX8_ASL 1： Unit 4 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_TwkGS9TjUX8.pt,sister,train,success,72,1629
+TwkGS9TjUX8,TwkGS9TjUX8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_TwkGS9TjUX8.pt,like,train,success,50,1629
+TwkGS9TjUX8,TwkGS9TjUX8_ASL 1： Unit 4 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_TwkGS9TjUX8.pt,beautiful,train,success,180,1629
+u0XAd3TkGaA,u0XAd3TkGaA_UNIT 9 VOCABULARY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_u0XAd3TkGaA.pt,nice,train,success,105,1629
+u0XAd3TkGaA,u0XAd3TkGaA_UNIT 9 VOCABULARY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_u0XAd3TkGaA.pt,nice,train,skipped (already processed),,
+u0XAd3TkGaA,u0XAd3TkGaA_UNIT 9 VOCABULARY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_u0XAd3TkGaA.pt,beautiful,train,success,148,1629
+u0XAd3TkGaA,u0XAd3TkGaA_UNIT 9 VOCABULARY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_u0XAd3TkGaA.pt,beautiful,train,skipped (already processed),,
+u0XAd3TkGaA,u0XAd3TkGaA_UNIT 9 VOCABULARY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_u0XAd3TkGaA.pt,good,train,success,85,1629
+u0XAd3TkGaA,u0XAd3TkGaA_UNIT 9 VOCABULARY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_u0XAd3TkGaA.pt,good,train,skipped (already processed),,
+bq-HmgjGzmw,bq-HmgjGzmw_Unit 08 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_bq-HmgjGzmw.pt,friend,train,success,119,1629
+f7COHRpmVKA,f7COHRpmVKA_ASL 1： Unit 2 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_f7COHRpmVKA.pt,teacher,train,success,151,1629
+X7z-Z1kJwp4,X7z-Z1kJwp4_what.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_X7z-Z1kJwp4.pt,what,train,success,50,1629
+X7z-Z1kJwp4,X7z-Z1kJwp4_what.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_X7z-Z1kJwp4.pt,what,train,skipped (already processed),,
+X7z-Z1kJwp4,X7z-Z1kJwp4_what.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_X7z-Z1kJwp4.pt,what,train,skipped (already processed),,
+X7z-Z1kJwp4,X7z-Z1kJwp4_what.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_X7z-Z1kJwp4.pt,what,train,skipped (already processed),,
+OzkMuzJUdDc,OzkMuzJUdDc.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_OzkMuzJUdDc.pt,like,train,success,72,1629
+OzkMuzJUdDc,OzkMuzJUdDc.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_OzkMuzJUdDc.pt,like,train,skipped (already processed),,
+nyUDOPmQlZQ,nyUDOPmQlZQ.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_nyUDOPmQlZQ.pt,no,train,success,105,1629
+xu9VvX1Vbck,xu9VvX1Vbck_ASL Dictionary - Teacher.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_xu9VvX1Vbck.pt,teacher,train,success,58,1629
+FVjpLa8GqeM,FVjpLa8GqeM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_FVjpLa8GqeM.pt,hello,train,success,53,1629
+hLF-XX4op04,hLF-XX4op04_Sign FRIEND.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_hLF-XX4op04.pt,friend,train,success,131,1629
+rTykxVBxc00,rTykxVBxc00_Sign for NO (Lexicalized sign) from page 15.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_rTykxVBxc00.pt,no,train,success,52,1629
+z8e_-viWx9E,z8e_-viWx9E_Robber and the Geek Vocab video for ASL class.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_z8e_-viWx9E.pt,what,train,success,127,1629
+D0Aq3IzYnUU,D0Aq3IzYnUU_white - ASL sign for white.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_D0Aq3IzYnUU.pt,white,train,success,171,1629
+D0Aq3IzYnUU,D0Aq3IzYnUU_white - ASL sign for white.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_D0Aq3IzYnUU.pt,white,train,skipped (already processed),,
+MCnRMFNuztI,MCnRMFNuztI_SISTER.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_MCnRMFNuztI.pt,sister,train,success,72,1629
+PygPDLrGBwE,PygPDLrGBwE_GOOD.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_PygPDLrGBwE.pt,good,train,success,70,1629
+QisLkDnvcpE,QisLkDnvcpE_Types of Housing.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/big_QisLkDnvcpE.pt,big,train,success,71,1629
+QisLkDnvcpE,QisLkDnvcpE_Types of Housing.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/big_QisLkDnvcpE.pt,big,train,skipped (already processed),,
+xO0FZwvScOI,xO0FZwvScOI_Nice.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_xO0FZwvScOI.pt,nice,train,success,109,1629
+mCjHYreiZ24,mCjHYreiZ24.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_mCjHYreiZ24.pt,like,train,success,149,1629
+mCjHYreiZ24,mCjHYreiZ24.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_mCjHYreiZ24.pt,white,train,success,149,1629
+6XcxbPfP5YQ,6XcxbPfP5YQ_First 100 Social Function.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_6XcxbPfP5YQ.pt,no,train,success,92,1629
+3zoqSvF0Z2A,3zoqSvF0Z2A.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_3zoqSvF0Z2A.pt,white,train,success,49,1629
+3zoqSvF0Z2A,3zoqSvF0Z2A_ASL UNIT 1 VOCAB ｜ signing naturally.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_3zoqSvF0Z2A.pt,hello,train,success,67,1629
+aeZKNdfmbPo,aeZKNdfmbPo_what - ASL sign for what.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_aeZKNdfmbPo.pt,what,train,success,121,1629
+aeZKNdfmbPo,aeZKNdfmbPo_what - ASL sign for what.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_aeZKNdfmbPo.pt,what,train,skipped (already processed),,
+m5H0ypryFRM,m5H0ypryFRM_ASL： Happy שמח.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_m5H0ypryFRM.pt,happy,train,success,68,1629
+1udGGPLkA-Q,1udGGPLkA-Q.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_1udGGPLkA-Q.pt,what,train,success,61,1629
+aMtB6wxdKg8,aMtB6wxdKg8_ASL： Friend ידיד.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_aMtB6wxdKg8.pt,friend,train,success,101,1629
+NOZSXL8Z_Q4,NOZSXL8Z_Q4_SWIC Community Ed - Class Four.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_NOZSXL8Z_Q4.pt,teacher,train,success,90,1629
+NOZSXL8Z_Q4,NOZSXL8Z_Q4_SWIC Community Ed - Class Four.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_NOZSXL8Z_Q4.pt,nice,train,success,91,1629
+K4lo0NZDlH8,K4lo0NZDlH8_ASL school vocab.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_K4lo0NZDlH8.pt,teacher,train,success,67,1629
+K4lo0NZDlH8,K4lo0NZDlH8_ASL school vocab.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_K4lo0NZDlH8.pt,friend,train,success,68,1629
+qK3SqANZheA,qK3SqANZheA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_qK3SqANZheA.pt,like,train,success,80,1629
+ukG3s9WX7U4,ukG3s9WX7U4_ASL Lesson 13   Describing.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_ukG3s9WX7U4.pt,beautiful,train,success,88,1629
+4g_w14wZGoA,4g_w14wZGoA_How to sign Sister - ASL Vocabulary Series.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_4g_w14wZGoA.pt,sister,train,success,91,1629
+jmlYtEoHKiY,jmlYtEoHKiY_No.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_jmlYtEoHKiY.pt,no,train,success,157,1629
+5sMmseav-dU,5sMmseav-dU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_5sMmseav-dU.pt,white,train,success,87,1629
+0ftvRe7oD2c,0ftvRe7oD2c_BIG.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/big_0ftvRe7oD2c.pt,big,train,success,31,1629
+fnhiGz4qE_I,fnhiGz4qE_I_Important Emotion signs.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_fnhiGz4qE_I.pt,happy,train,success,48,1629
+fnhiGz4qE_I,fnhiGz4qE_I_Important Emotion signs.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_fnhiGz4qE_I.pt,happy,train,skipped (already processed),,
+8hBFgtJOZaE,8hBFgtJOZaE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_8hBFgtJOZaE.pt,white,train,success,81,1629
+8hBFgtJOZaE,8hBFgtJOZaE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_8hBFgtJOZaE.pt,white,train,skipped (already processed),,
+p36hZJQpLoQ,p36hZJQpLoQ_ASL Vocabulary (Spring 2018).mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_p36hZJQpLoQ.pt,what,train,success,64,1629
+p36hZJQpLoQ,p36hZJQpLoQ_ASL Vocabulary (Spring 2018).mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_p36hZJQpLoQ.pt,friend,train,success,72,1629
+p36hZJQpLoQ,p36hZJQpLoQ_ASL Vocabulary (Spring 2018).mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_p36hZJQpLoQ.pt,sister,train,success,61,1629
+p36hZJQpLoQ,p36hZJQpLoQ_ASL Vocabulary (Spring 2018).mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_p36hZJQpLoQ.pt,boy,train,success,62,1629
+p36hZJQpLoQ,p36hZJQpLoQ_ASL Vocabulary (Spring 2018).mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_p36hZJQpLoQ.pt,hello,train,success,53,1629
+p67ss5Yhjbk,p67ss5Yhjbk_NICE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_p67ss5Yhjbk.pt,nice,train,success,75,1629
+FECmADZAuxI,FECmADZAuxI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_FECmADZAuxI.pt,like,train,success,70,1629
+FECmADZAuxI,FECmADZAuxI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_FECmADZAuxI.pt,like,train,skipped (already processed),,
+P4QA138QqZc,P4QA138QqZc_Good.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_P4QA138QqZc.pt,good,train,success,77,1629
+Tckw40A23Bc,Tckw40A23Bc_Unit 8 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_Tckw40A23Bc.pt,friend,train,success,62,1629
+Tckw40A23Bc,Tckw40A23Bc_Unit 8 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_Tckw40A23Bc.pt,friend,train,skipped (already processed),,
+wm-dxopEZT8,wm-dxopEZT8_ASL： Teacher מורה.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_wm-dxopEZT8.pt,teacher,train,success,105,1629
+SbXfT74yfDI,SbXfT74yfDI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_SbXfT74yfDI.pt,like,train,success,90,1629
+8Ei9aj133DM,8Ei9aj133DM_Boy.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_8Ei9aj133DM.pt,boy,train,success,121,1629
+toXpklFYUtI,toXpklFYUtI_sister - ASL sign for sister.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_toXpklFYUtI.pt,sister,train,success,81,1629
+toXpklFYUtI,toXpklFYUtI_sister - ASL sign for sister.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_toXpklFYUtI.pt,sister,train,skipped (already processed),,
+Xt6F1wT394I,Xt6F1wT394I.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_Xt6F1wT394I.pt,like,train,success,132,1629
+TpsMdNqKNpg,TpsMdNqKNpg_HAPPY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_TpsMdNqKNpg.pt,happy,train,success,41,1629
+6428Q0atPDA,6428Q0atPDA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_6428Q0atPDA.pt,white,train,success,120,1629
+QB44Vddoi-w,QB44Vddoi-w_How to sign 'Hello'.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_QB44Vddoi-w.pt,hello,train,success,50,1629
+-Dt1B2UYfvc,-Dt1B2UYfvc_big - ASL sign for big.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/big_-Dt1B2UYfvc.pt,big,train,success,121,1629
+-Dt1B2UYfvc,-Dt1B2UYfvc_big - ASL sign for big.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/big_-Dt1B2UYfvc.pt,big,train,skipped (already processed),,
+k0T-yY_HrEQ,k0T-yY_HrEQ_Baby Language Song (ASL) Basic Words and Commands #4 by Patty Shukla.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/go_k0T-yY_HrEQ.pt,go,train,success,118,1629
+k0T-yY_HrEQ,k0T-yY_HrEQ_Baby Language Song (ASL) Basic Words and Commands #4 by Patty Shukla.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/go_k0T-yY_HrEQ.pt,go,train,skipped (already processed),,
+k0T-yY_HrEQ,k0T-yY_HrEQ_Baby Language Song (ASL) Basic Words and Commands #4 by Patty Shukla.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/go_k0T-yY_HrEQ.pt,go,train,skipped (already processed),,
+k0T-yY_HrEQ,k0T-yY_HrEQ_Baby Language Song (ASL) Basic Words and Commands #4 by Patty Shukla.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/go_k0T-yY_HrEQ.pt,go,train,skipped (already processed),,
+k0T-yY_HrEQ,k0T-yY_HrEQ_Baby Language Song (ASL) Basic Words and Commands #4 by Patty Shukla.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/go_k0T-yY_HrEQ.pt,go,train,skipped (already processed),,
+csBb71UPN8E,csBb71UPN8E_ASL ABC Song ｜ NEW with ASL Letters and Signs.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_csBb71UPN8E.pt,friend,train,success,86,1629
+ZXHHO_DY6_A,ZXHHO_DY6_A_HAPPY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_ZXHHO_DY6_A.pt,happy,train,success,90,1629
+eMZdggjnLQA,eMZdggjnLQA_Introductions B Review.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_eMZdggjnLQA.pt,what,train,success,120,1629
+4guHni0Kkok,4guHni0Kkok_Sign SISTER.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_4guHni0Kkok.pt,sister,train,success,61,1629
+4guHni0Kkok,4guHni0Kkok_Sign SISTER.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_4guHni0Kkok.pt,sister,train,skipped (already processed),,
+2F2LUb-H8SU,2F2LUb-H8SU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_2F2LUb-H8SU.pt,white,train,success,56,1629
+2PeTh4Ym048,2PeTh4Ym048_NICE⧸CLEAN.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_2PeTh4Ym048.pt,nice,train,success,91,1629
+-LB4ENHxcIs,-LB4ENHxcIs_ASL Class 02-08-10.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_-LB4ENHxcIs.pt,what,train,success,66,1629
+-LB4ENHxcIs,-LB4ENHxcIs_ASL Class 02-08-10.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_-LB4ENHxcIs.pt,no,train,success,63,1629
+-LB4ENHxcIs,-LB4ENHxcIs_ASL Class 02-08-10.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_-LB4ENHxcIs.pt,teacher,train,success,67,1629
+HYK7P7Cm_aY,HYK7P7Cm_aY_teacher.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_HYK7P7Cm_aY.pt,teacher,train,success,51,1629
+HYK7P7Cm_aY,HYK7P7Cm_aY_teacher.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_HYK7P7Cm_aY.pt,teacher,train,skipped (already processed),,
+HYK7P7Cm_aY,HYK7P7Cm_aY_teacher.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_HYK7P7Cm_aY.pt,teacher,train,skipped (already processed),,
+hesnczlStrA,hesnczlStrA_ASL Vocabulary ＂nice＂.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_hesnczlStrA.pt,nice,train,success,110,1629
+UKGBW9-wo4k,UKGBW9-wo4k_School Personnel Vocabulary ｜ ASL - American Sign Language.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_UKGBW9-wo4k.pt,teacher,train,success,59,1629
+kyLNqzXq8IA,kyLNqzXq8IA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_kyLNqzXq8IA.pt,white,train,success,186,1629
+IMF7K2ClfQc,IMF7K2ClfQc_Basic Sign Language for Caregivers (bath time).mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_IMF7K2ClfQc.pt,nice,train,success,61,1629
+IMF7K2ClfQc,IMF7K2ClfQc_Basic Sign Language for Caregivers (bath time).mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_IMF7K2ClfQc.pt,nice,train,skipped (already processed),,
+D5Glywo1wSA,D5Glywo1wSA_happy - ASL sign for happy.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_D5Glywo1wSA.pt,happy,train,success,121,1629
+D5Glywo1wSA,D5Glywo1wSA_happy - ASL sign for happy.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_D5Glywo1wSA.pt,happy,train,skipped (already processed),,
+WprUBqi3iBc,WprUBqi3iBc_Unit 04 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_WprUBqi3iBc.pt,good,train,success,116,1629
+yzl_Ez0ZB9Q,yzl_Ez0ZB9Q_People Signs in ASL.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_yzl_Ez0ZB9Q.pt,sister,train,success,61,1629
+yzl_Ez0ZB9Q,yzl_Ez0ZB9Q_People Signs in ASL.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_yzl_Ez0ZB9Q.pt,friend,train,success,59,1629
+7iuyJ84wvds,7iuyJ84wvds_Hello - Asl.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_7iuyJ84wvds.pt,hello,train,success,46,1629
+rnr_aY0X0dQ,rnr_aY0X0dQ_Unit  1 vocabulary part 1.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_rnr_aY0X0dQ.pt,boy,train,success,109,1629
+rnr_aY0X0dQ,rnr_aY0X0dQ_Unit  1 vocabulary part 1.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_rnr_aY0X0dQ.pt,no,train,success,35,1629
+12Cqpj9g96Q,12Cqpj9g96Q_Unit 4 vocabulary pg 1-3.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_12Cqpj9g96Q.pt,boy,train,success,103,1629
+12Cqpj9g96Q,12Cqpj9g96Q_Unit 4 vocabulary pg 1-3.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_12Cqpj9g96Q.pt,sister,train,success,92,1629
+12Cqpj9g96Q,12Cqpj9g96Q_Unit 4 vocabulary pg 1-3.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_12Cqpj9g96Q.pt,friend,train,success,198,1629
+e1kSBykQ65w,e1kSBykQ65w_ASL： Sister אחות.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_e1kSBykQ65w.pt,sister,train,success,138,1629
+2nXrJ_7NOgE,2nXrJ_7NOgE_Signing Naturally Unit 14 Vocabulary (Updated⧸Shorter Version).mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/go_2nXrJ_7NOgE.pt,go,train,success,21,1629
+2nXrJ_7NOgE,2nXrJ_7NOgE_Signing Naturally Unit 14 Vocabulary (Updated⧸Shorter Version).mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_2nXrJ_7NOgE.pt,good,train,success,114,1629
+0z2_gcB5OJ8,0z2_gcB5OJ8_SISTER.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_0z2_gcB5OJ8.pt,sister,train,success,104,1629
+wv5nc3pbyK0,wv5nc3pbyK0_First 100 People.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_wv5nc3pbyK0.pt,boy,train,success,81,1629
+lElR-sVcYyw,lElR-sVcYyw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_lElR-sVcYyw.pt,like,train,success,151,1629
+eN6g-Bezw3M,eN6g-Bezw3M.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_eN6g-Bezw3M.pt,like,train,success,51,1629
+kAnBm2RQb-0,kAnBm2RQb-0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_kAnBm2RQb-0.pt,like,train,success,43,1629
+kAnBm2RQb-0,kAnBm2RQb-0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_kAnBm2RQb-0.pt,like,train,skipped (already processed),,
+p8OYydc3WQM,p8OYydc3WQM_SN Unit 1 Video Vocab Review.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_p8OYydc3WQM.pt,hello,train,success,134,1629
+p8OYydc3WQM,p8OYydc3WQM_SN Unit 1 Video Vocab Review.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_p8OYydc3WQM.pt,teacher,train,success,116,1629
+p8OYydc3WQM,p8OYydc3WQM_SN Unit 1 Video Vocab Review.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_p8OYydc3WQM.pt,good,train,success,98,1629
+p8OYydc3WQM,p8OYydc3WQM_SN Unit 1 Video Vocab Review.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_p8OYydc3WQM.pt,good,train,skipped (already processed),,
+p8OYydc3WQM,p8OYydc3WQM_SN Unit 1 Video Vocab Review.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_p8OYydc3WQM.pt,boy,train,success,113,1629
+p8OYydc3WQM,p8OYydc3WQM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_p8OYydc3WQM.pt,white,train,success,120,1629
+NY3f0h62fZc,NY3f0h62fZc_beautiful - ASL sign for beautiful.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_NY3f0h62fZc.pt,beautiful,train,success,72,1629
+NY3f0h62fZc,NY3f0h62fZc_beautiful - ASL sign for beautiful.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_NY3f0h62fZc.pt,beautiful,train,skipped (already processed),,
+SC9lyDxbwUE,SC9lyDxbwUE_SWIC Community Ed - Class Two.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_SC9lyDxbwUE.pt,happy,train,success,120,1629
+SC9lyDxbwUE,SC9lyDxbwUE_SWIC Community Ed - Class Two.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_SC9lyDxbwUE.pt,good,train,success,120,1629
+yYmiLJpJocA,yYmiLJpJocA_NICE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_yYmiLJpJocA.pt,nice,train,success,87,1629
+5Sb-YjNphkY,5Sb-YjNphkY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_5Sb-YjNphkY.pt,white,train,success,131,1629
+5Sb-YjNphkY,5Sb-YjNphkY_Unit 4 Vocabulary.mp4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_5Sb-YjNphkY.pt,good,train,success,186,1629
+13OPrjZT9lo,13OPrjZT9lo_Unit four packet. PG 4-5.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_13OPrjZT9lo.pt,no,train,success,46,1629
+13OPrjZT9lo,13OPrjZT9lo_Unit four packet. PG 4-5.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_13OPrjZT9lo.pt,no,train,skipped (already processed),,
+UXetwN_cI5A,UXetwN_cI5A_Mastering ASL Unit 4 Vocabulary signed by Dr. Wooten.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/big_UXetwN_cI5A.pt,big,train,success,61,1629
+UXetwN_cI5A,UXetwN_cI5A_Mastering ASL Unit 4 Vocabulary signed by Dr. Wooten.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/big_UXetwN_cI5A.pt,big,train,skipped (already processed),,
+UXetwN_cI5A,UXetwN_cI5A_Mastering ASL Unit 4 Vocabulary signed by Dr. Wooten.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_UXetwN_cI5A.pt,boy,train,success,61,1629
+UXetwN_cI5A,UXetwN_cI5A_Mastering ASL Unit 4 Vocabulary signed by Dr. Wooten.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_UXetwN_cI5A.pt,boy,train,skipped (already processed),,
+UXetwN_cI5A,UXetwN_cI5A_Mastering ASL Unit 4 Vocabulary signed by Dr. Wooten.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_UXetwN_cI5A.pt,beautiful,train,success,71,1629
+UXetwN_cI5A,UXetwN_cI5A_Mastering ASL Unit 4 Vocabulary signed by Dr. Wooten.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_UXetwN_cI5A.pt,beautiful,train,skipped (already processed),,
+UXetwN_cI5A,UXetwN_cI5A_Mastering ASL Unit 4 Vocabulary signed by Dr. Wooten.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_UXetwN_cI5A.pt,sister,train,success,71,1629
+UXetwN_cI5A,UXetwN_cI5A_Mastering ASL Unit 4 Vocabulary signed by Dr. Wooten.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_UXetwN_cI5A.pt,sister,train,skipped (already processed),,
+rWIDL_GpaJc,rWIDL_GpaJc.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_rWIDL_GpaJc.pt,what,train,success,128,1629
+rWIDL_GpaJc,rWIDL_GpaJc_Learn American Sign Language： Basic Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_rWIDL_GpaJc.pt,boy,train,success,150,1629
+rWIDL_GpaJc,rWIDL_GpaJc_Learn American Sign Language： Basic Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_rWIDL_GpaJc.pt,no,train,success,185,1629
+rWIDL_GpaJc,rWIDL_GpaJc.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_rWIDL_GpaJc.pt,white,train,success,183,1629
+rWIDL_GpaJc,rWIDL_GpaJc.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_rWIDL_GpaJc.pt,like,train,success,170,1629
+MDQQ9WZNwcc,MDQQ9WZNwcc_Beginner Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_MDQQ9WZNwcc.pt,no,train,success,91,1629
+MDQQ9WZNwcc,MDQQ9WZNwcc.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_MDQQ9WZNwcc.pt,like,train,success,95,1629
+MDQQ9WZNwcc,MDQQ9WZNwcc.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_MDQQ9WZNwcc.pt,what,train,success,149,1629
+qk58RD7dz_k,qk58RD7dz_k.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_qk58RD7dz_k.pt,what,train,success,51,1629
+qk58RD7dz_k,qk58RD7dz_k.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_qk58RD7dz_k.pt,what,train,skipped (already processed),,
+q38xuZH11jw,q38xuZH11jw_Food unit (first three pages).mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_q38xuZH11jw.pt,good,train,success,115,1629
+9RvIkK-t0SA,9RvIkK-t0SA_Signing Naturally Unit 4 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_9RvIkK-t0SA.pt,beautiful,train,success,99,1629
+1skSbSMPlMI,1skSbSMPlMI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_1skSbSMPlMI.pt,sister,train,success,91,1629
+fJVwZyjEa4k,fJVwZyjEa4k.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_fJVwZyjEa4k.pt,sister,train,success,51,1629
+fJVwZyjEa4k,fJVwZyjEa4k.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_fJVwZyjEa4k.pt,sister,train,skipped (already processed),,
+YasOpK1RNvg,YasOpK1RNvg_Making Introductions Vocabulary ｜ ASL - American Sign Language.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_YasOpK1RNvg.pt,friend,train,success,20,1629
+YasOpK1RNvg,YasOpK1RNvg_Making Introductions Vocabulary ｜ ASL - American Sign Language.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_YasOpK1RNvg.pt,friend,train,skipped (already processed),,
+YasOpK1RNvg,YasOpK1RNvg_Making Introductions Vocabulary ｜ ASL - American Sign Language.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_YasOpK1RNvg.pt,nice,train,success,161,1629
+sEjaTTIdHhk,sEjaTTIdHhk_How are you？.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_sEjaTTIdHhk.pt,hello,train,success,138,1629
+sEjaTTIdHhk,sEjaTTIdHhk_How are you？.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_sEjaTTIdHhk.pt,happy,train,success,121,1629
+xx1mmM_E10s,xx1mmM_E10s_Go.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/go_xx1mmM_E10s.pt,go,train,success,120,1629
+DOZJOFHs75s,DOZJOFHs75s_ASL Lesson 1.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_DOZJOFHs75s.pt,no,train,success,48,1629
+DOZJOFHs75s,DOZJOFHs75s_ASL Lesson 1.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_DOZJOFHs75s.pt,no,train,skipped (already processed),,
+DOZJOFHs75s,DOZJOFHs75s.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_DOZJOFHs75s.pt,what,train,success,109,1629
+DOZJOFHs75s,DOZJOFHs75s_ASL Lesson 1.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_DOZJOFHs75s.pt,teacher,train,success,108,1629
+KftGqsKKn7w,KftGqsKKn7w.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_KftGqsKKn7w.pt,sister,train,success,50,1629
+KftGqsKKn7w,KftGqsKKn7w.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_KftGqsKKn7w.pt,sister,train,skipped (already processed),,
+KftGqsKKn7w,KftGqsKKn7w.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_KftGqsKKn7w.pt,sister,train,skipped (already processed),,
+ooyNSKSnDuo,ooyNSKSnDuo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_ooyNSKSnDuo.pt,sister,train,success,121,1629
+5H6OSAy-Mzs,"5H6OSAy-Mzs_MALE, boy, dude, guy, fellow.mp4",/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_5H6OSAy-Mzs.pt,boy,train,success,73,1629
+pt8VPByKR58,pt8VPByKR58_CLEAN.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_pt8VPByKR58.pt,nice,train,success,102,1629
+vcrTUbE1NoY,vcrTUbE1NoY_ASL Level 1 Unit 2 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_vcrTUbE1NoY.pt,boy,train,success,67,1629
+vcrTUbE1NoY,vcrTUbE1NoY_ASL Level 1 Unit 2 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_vcrTUbE1NoY.pt,teacher,train,success,85,1629
+vcrTUbE1NoY,vcrTUbE1NoY_ASL Level 1 Unit 2 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_vcrTUbE1NoY.pt,no,train,success,135,1629
+vcrTUbE1NoY,vcrTUbE1NoY_ASL Level 1 Unit 2 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_vcrTUbE1NoY.pt,happy,train,success,83,1629
+NAZKMt2NhtU,NAZKMt2NhtU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_NAZKMt2NhtU.pt,white,train,success,52,1629
+NAZKMt2NhtU,NAZKMt2NhtU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_NAZKMt2NhtU.pt,white,train,skipped (already processed),,
+NAZKMt2NhtU,NAZKMt2NhtU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_NAZKMt2NhtU.pt,white,train,skipped (already processed),,
+NAZKMt2NhtU,NAZKMt2NhtU_ASL Colors & Clothes Lesson.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_NAZKMt2NhtU.pt,nice,train,success,72,1629
+Ks26De5YvSg,Ks26De5YvSg_NO.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_Ks26De5YvSg.pt,no,train,success,86,1629
+nBvBJ91I5ZI,nBvBJ91I5ZI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_nBvBJ91I5ZI.pt,friend,train,success,39,1629
+nBvBJ91I5ZI,nBvBJ91I5ZI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_nBvBJ91I5ZI.pt,friend,train,skipped (already processed),,
+nBvBJ91I5ZI,nBvBJ91I5ZI_People at school ASL.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_nBvBJ91I5ZI.pt,teacher,train,success,56,1629
+nBvBJ91I5ZI,nBvBJ91I5ZI_People at school ASL.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_nBvBJ91I5ZI.pt,teacher,train,skipped (already processed),,
+AkGYEiN8vOY,AkGYEiN8vOY_Unit 2 Vocabulary (Part 1) rev. 2018.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_AkGYEiN8vOY.pt,teacher,train,success,101,1629
+AkGYEiN8vOY,AkGYEiN8vOY_Unit 2 Vocabulary (Part 1) rev. 2018.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_AkGYEiN8vOY.pt,teacher,train,skipped (already processed),,
+XUg1eKl65p4,XUg1eKl65p4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_XUg1eKl65p4.pt,sister,train,success,137,1629
+AFCgNBsQOTk,AFCgNBsQOTk_How to sign Good - ASL Vocabulary Series.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_AFCgNBsQOTk.pt,good,train,success,121,1629
+pv1yeA4iHmU,pv1yeA4iHmU_Family Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_pv1yeA4iHmU.pt,boy,train,success,165,1629
+pv1yeA4iHmU,pv1yeA4iHmU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_pv1yeA4iHmU.pt,sister,train,success,81,1629
+pv1yeA4iHmU,pv1yeA4iHmU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_pv1yeA4iHmU.pt,sister,train,skipped (already processed),,
+pv1yeA4iHmU,pv1yeA4iHmU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_pv1yeA4iHmU.pt,friend,train,success,179,1629
+pv1yeA4iHmU,pv1yeA4iHmU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_pv1yeA4iHmU.pt,friend,train,skipped (already processed),,
+Fd3xF72yJrk,Fd3xF72yJrk.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_Fd3xF72yJrk.pt,what,train,success,57,1629
+O6-OsGXF0Uw,O6-OsGXF0Uw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_O6-OsGXF0Uw.pt,white,train,success,79,1629
+TomJbyh-XVY,TomJbyh-XVY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_TomJbyh-XVY.pt,white,train,success,31,1629
+Fef0GDkOO6k,Fef0GDkOO6k_good - ASL sign for good.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_Fef0GDkOO6k.pt,good,train,success,272,1629
+Fef0GDkOO6k,Fef0GDkOO6k_good - ASL sign for good.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_Fef0GDkOO6k.pt,good,train,skipped (already processed),,
+Fef0GDkOO6k,Fef0GDkOO6k_good - ASL sign for good.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_Fef0GDkOO6k.pt,good,train,skipped (already processed),,
+RIpWAYXYGyY,RIpWAYXYGyY_PRETTY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_RIpWAYXYGyY.pt,beautiful,train,success,106,1629
+75BkNdtDsoQ,75BkNdtDsoQ.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_75BkNdtDsoQ.pt,boy,train,success,71,1629
+75BkNdtDsoQ,75BkNdtDsoQ.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_75BkNdtDsoQ.pt,sister,train,success,61,1629
+75BkNdtDsoQ,75BkNdtDsoQ_Unit 1 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_75BkNdtDsoQ.pt,no,train,success,71,1629
+75BkNdtDsoQ,75BkNdtDsoQ_Unit 1 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_75BkNdtDsoQ.pt,no,train,skipped (already processed),,
+75BkNdtDsoQ,75BkNdtDsoQ_Unit 1 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_75BkNdtDsoQ.pt,hello,train,success,200,1629
+75BkNdtDsoQ,75BkNdtDsoQ_Unit 1 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_75BkNdtDsoQ.pt,nice,train,success,221,1629
+cF6XScPZDsE,cF6XScPZDsE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_cF6XScPZDsE.pt,friend,train,success,151,1629
+jQlSl_lx3ec,jQlSl_lx3ec.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_jQlSl_lx3ec.pt,friend,train,success,76,1629
+LNw3SmRomG8,LNw3SmRomG8_Clean.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_LNw3SmRomG8.pt,nice,train,success,114,1629
+KRrKqGEGdMg,KRrKqGEGdMg_ASL 1： Unit 3 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/big_KRrKqGEGdMg.pt,big,train,success,123,1629
+KRrKqGEGdMg,KRrKqGEGdMg.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_KRrKqGEGdMg.pt,like,train,success,151,1629
+dMZ-SCl7nA4,dMZ-SCl7nA4_ASL Level 2 Unit 11 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_dMZ-SCl7nA4.pt,beautiful,train,success,137,1629
+dMZ-SCl7nA4,dMZ-SCl7nA4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_dMZ-SCl7nA4.pt,good,train,success,62,1629
+dMZ-SCl7nA4,dMZ-SCl7nA4_ASL Level 2 Unit 11 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_dMZ-SCl7nA4.pt,nice,train,success,68,1629
+8uIg8r1awC4,8uIg8r1awC4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_8uIg8r1awC4.pt,like,train,success,61,1629
+H63Q4sfu9mk,H63Q4sfu9mk_GO.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/go_H63Q4sfu9mk.pt,go,train,success,49,1629
+ZHUVt5W8UEk,ZHUVt5W8UEk.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_ZHUVt5W8UEk.pt,boy,train,success,61,1629
+ZHUVt5W8UEk,ZHUVt5W8UEk_ASL 1st class VOCABULARY BUILDER.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_ZHUVt5W8UEk.pt,happy,train,success,62,1629
+Ni6Uixw5Qmo,Ni6Uixw5Qmo_Next Words： People in ASL with captions.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_Ni6Uixw5Qmo.pt,teacher,train,success,107,1629
+sSdQWC7mUZc,sSdQWC7mUZc.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_sSdQWC7mUZc.pt,what,train,success,61,1629
+FbBdHdmt5oI,FbBdHdmt5oI_Hello.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_FbBdHdmt5oI.pt,hello,train,success,70,1629
+W_IPtdsIUOo,W_IPtdsIUOo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_W_IPtdsIUOo.pt,white,train,success,15,1629
+1E8k8gI_xYk,1E8k8gI_xYk.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_1E8k8gI_xYk.pt,friend,train,success,70,1629
+Cv5avR9nEhg,Cv5avR9nEhg_Signing Naturally Unit 14 Vocabulary Signed by Dr Wooten.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/go_Cv5avR9nEhg.pt,go,train,success,32,1629
+Cv5avR9nEhg,Cv5avR9nEhg_Signing Naturally Unit 14 Vocabulary Signed by Dr Wooten.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/go_Cv5avR9nEhg.pt,go,train,skipped (already processed),,
+Cv5avR9nEhg,Cv5avR9nEhg_Signing Naturally Unit 14 Vocabulary Signed by Dr Wooten.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/go_Cv5avR9nEhg.pt,go,train,skipped (already processed),,
+Cv5avR9nEhg,Cv5avR9nEhg_Signing Naturally Unit 14 Vocabulary Signed by Dr Wooten.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/go_Cv5avR9nEhg.pt,go,train,skipped (already processed),,
+Cv5avR9nEhg,Cv5avR9nEhg_Signing Naturally Unit 14 Vocabulary Signed by Dr Wooten.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/go_Cv5avR9nEhg.pt,go,train,skipped (already processed),,
+Cv5avR9nEhg,Cv5avR9nEhg.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_Cv5avR9nEhg.pt,good,train,success,71,1629
+Cv5avR9nEhg,Cv5avR9nEhg.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_Cv5avR9nEhg.pt,good,train,skipped (already processed),,
+97WDRBCtj0o,97WDRBCtj0o.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_97WDRBCtj0o.pt,hello,train,success,140,1629
+ZG4u7LDCN8A,ZG4u7LDCN8A.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_ZG4u7LDCN8A.pt,like,train,success,152,1629
+4Nh1iFv2BMc,4Nh1iFv2BMc.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_4Nh1iFv2BMc.pt,what,train,success,149,1629
+4Nh1iFv2BMc,4Nh1iFv2BMc.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_4Nh1iFv2BMc.pt,what,train,skipped (already processed),,
+rkQZQhloXuE,rkQZQhloXuE_Basic Sign Language for Caregivers of the Deaf⧸Hard of Hearing.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_rkQZQhloXuE.pt,nice,train,success,61,1629
+rkQZQhloXuE,rkQZQhloXuE_Basic Sign Language for Caregivers of the Deaf⧸Hard of Hearing.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_rkQZQhloXuE.pt,nice,train,skipped (already processed),,
+rkQZQhloXuE,rkQZQhloXuE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_rkQZQhloXuE.pt,friend,train,success,81,1629
+rkQZQhloXuE,rkQZQhloXuE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_rkQZQhloXuE.pt,friend,train,skipped (already processed),,
+rkQZQhloXuE,rkQZQhloXuE_Basic Sign Language for Caregivers of the Deaf⧸Hard of Hearing.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_rkQZQhloXuE.pt,no,train,success,72,1629
+rkQZQhloXuE,rkQZQhloXuE_Basic Sign Language for Caregivers of the Deaf⧸Hard of Hearing.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_rkQZQhloXuE.pt,no,train,skipped (already processed),,
+rkQZQhloXuE,rkQZQhloXuE_Basic Sign Language for Caregivers of the Deaf⧸Hard of Hearing.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_rkQZQhloXuE.pt,happy,train,success,52,1629
+rkQZQhloXuE,rkQZQhloXuE_Basic Sign Language for Caregivers of the Deaf⧸Hard of Hearing.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_rkQZQhloXuE.pt,happy,train,skipped (already processed),,
+FKp2hBhdj9k,FKp2hBhdj9k.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_FKp2hBhdj9k.pt,what,train,success,69,1629
+uPKOwziViaw,uPKOwziViaw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_uPKOwziViaw.pt,friend,train,success,110,1629
+uPKOwziViaw,uPKOwziViaw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_uPKOwziViaw.pt,good,train,success,85,1629
+uPKOwziViaw,uPKOwziViaw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_uPKOwziViaw.pt,hello,train,success,83,1629
+uPKOwziViaw,uPKOwziViaw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_uPKOwziViaw.pt,like,train,success,178,1629
+uPKOwziViaw,uPKOwziViaw_Unit 1 Vocabulary ｜ ASL Level 1 - American Sign Language.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_uPKOwziViaw.pt,nice,train,success,99,1629
+uPKOwziViaw,uPKOwziViaw_Unit 1 Vocabulary ｜ ASL Level 1 - American Sign Language.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_uPKOwziViaw.pt,no,train,success,118,1629
+iHR2uV-Uxc8,iHR2uV-Uxc8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_iHR2uV-Uxc8.pt,sister,train,success,48,1629
+iHR2uV-Uxc8,iHR2uV-Uxc8_ASL conversation class 2.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_iHR2uV-Uxc8.pt,beautiful,train,success,50,1629
+iHR2uV-Uxc8,iHR2uV-Uxc8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_iHR2uV-Uxc8.pt,friend,train,success,25,1629
+iHR2uV-Uxc8,iHR2uV-Uxc8_ASL conversation class 2.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_iHR2uV-Uxc8.pt,no,train,success,23,1629
+JHFExZgYdwk,JHFExZgYdwk.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_JHFExZgYdwk.pt,hello,train,success,123,1629
+JHFExZgYdwk,JHFExZgYdwk_Signing Naturally Unit 1 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_JHFExZgYdwk.pt,teacher,train,success,200,1629
+JHFExZgYdwk,JHFExZgYdwk.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_JHFExZgYdwk.pt,white,train,success,99,1629
+Ag5VPvAe8PA,Ag5VPvAe8PA_SWIC Community Ed - Class One.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_Ag5VPvAe8PA.pt,nice,train,success,119,1629
+Ag5VPvAe8PA,Ag5VPvAe8PA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_Ag5VPvAe8PA.pt,sister,train,success,120,1629
+Ag5VPvAe8PA,Ag5VPvAe8PA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_Ag5VPvAe8PA.pt,friend,train,success,119,1629
+Ag5VPvAe8PA,Ag5VPvAe8PA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_Ag5VPvAe8PA.pt,like,train,success,44,1629
+Ag5VPvAe8PA,Ag5VPvAe8PA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_Ag5VPvAe8PA.pt,what,train,success,120,1629
+Ag5VPvAe8PA,Ag5VPvAe8PA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_Ag5VPvAe8PA.pt,what,train,skipped (already processed),,
+CrUCwJklAUA,CrUCwJklAUA_TEACHER.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_CrUCwJklAUA.pt,teacher,train,success,84,1629
+XVbehHoPfdM,XVbehHoPfdM_BEAUTIFUL.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_XVbehHoPfdM.pt,beautiful,train,success,82,1629
+KHJjHjG-8JU,KHJjHjG-8JU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_KHJjHjG-8JU.pt,sister,train,success,61,1629
+KHJjHjG-8JU,KHJjHjG-8JU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_KHJjHjG-8JU.pt,sister,train,skipped (already processed),,
+KHJjHjG-8JU,KHJjHjG-8JU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_KHJjHjG-8JU.pt,friend,train,success,80,1629
+KHJjHjG-8JU,KHJjHjG-8JU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_KHJjHjG-8JU.pt,friend,train,skipped (already processed),,
+KHJjHjG-8JU,KHJjHjG-8JU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_KHJjHjG-8JU.pt,boy,train,success,82,1629
+KHJjHjG-8JU,KHJjHjG-8JU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_KHJjHjG-8JU.pt,boy,train,skipped (already processed),,
+gU5EI_ZTzxw,gU5EI_ZTzxw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_gU5EI_ZTzxw.pt,hello,train,success,36,1629
+GCMo9e9GOWs,GCMo9e9GOWs.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_GCMo9e9GOWs.pt,what,train,success,73,1629
+RRzbB2rg4VM,RRzbB2rg4VM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_RRzbB2rg4VM.pt,hello,train,success,61,1629
+6jjPIk3O0q4,6jjPIk3O0q4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_6jjPIk3O0q4.pt,boy,train,success,149,1629
+_ZlZH4b0C44,_ZlZH4b0C44.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what__ZlZH4b0C44.pt,what,train,success,27,1629
+_ZlZH4b0C44,_ZlZH4b0C44.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good__ZlZH4b0C44.pt,good,train,success,31,1629
+QBwuhvz8LAk,QBwuhvz8LAk_Happy birthday!.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_QBwuhvz8LAk.pt,happy,train,success,71,1629
+owXsDIKq4lk,owXsDIKq4lk_ASL Lesson 1.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_owXsDIKq4lk.pt,nice,train,success,34,1629
+owXsDIKq4lk,owXsDIKq4lk_ASL Lesson 1.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_owXsDIKq4lk.pt,nice,train,skipped (already processed),,
+owXsDIKq4lk,owXsDIKq4lk.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_owXsDIKq4lk.pt,what,train,success,93,1629
+TYEae1fcehg,TYEae1fcehg_Jobs ｜ ASL - American Sign Language.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_TYEae1fcehg.pt,teacher,train,success,165,1629
+YrdkYimZtSY,YrdkYimZtSY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_YrdkYimZtSY.pt,friend,train,success,140,1629
+wbScz3a4NLk,wbScz3a4NLk_go - ASL sign for go.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/go_wbScz3a4NLk.pt,go,train,success,102,1629
+wbScz3a4NLk,wbScz3a4NLk_go - ASL sign for go.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/go_wbScz3a4NLk.pt,go,train,skipped (already processed),,
+ZvPcSJ9A1pM,ZvPcSJ9A1pM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_ZvPcSJ9A1pM.pt,what,train,success,51,1629
+9RE2NLd_Sgw,9RE2NLd_Sgw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_9RE2NLd_Sgw.pt,white,train,success,184,1629
+9RE2NLd_Sgw,9RE2NLd_Sgw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_9RE2NLd_Sgw.pt,what,train,success,151,1629
+9RE2NLd_Sgw,9RE2NLd_Sgw_Colors and Springtime signs in ASL.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_9RE2NLd_Sgw.pt,beautiful,train,success,121,1629
+9RE2NLd_Sgw,9RE2NLd_Sgw_Colors and Springtime signs in ASL.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_9RE2NLd_Sgw.pt,beautiful,train,skipped (already processed),,
+WxY7E9P46DM,WxY7E9P46DM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_WxY7E9P46DM.pt,hello,train,success,135,1629
+WxY7E9P46DM,WxY7E9P46DM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_WxY7E9P46DM.pt,what,train,success,167,1629
+WxY7E9P46DM,WxY7E9P46DM_#deaffriendly ASL Vocabulary - Hotel.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_WxY7E9P46DM.pt,no,train,success,187,1629
+RffIEzlN5Yo,RffIEzlN5Yo_Unit 3 vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_RffIEzlN5Yo.pt,beautiful,train,success,22,1629
+Eq6SnaimpzQ,Eq6SnaimpzQ.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_Eq6SnaimpzQ.pt,friend,train,success,79,1629
+Eq6SnaimpzQ,Eq6SnaimpzQ_ASL Unit One Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_Eq6SnaimpzQ.pt,happy,train,success,80,1629
+Eq6SnaimpzQ,Eq6SnaimpzQ.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_Eq6SnaimpzQ.pt,hello,train,success,80,1629
+Eq6SnaimpzQ,Eq6SnaimpzQ.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_Eq6SnaimpzQ.pt,like,train,success,80,1629
+Eq6SnaimpzQ,Eq6SnaimpzQ_ASL Unit One Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_Eq6SnaimpzQ.pt,nice,train,success,91,1629
+Eq6SnaimpzQ,Eq6SnaimpzQ_ASL Unit One Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_Eq6SnaimpzQ.pt,no,train,success,96,1629
+FNt4N8WFuVY,FNt4N8WFuVY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_FNt4N8WFuVY.pt,teacher,train,success,185,1629
+FNt4N8WFuVY,FNt4N8WFuVY_Asl vocab 2.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_FNt4N8WFuVY.pt,no,train,success,109,1629
+FNt4N8WFuVY,FNt4N8WFuVY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_FNt4N8WFuVY.pt,like,train,success,114,1629
+z9WFeko-7jw,z9WFeko-7jw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/big_z9WFeko-7jw.pt,big,train,success,61,1629
+25ymRY7hbjs,25ymRY7hbjs.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_25ymRY7hbjs.pt,teacher,train,success,138,1629
+25ymRY7hbjs,25ymRY7hbjs.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_25ymRY7hbjs.pt,boy,train,success,129,1629
+25ymRY7hbjs,25ymRY7hbjs.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_25ymRY7hbjs.pt,sister,train,success,140,1629
+25ymRY7hbjs,25ymRY7hbjs.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_25ymRY7hbjs.pt,hello,train,success,100,1629
+25ymRY7hbjs,25ymRY7hbjs_Unit 01 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_25ymRY7hbjs.pt,nice,train,success,111,1629
+yG09SQB0Hds,yG09SQB0Hds.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_yG09SQB0Hds.pt,hello,train,success,31,1629
+yG09SQB0Hds,yG09SQB0Hds.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/hello_yG09SQB0Hds.pt,hello,train,skipped (already processed),,
+ckNZidesfIA,ckNZidesfIA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_ckNZidesfIA.pt,sister,train,success,53,1629
+ckNZidesfIA,ckNZidesfIA_Level 1 Unit 5 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_ckNZidesfIA.pt,no,train,success,63,1629
+ckNZidesfIA,ckNZidesfIA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_ckNZidesfIA.pt,boy,train,success,58,1629
+b-D-ZF8spMY,b-D-ZF8spMY_ASL： Clean נקי.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_b-D-ZF8spMY.pt,nice,train,success,126,1629
+R_ES8RZua1g,R_ES8RZua1g.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_R_ES8RZua1g.pt,what,train,success,59,1629
+R_ES8RZua1g,R_ES8RZua1g.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_R_ES8RZua1g.pt,friend,train,success,88,1629
+R_ES8RZua1g,R_ES8RZua1g.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_R_ES8RZua1g.pt,teacher,train,success,100,1629
+R_ES8RZua1g,R_ES8RZua1g.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_R_ES8RZua1g.pt,like,train,success,61,1629
+R_ES8RZua1g,R_ES8RZua1g.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_R_ES8RZua1g.pt,good,train,success,49,1629
+wOw8gVHd1Ck,wOw8gVHd1Ck.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_wOw8gVHd1Ck.pt,good,train,success,64,1629
+TDoqoJDX280,TDoqoJDX280_Making Conversation Vocabulary ｜ ASL - American Sign Language.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_TDoqoJDX280.pt,no,train,success,165,1629
+3RB642y8sgo,3RB642y8sgo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_3RB642y8sgo.pt,boy,train,success,189,1629
+HVtHrQuNA8Q,HVtHrQuNA8Q_Happy.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_HVtHrQuNA8Q.pt,happy,train,success,120,1629
+ON87DP4jAvo,ON87DP4jAvo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_ON87DP4jAvo.pt,boy,train,success,74,1629
+UoITyyziLOw,UoITyyziLOw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_UoITyyziLOw.pt,what,train,success,67,1629
+UoITyyziLOw,UoITyyziLOw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_UoITyyziLOw.pt,teacher,train,success,83,1629
+UoITyyziLOw,UoITyyziLOw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_UoITyyziLOw.pt,friend,train,success,104,1629
+UoITyyziLOw,UoITyyziLOw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_UoITyyziLOw.pt,like,train,success,86,1629
+kdz5f_PJxDk,kdz5f_PJxDk.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_kdz5f_PJxDk.pt,beautiful,train,success,149,1629
+oVsuQbfMscM,oVsuQbfMscM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_oVsuQbfMscM.pt,beautiful,train,success,21,1629
+oVsuQbfMscM,oVsuQbfMscM_Opinion about Places Vocabulary ｜ ASL - American Sign Language.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_oVsuQbfMscM.pt,nice,train,success,50,1629
+oVsuQbfMscM,oVsuQbfMscM_Opinion about Places Vocabulary ｜ ASL - American Sign Language.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_oVsuQbfMscM.pt,nice,train,skipped (already processed),,
+oVsuQbfMscM,oVsuQbfMscM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/big_oVsuQbfMscM.pt,big,train,success,156,1629
+yDNcxRM9Nf8,yDNcxRM9Nf8_no - ASL sign for no.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_yDNcxRM9Nf8.pt,no,train,success,92,1629
+yDNcxRM9Nf8,yDNcxRM9Nf8_no - ASL sign for no.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_yDNcxRM9Nf8.pt,no,train,skipped (already processed),,
+yDNcxRM9Nf8,yDNcxRM9Nf8_no - ASL sign for no.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_yDNcxRM9Nf8.pt,no,train,skipped (already processed),,
+TwkGS9TjUX8,TwkGS9TjUX8_ASL 1： Unit 4 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/boy_TwkGS9TjUX8.pt,boy,train,skipped (already processed),,
+TwkGS9TjUX8,TwkGS9TjUX8_ASL 1： Unit 4 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/sister_TwkGS9TjUX8.pt,sister,train,skipped (already processed),,
+TwkGS9TjUX8,TwkGS9TjUX8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_TwkGS9TjUX8.pt,like,train,skipped (already processed),,
+TwkGS9TjUX8,TwkGS9TjUX8_ASL 1： Unit 4 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/beautiful_TwkGS9TjUX8.pt,beautiful,train,skipped (already processed),,
+4AwP2ED0O78,4AwP2ED0O78.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_4AwP2ED0O78.pt,teacher,train,success,137,1629
+q_p38s5JsXo,q_p38s5JsXo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_q_p38s5JsXo.pt,like,train,success,88,1629
+mCG3gsQfiBA,mCG3gsQfiBA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_mCG3gsQfiBA.pt,white,train,success,31,1629
+nvaS2J5mcEk,nvaS2J5mcEk.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_nvaS2J5mcEk.pt,friend,train,success,60,1629
+nvaS2J5mcEk,nvaS2J5mcEk.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_nvaS2J5mcEk.pt,good,train,success,90,1629
+nvaS2J5mcEk,nvaS2J5mcEk.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_nvaS2J5mcEk.pt,like,train,success,90,1629
+nvaS2J5mcEk,nvaS2J5mcEk.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/nice_nvaS2J5mcEk.pt,nice,train,success,31,1629
+nvaS2J5mcEk,nvaS2J5mcEk_Unit 1.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_nvaS2J5mcEk.pt,no,train,success,59,1629
+nvaS2J5mcEk,nvaS2J5mcEk.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_nvaS2J5mcEk.pt,good,train,skipped (already processed),,
+6a571i9uA3U,6a571i9uA3U.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_6a571i9uA3U.pt,friend,train,success,105,1629
+rVBv13texI0,rVBv13texI0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_rVBv13texI0.pt,like,train,success,140,1629
+hrH2ZfCyJDo,hrH2ZfCyJDo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_hrH2ZfCyJDo.pt,friend,train,success,132,1629
+hrH2ZfCyJDo,hrH2ZfCyJDo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_hrH2ZfCyJDo.pt,friend,train,skipped (already processed),,
+P3tBJESDamE,P3tBJESDamE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_P3tBJESDamE.pt,teacher,train,success,101,1629
+P3tBJESDamE,P3tBJESDamE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_P3tBJESDamE.pt,teacher,train,skipped (already processed),,
+P3tBJESDamE,P3tBJESDamE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_P3tBJESDamE.pt,friend,train,success,171,1629
+GqF8lSxalYo,GqF8lSxalYo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_GqF8lSxalYo.pt,like,train,success,110,1629
+GqF8lSxalYo,GqF8lSxalYo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/like_GqF8lSxalYo.pt,like,train,skipped (already processed),,
+_0ltTWDlWyo,_0ltTWDlWyo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/big__0ltTWDlWyo.pt,big,train,success,85,1629
+6RRmIyhkMx0,6RRmIyhkMx0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/friend_6RRmIyhkMx0.pt,friend,train,success,74,1629
+07hyGF-PcWs,07hyGF-PcWs.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/good_07hyGF-PcWs.pt,good,train,success,126,1629
+EEETudiKe50,EEETudiKe50.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_EEETudiKe50.pt,white,train,success,61,1629
+9JAG32jKZms,9JAG32jKZms.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_9JAG32jKZms.pt,teacher,train,success,56,1629
+F16BdOmsr8w,F16BdOmsr8w_ASL Vocabulary ＂happy＂.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_F16BdOmsr8w.pt,happy,train,success,61,1629
+F16BdOmsr8w,F16BdOmsr8w_ASL Vocabulary ＂happy＂.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/happy_F16BdOmsr8w.pt,happy,train,skipped (already processed),,
+-DZaI_yoNac,-DZaI_yoNac.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/teacher_-DZaI_yoNac.pt,teacher,train,success,94,1629
+fNg_sJ9f8EI,fNg_sJ9f8EI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/what_fNg_sJ9f8EI.pt,what,train,success,121,1629
+fNg_sJ9f8EI,fNg_sJ9f8EI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/white_fNg_sJ9f8EI.pt,white,train,success,119,1629
+fNg_sJ9f8EI,fNg_sJ9f8EI_ASL 1： Unit 1 Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/train/no_fNg_sJ9f8EI.pt,no,train,success,119,1629
+TR9M0q7iWxY,TR9M0q7iWxY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/big_TR9M0q7iWxY.pt,big,val,success,44,1629
+koMZVbqiXf4,koMZVbqiXf4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/white_koMZVbqiXf4.pt,white,val,success,104,1629
+GOczM9jk2xY,GOczM9jk2xY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/big_GOczM9jk2xY.pt,big,val,success,67,1629
+GOczM9jk2xY,GOczM9jk2xY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/sister_GOczM9jk2xY.pt,sister,val,success,64,1629
+GOczM9jk2xY,GOczM9jk2xY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/sister_GOczM9jk2xY.pt,sister,val,skipped (already processed),,
+GOczM9jk2xY,GOczM9jk2xY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/sister_GOczM9jk2xY.pt,sister,val,skipped (already processed),,
+GOczM9jk2xY,GOczM9jk2xY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/friend_GOczM9jk2xY.pt,friend,val,success,81,1629
+0HvgswZfDGI,0HvgswZfDGI_NO.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/no_0HvgswZfDGI.pt,no,val,success,36,1629
+iR6M4P6XqB0,iR6M4P6XqB0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/teacher_iR6M4P6XqB0.pt,teacher,val,success,151,1629
+CxTSVyM-ij0,CxTSVyM-ij0_Unit 6.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_CxTSVyM-ij0.pt,happy,val,success,61,1629
+CxTSVyM-ij0,CxTSVyM-ij0_Unit 6.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_CxTSVyM-ij0.pt,happy,val,skipped (already processed),,
+CxTSVyM-ij0,CxTSVyM-ij0_Unit 6.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_CxTSVyM-ij0.pt,happy,val,skipped (already processed),,
+CxTSVyM-ij0,CxTSVyM-ij0_Unit 6.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_CxTSVyM-ij0.pt,happy,val,skipped (already processed),,
+CxTSVyM-ij0,CxTSVyM-ij0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/like_CxTSVyM-ij0.pt,like,val,success,50,1629
+CxTSVyM-ij0,CxTSVyM-ij0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/like_CxTSVyM-ij0.pt,like,val,skipped (already processed),,
+1b2TXYk0jbM,1b2TXYk0jbM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/go_1b2TXYk0jbM.pt,go,val,success,26,1629
+N4n5CDpyX3w,N4n5CDpyX3w_ASL Vocabulary ＂Opposites＂.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_N4n5CDpyX3w.pt,happy,val,success,104,1629
+N4n5CDpyX3w,N4n5CDpyX3w_ASL Vocabulary ＂Opposites＂.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_N4n5CDpyX3w.pt,happy,val,skipped (already processed),,
+N4n5CDpyX3w,N4n5CDpyX3w.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/like_N4n5CDpyX3w.pt,like,val,success,111,1629
+N4n5CDpyX3w,N4n5CDpyX3w.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/like_N4n5CDpyX3w.pt,like,val,skipped (already processed),,
+PHEFs5gHrl4,PHEFs5gHrl4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/white_PHEFs5gHrl4.pt,white,val,success,37,1629
+PBDUwwE9BFM,PBDUwwE9BFM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/nice_PBDUwwE9BFM.pt,nice,val,success,86,1629
+bFm9sAXhmkQ,bFm9sAXhmkQ_How to Sign ＂#HAPPY＂ in Sign Language？.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_bFm9sAXhmkQ.pt,happy,val,success,121,1629
+qysriDtUS5o,qysriDtUS5o_How to Sign ＂Happy Mother's Day＂ in Sign Language？.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_qysriDtUS5o.pt,happy,val,success,25,1629
+7m6N78E-5uE,7m6N78E-5uE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/boy_7m6N78E-5uE.pt,boy,val,success,111,1629
+7m6N78E-5uE,7m6N78E-5uE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/boy_7m6N78E-5uE.pt,boy,val,skipped (already processed),,
+7m6N78E-5uE,7m6N78E-5uE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/sister_7m6N78E-5uE.pt,sister,val,success,107,1629
+7m6N78E-5uE,7m6N78E-5uE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/sister_7m6N78E-5uE.pt,sister,val,skipped (already processed),,
+RjKI2a_hZ18,RjKI2a_hZ18.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/what_RjKI2a_hZ18.pt,what,val,success,38,1629
+kZuJalsv_z0,kZuJalsv_z0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/beautiful_kZuJalsv_z0.pt,beautiful,val,success,124,1629
+kZuJalsv_z0,kZuJalsv_z0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/big_kZuJalsv_z0.pt,big,val,success,109,1629
+kZuJalsv_z0,kZuJalsv_z0_Mr. Misener's ASL lesson 1 vocab review.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_kZuJalsv_z0.pt,happy,val,success,144,1629
+kZuJalsv_z0,kZuJalsv_z0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/hello_kZuJalsv_z0.pt,hello,val,success,115,1629
+kZuJalsv_z0,kZuJalsv_z0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/beautiful_kZuJalsv_z0.pt,beautiful,val,skipped (already processed),,
+0bIF7jh6lnE,0bIF7jh6lnE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/boy_0bIF7jh6lnE.pt,boy,val,success,58,1629
+0bIF7jh6lnE,0bIF7jh6lnE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/teacher_0bIF7jh6lnE.pt,teacher,val,success,42,1629
+0bIF7jh6lnE,0bIF7jh6lnE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/teacher_0bIF7jh6lnE.pt,teacher,val,skipped (already processed),,
+0bIF7jh6lnE,0bIF7jh6lnE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/teacher_0bIF7jh6lnE.pt,teacher,val,skipped (already processed),,
+0bIF7jh6lnE,0bIF7jh6lnE_ASL I - Unit 2 - Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/no_0bIF7jh6lnE.pt,no,val,success,28,1629
+0bIF7jh6lnE,0bIF7jh6lnE_ASL I - Unit 2 - Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/no_0bIF7jh6lnE.pt,no,val,skipped (already processed),,
+0bIF7jh6lnE,0bIF7jh6lnE_ASL I - Unit 2 - Vocabulary.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/no_0bIF7jh6lnE.pt,no,val,skipped (already processed),,
+xmM5-XsE8Ac,xmM5-XsE8Ac.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/hello_xmM5-XsE8Ac.pt,hello,val,success,44,1629
+R_G5zGVHxkU,R_G5zGVHxkU_ASL Vocabulary ＂Emotions＂.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_R_G5zGVHxkU.pt,happy,val,success,92,1629
+R_G5zGVHxkU,R_G5zGVHxkU_ASL Vocabulary ＂Emotions＂.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_R_G5zGVHxkU.pt,happy,val,skipped (already processed),,
+R_G5zGVHxkU,R_G5zGVHxkU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/nice_R_G5zGVHxkU.pt,nice,val,success,105,1629
+R_G5zGVHxkU,R_G5zGVHxkU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/nice_R_G5zGVHxkU.pt,nice,val,skipped (already processed),,
+9mxvzW7doks,9mxvzW7doks.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/good_9mxvzW7doks.pt,good,val,success,41,1629
+IeH7XYbo0yg,IeH7XYbo0yg.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/teacher_IeH7XYbo0yg.pt,teacher,val,success,75,1629
+k8hg4-mwRqU,k8hg4-mwRqU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/friend_k8hg4-mwRqU.pt,friend,val,success,28,1629
+V8DTIPK4QlU,V8DTIPK4QlU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/hello_V8DTIPK4QlU.pt,hello,val,success,34,1629
+Fc0mGYlkQHg,Fc0mGYlkQHg.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/boy_Fc0mGYlkQHg.pt,boy,val,success,70,1629
+_LGqHR3FhL8,_LGqHR3FhL8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/what__LGqHR3FhL8.pt,what,val,success,81,1629
+_LGqHR3FhL8,_LGqHR3FhL8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/what__LGqHR3FhL8.pt,what,val,skipped (already processed),,
+5sILDEiOcQ0,5sILDEiOcQ0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/big_5sILDEiOcQ0.pt,big,val,success,32,1629
+5sILDEiOcQ0,5sILDEiOcQ0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/big_5sILDEiOcQ0.pt,big,val,skipped (already processed),,
+g59_3vr_NT0,g59_3vr_NT0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/good_g59_3vr_NT0.pt,good,val,success,82,1629
+g59_3vr_NT0,g59_3vr_NT0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/no_g59_3vr_NT0.pt,no,val,success,94,1629
+9g-hioQapYE,9g-hioQapYE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/hello_9g-hioQapYE.pt,hello,val,success,46,1629
+9g-hioQapYE,9g-hioQapYE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/boy_9g-hioQapYE.pt,boy,val,success,52,1629
+9g-hioQapYE,9g-hioQapYE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/beautiful_9g-hioQapYE.pt,beautiful,val,success,52,1629
+9g-hioQapYE,9g-hioQapYE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/good_9g-hioQapYE.pt,good,val,success,61,1629
+9g-hioQapYE,9g-hioQapYE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/white_9g-hioQapYE.pt,white,val,success,34,1629
+9g-hioQapYE,9g-hioQapYE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/boy_9g-hioQapYE.pt,boy,val,skipped (already processed),,
+9g-hioQapYE,9g-hioQapYE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/what_9g-hioQapYE.pt,what,val,success,32,1629
+9g-hioQapYE,9g-hioQapYE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/teacher_9g-hioQapYE.pt,teacher,val,success,41,1629
+9g-hioQapYE,9g-hioQapYE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/friend_9g-hioQapYE.pt,friend,val,success,57,1629
+9g-hioQapYE,9g-hioQapYE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/nice_9g-hioQapYE.pt,nice,val,success,39,1629
+psspxdbtM3k,psspxdbtM3k.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/sister_psspxdbtM3k.pt,sister,val,success,59,1629
+7bWO4SJ0sv4,7bWO4SJ0sv4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_7bWO4SJ0sv4.pt,happy,val,success,44,1629
+meBI_IVGKpE,meBI_IVGKpE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/boy_meBI_IVGKpE.pt,boy,val,success,53,1629
+meBI_IVGKpE,meBI_IVGKpE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/friend_meBI_IVGKpE.pt,friend,val,success,39,1629
+meBI_IVGKpE,meBI_IVGKpE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/boy_meBI_IVGKpE.pt,boy,val,skipped (already processed),,
+meBI_IVGKpE,meBI_IVGKpE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/friend_meBI_IVGKpE.pt,friend,val,skipped (already processed),,
+BEKUHzwnVO8,BEKUHzwnVO8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/teacher_BEKUHzwnVO8.pt,teacher,val,success,121,1629
+BEKUHzwnVO8,BEKUHzwnVO8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/teacher_BEKUHzwnVO8.pt,teacher,val,skipped (already processed),,
+BEKUHzwnVO8,BEKUHzwnVO8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/boy_BEKUHzwnVO8.pt,boy,val,success,197,1629
+BEKUHzwnVO8,BEKUHzwnVO8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/sister_BEKUHzwnVO8.pt,sister,val,success,91,1629
+BEKUHzwnVO8,BEKUHzwnVO8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/sister_BEKUHzwnVO8.pt,sister,val,skipped (already processed),,
+BEKUHzwnVO8,BEKUHzwnVO8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/no_BEKUHzwnVO8.pt,no,val,success,181,1629
+BEKUHzwnVO8,BEKUHzwnVO8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/hello_BEKUHzwnVO8.pt,hello,val,success,184,1629
+BEKUHzwnVO8,BEKUHzwnVO8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/nice_BEKUHzwnVO8.pt,nice,val,success,190,1629
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/big_HUMEcnkvhJU.pt,big,val,success,40,1629
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/big_HUMEcnkvhJU.pt,big,val,skipped (already processed),,
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/boy_HUMEcnkvhJU.pt,boy,val,success,45,1629
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/boy_HUMEcnkvhJU.pt,boy,val,skipped (already processed),,
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/friend_HUMEcnkvhJU.pt,friend,val,success,51,1629
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/friend_HUMEcnkvhJU.pt,friend,val,skipped (already processed),,
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/friend_HUMEcnkvhJU.pt,friend,val,skipped (already processed),,
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/go_HUMEcnkvhJU.pt,go,val,success,140,1629
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/go_HUMEcnkvhJU.pt,go,val,skipped (already processed),,
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/good_HUMEcnkvhJU.pt,good,val,success,31,1629
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/good_HUMEcnkvhJU.pt,good,val,skipped (already processed),,
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_HUMEcnkvhJU.pt,happy,val,success,36,1629
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_HUMEcnkvhJU.pt,happy,val,skipped (already processed),,
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/hello_HUMEcnkvhJU.pt,hello,val,success,37,1629
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/hello_HUMEcnkvhJU.pt,hello,val,skipped (already processed),,
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/like_HUMEcnkvhJU.pt,like,val,success,132,1629
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/like_HUMEcnkvhJU.pt,like,val,skipped (already processed),,
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/nice_HUMEcnkvhJU.pt,nice,val,success,39,1629
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/nice_HUMEcnkvhJU.pt,nice,val,skipped (already processed),,
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/no_HUMEcnkvhJU.pt,no,val,success,271,1629
+HUMEcnkvhJU,HUMEcnkvhJU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/what_HUMEcnkvhJU.pt,what,val,success,200,1629
+bX1eJjB3nyA,bX1eJjB3nyA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/no_bX1eJjB3nyA.pt,no,val,success,90,1629
+bX1eJjB3nyA,bX1eJjB3nyA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_bX1eJjB3nyA.pt,happy,val,success,30,1629
+bX1eJjB3nyA,bX1eJjB3nyA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/good_bX1eJjB3nyA.pt,good,val,success,29,1629
+bX1eJjB3nyA,bX1eJjB3nyA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/teacher_bX1eJjB3nyA.pt,teacher,val,success,44,1629
+1bj72qXSy8c,1bj72qXSy8c.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/like_1bj72qXSy8c.pt,like,val,success,75,1629
+1bj72qXSy8c,1bj72qXSy8c.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/nice_1bj72qXSy8c.pt,nice,val,success,82,1629
+bTSejTfpGR8,bTSejTfpGR8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/big_bTSejTfpGR8.pt,big,val,success,46,1629
+EyWuC4JL4Tk,EyWuC4JL4Tk.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/like_EyWuC4JL4Tk.pt,like,val,success,72,1629
+JYF-AfMbUNw,JYF-AfMbUNw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/sister_JYF-AfMbUNw.pt,sister,val,success,88,1629
+JYF-AfMbUNw,JYF-AfMbUNw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/friend_JYF-AfMbUNw.pt,friend,val,success,98,1629
+JYF-AfMbUNw,JYF-AfMbUNw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/no_JYF-AfMbUNw.pt,no,val,success,89,1629
+VcRx3U-HpTE,VcRx3U-HpTE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/white_VcRx3U-HpTE.pt,white,val,success,84,1629
+Xq3QAqQXpTM,Xq3QAqQXpTM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_Xq3QAqQXpTM.pt,happy,val,success,67,1629
+0qeMFifNqC4,0qeMFifNqC4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/like_0qeMFifNqC4.pt,like,val,success,90,1629
+sQELZPmche8,sQELZPmche8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/no_sQELZPmche8.pt,no,val,success,60,1629
+2VB3WN8adyM,2VB3WN8adyM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/white_2VB3WN8adyM.pt,white,val,success,81,1629
+2VB3WN8adyM,2VB3WN8adyM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/hello_2VB3WN8adyM.pt,hello,val,success,77,1629
+2VB3WN8adyM,2VB3WN8adyM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/what_2VB3WN8adyM.pt,what,val,success,88,1629
+2VB3WN8adyM,2VB3WN8adyM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/boy_2VB3WN8adyM.pt,boy,val,success,88,1629
+OQtf7R6phQQ,OQtf7R6phQQ.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/beautiful_OQtf7R6phQQ.pt,beautiful,val,success,200,1629
+rIlQQTN2b58,rIlQQTN2b58.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/good_rIlQQTN2b58.pt,good,val,success,78,1629
+rIlQQTN2b58,rIlQQTN2b58.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/beautiful_rIlQQTN2b58.pt,beautiful,val,success,93,1629
+rIlQQTN2b58,rIlQQTN2b58.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/happy_rIlQQTN2b58.pt,happy,val,success,89,1629
+_bL1hlBmaLI,_bL1hlBmaLI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/beautiful__bL1hlBmaLI.pt,beautiful,val,success,80,1629
+_bL1hlBmaLI,_bL1hlBmaLI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/beautiful__bL1hlBmaLI.pt,beautiful,val,skipped (already processed),,
+_bL1hlBmaLI,_bL1hlBmaLI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/beautiful__bL1hlBmaLI.pt,beautiful,val,skipped (already processed),,
+_bL1hlBmaLI,_bL1hlBmaLI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/beautiful__bL1hlBmaLI.pt,beautiful,val,skipped (already processed),,
+_bL1hlBmaLI,_bL1hlBmaLI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/like__bL1hlBmaLI.pt,like,val,success,128,1629
+hKogDJd0yc4,hKogDJd0yc4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/white_hKogDJd0yc4.pt,white,val,success,197,1629
+hKogDJd0yc4,hKogDJd0yc4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/beautiful_hKogDJd0yc4.pt,beautiful,val,success,51,1629
+hKogDJd0yc4,hKogDJd0yc4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/beautiful_hKogDJd0yc4.pt,beautiful,val,skipped (already processed),,
+hKogDJd0yc4,hKogDJd0yc4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/good_hKogDJd0yc4.pt,good,val,success,51,1629
+hKogDJd0yc4,hKogDJd0yc4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/good_hKogDJd0yc4.pt,good,val,skipped (already processed),,
+GmxS5HkNc3o,GmxS5HkNc3o.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/like_GmxS5HkNc3o.pt,like,val,success,113,1629
+GmxS5HkNc3o,GmxS5HkNc3o.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/go_GmxS5HkNc3o.pt,go,val,success,49,1629
+GmxS5HkNc3o,GmxS5HkNc3o.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/go_GmxS5HkNc3o.pt,go,val,skipped (already processed),,
+GmxS5HkNc3o,GmxS5HkNc3o.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/go_GmxS5HkNc3o.pt,go,val,skipped (already processed),,
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/good_FRQbKDZeRzM.pt,good,val,success,36,1629
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/good_FRQbKDZeRzM.pt,good,val,skipped (already processed),,
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/good_FRQbKDZeRzM.pt,good,val,skipped (already processed),,
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/good_FRQbKDZeRzM.pt,good,val,skipped (already processed),,
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/good_FRQbKDZeRzM.pt,good,val,skipped (already processed),,
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/big_FRQbKDZeRzM.pt,big,val,success,48,1629
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/big_FRQbKDZeRzM.pt,big,val,skipped (already processed),,
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/big_FRQbKDZeRzM.pt,big,val,skipped (already processed),,
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/big_FRQbKDZeRzM.pt,big,val,skipped (already processed),,
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/big_FRQbKDZeRzM.pt,big,val,skipped (already processed),,
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/white_FRQbKDZeRzM.pt,white,val,success,67,1629
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/white_FRQbKDZeRzM.pt,white,val,skipped (already processed),,
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/white_FRQbKDZeRzM.pt,white,val,skipped (already processed),,
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/white_FRQbKDZeRzM.pt,white,val,skipped (already processed),,
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/boy_FRQbKDZeRzM.pt,boy,val,success,103,1629
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/boy_FRQbKDZeRzM.pt,boy,val,skipped (already processed),,
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/nice_FRQbKDZeRzM.pt,nice,val,success,108,1629
+FRQbKDZeRzM,FRQbKDZeRzM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/nice_FRQbKDZeRzM.pt,nice,val,skipped (already processed),,
+qE0EsE4dTj8,qE0EsE4dTj8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/beautiful_qE0EsE4dTj8.pt,beautiful,val,success,47,1629
+dELt8wh_5nA,dELt8wh_5nA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/nice_dELt8wh_5nA.pt,nice,val,success,97,1629
+CYLvY25yI9c,CYLvY25yI9c.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/nice_CYLvY25yI9c.pt,nice,val,success,43,1629
+Uu2prMSD4l4,Uu2prMSD4l4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/white_Uu2prMSD4l4.pt,white,val,success,73,1629
+URb48i4X52U,URb48i4X52U.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/no_URb48i4X52U.pt,no,val,success,76,1629
+UmcAkb54I4c,UmcAkb54I4c.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/val/go_UmcAkb54I4c.pt,go,val,success,50,1629
+G77ZoILMYw4,G77ZoILMYw4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/teacher_G77ZoILMYw4.pt,teacher,test,success,90,1629
+-DMFu-nAsok,-DMFu-nAsok.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_-DMFu-nAsok.pt,hello,test,success,35,1629
+hCxSiN-vZS8,hCxSiN-vZS8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/good_hCxSiN-vZS8.pt,good,test,success,43,1629
+hCxSiN-vZS8,hCxSiN-vZS8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/happy_hCxSiN-vZS8.pt,happy,test,success,68,1629
+HuViTIjghKk,HuViTIjghKk.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/what_HuViTIjghKk.pt,what,test,success,101,1629
+ybhXZy32d1E,ybhXZy32d1E.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/sister_ybhXZy32d1E.pt,sister,test,success,71,1629
+ybhXZy32d1E,ybhXZy32d1E.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/sister_ybhXZy32d1E.pt,sister,test,skipped (already processed),,
+ybhXZy32d1E,ybhXZy32d1E.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/sister_ybhXZy32d1E.pt,sister,test,skipped (already processed),,
+KTURNRi-wy0,KTURNRi-wy0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/friend_KTURNRi-wy0.pt,friend,test,success,74,1629
+KTURNRi-wy0,KTURNRi-wy0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/nice_KTURNRi-wy0.pt,nice,test,success,56,1629
+KTURNRi-wy0,KTURNRi-wy0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/teacher_KTURNRi-wy0.pt,teacher,test,success,70,1629
+K8T0-zeB3jc,K8T0-zeB3jc.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_K8T0-zeB3jc.pt,hello,test,success,34,1629
+hElr5OPpnAo,hElr5OPpnAo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/beautiful_hElr5OPpnAo.pt,beautiful,test,success,121,1629
+N9tVg829W4c,N9tVg829W4c.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/teacher_N9tVg829W4c.pt,teacher,test,success,70,1629
+N9tVg829W4c,N9tVg829W4c.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/teacher_N9tVg829W4c.pt,teacher,test,skipped (already processed),,
+2qLS_mXdrh8,2qLS_mXdrh8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_2qLS_mXdrh8.pt,hello,test,success,40,1629
+xQR5y_xUtpA,xQR5y_xUtpA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_xQR5y_xUtpA.pt,hello,test,success,42,1629
+xQR5y_xUtpA,xQR5y_xUtpA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/like_xQR5y_xUtpA.pt,like,test,success,56,1629
+91foGHKuwL0,91foGHKuwL0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/good_91foGHKuwL0.pt,good,test,success,41,1629
+91foGHKuwL0,91foGHKuwL0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/good_91foGHKuwL0.pt,good,test,skipped (already processed),,
+91foGHKuwL0,91foGHKuwL0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/happy_91foGHKuwL0.pt,happy,test,success,55,1629
+91foGHKuwL0,91foGHKuwL0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/happy_91foGHKuwL0.pt,happy,test,skipped (already processed),,
+otTiJBUrJmI,otTiJBUrJmI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/like_otTiJBUrJmI.pt,like,test,success,77,1629
+otTiJBUrJmI,otTiJBUrJmI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/white_otTiJBUrJmI.pt,white,test,success,69,1629
+sUC-XDC5TvA,sUC-XDC5TvA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/boy_sUC-XDC5TvA.pt,boy,test,success,137,1629
+UEgTzBW3khs,UEgTzBW3khs.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/big_UEgTzBW3khs.pt,big,test,success,102,1629
+H3eHAKpTF70,H3eHAKpTF70.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_H3eHAKpTF70.pt,hello,test,success,31,1629
+ZI3Yk215al0,ZI3Yk215al0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/beautiful_ZI3Yk215al0.pt,beautiful,test,success,61,1629
+c49qWjgFtRI,c49qWjgFtRI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/teacher_c49qWjgFtRI.pt,teacher,test,success,76,1629
+9p6eojPZWu4,9p6eojPZWu4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/go_9p6eojPZWu4.pt,go,test,success,61,1629
+9p6eojPZWu4,9p6eojPZWu4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/go_9p6eojPZWu4.pt,go,test,skipped (already processed),,
+kVIt-qr5P2s,kVIt-qr5P2s.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_kVIt-qr5P2s.pt,hello,test,success,66,1629
+FwGL9FjFpYI,FwGL9FjFpYI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/friend_FwGL9FjFpYI.pt,friend,test,success,91,1629
+FwGL9FjFpYI,FwGL9FjFpYI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/go_FwGL9FjFpYI.pt,go,test,success,23,1629
+FwGL9FjFpYI,FwGL9FjFpYI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/go_FwGL9FjFpYI.pt,go,test,skipped (already processed),,
+FwGL9FjFpYI,FwGL9FjFpYI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/good_FwGL9FjFpYI.pt,good,test,success,56,1629
+FwGL9FjFpYI,FwGL9FjFpYI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/good_FwGL9FjFpYI.pt,good,test,skipped (already processed),,
+FwGL9FjFpYI,FwGL9FjFpYI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/happy_FwGL9FjFpYI.pt,happy,test,success,78,1629
+FwGL9FjFpYI,FwGL9FjFpYI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/happy_FwGL9FjFpYI.pt,happy,test,skipped (already processed),,
+FwGL9FjFpYI,FwGL9FjFpYI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_FwGL9FjFpYI.pt,hello,test,success,80,1629
+FwGL9FjFpYI,FwGL9FjFpYI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/like_FwGL9FjFpYI.pt,like,test,success,91,1629
+FwGL9FjFpYI,FwGL9FjFpYI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/nice_FwGL9FjFpYI.pt,nice,test,success,113,1629
+FwGL9FjFpYI,FwGL9FjFpYI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/teacher_FwGL9FjFpYI.pt,teacher,test,success,111,1629
+FwGL9FjFpYI,FwGL9FjFpYI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/no_FwGL9FjFpYI.pt,no,test,success,47,1629
+FwGL9FjFpYI,FwGL9FjFpYI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/no_FwGL9FjFpYI.pt,no,test,skipped (already processed),,
+kwCfdkhc37c,kwCfdkhc37c.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/nice_kwCfdkhc37c.pt,nice,test,success,46,1629
+wqDOKXEx24M,wqDOKXEx24M.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/white_wqDOKXEx24M.pt,white,test,success,54,1629
+r2y_GxB5PZo,r2y_GxB5PZo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/go_r2y_GxB5PZo.pt,go,test,success,112,1629
+1r5V8ZGwnJg,1r5V8ZGwnJg.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/good_1r5V8ZGwnJg.pt,good,test,success,27,1629
+61q-PJr_UvM,61q-PJr_UvM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/nice_61q-PJr_UvM.pt,nice,test,success,56,1629
+61q-PJr_UvM,61q-PJr_UvM.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/big_61q-PJr_UvM.pt,big,test,success,53,1629
+HBQaI1ZG-LU,HBQaI1ZG-LU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/beautiful_HBQaI1ZG-LU.pt,beautiful,test,success,105,1629
+HBQaI1ZG-LU,HBQaI1ZG-LU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/big_HBQaI1ZG-LU.pt,big,test,success,111,1629
+HBQaI1ZG-LU,HBQaI1ZG-LU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/happy_HBQaI1ZG-LU.pt,happy,test,success,70,1629
+HBQaI1ZG-LU,HBQaI1ZG-LU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_HBQaI1ZG-LU.pt,hello,test,success,83,1629
+HBQaI1ZG-LU,HBQaI1ZG-LU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/beautiful_HBQaI1ZG-LU.pt,beautiful,test,skipped (already processed),,
+exk-qIRNw7Y,exk-qIRNw7Y.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_exk-qIRNw7Y.pt,hello,test,success,36,1629
+exk-qIRNw7Y,exk-qIRNw7Y.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/white_exk-qIRNw7Y.pt,white,test,success,45,1629
+Zns-jGjPK5Q,Zns-jGjPK5Q.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/beautiful_Zns-jGjPK5Q.pt,beautiful,test,success,46,1629
+Zns-jGjPK5Q,Zns-jGjPK5Q.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/big_Zns-jGjPK5Q.pt,big,test,success,40,1629
+xIIGn6cn8BI,xIIGn6cn8BI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/boy_xIIGn6cn8BI.pt,boy,test,success,56,1629
+xIIGn6cn8BI,xIIGn6cn8BI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/like_xIIGn6cn8BI.pt,like,test,success,58,1629
+xIIGn6cn8BI,xIIGn6cn8BI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/teacher_xIIGn6cn8BI.pt,teacher,test,success,77,1629
+7b4vSYwKgok,7b4vSYwKgok.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/happy_7b4vSYwKgok.pt,happy,test,success,40,1629
+bhSbk9eQPu4,bhSbk9eQPu4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_bhSbk9eQPu4.pt,hello,test,success,28,1629
+Abj2Yj4vbtk,Abj2Yj4vbtk.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/happy_Abj2Yj4vbtk.pt,happy,test,success,62,1629
+bXyG4iebEBo,bXyG4iebEBo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/boy_bXyG4iebEBo.pt,boy,test,success,80,1629
+bXyG4iebEBo,bXyG4iebEBo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/friend_bXyG4iebEBo.pt,friend,test,success,87,1629
+bXyG4iebEBo,bXyG4iebEBo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/sister_bXyG4iebEBo.pt,sister,test,success,104,1629
+bXyG4iebEBo,bXyG4iebEBo.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/teacher_bXyG4iebEBo.pt,teacher,test,success,99,1629
+7klDf0ZSN_M,7klDf0ZSN_M.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/teacher_7klDf0ZSN_M.pt,teacher,test,success,43,1629
+eLpHf9bfdsI,eLpHf9bfdsI.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_eLpHf9bfdsI.pt,hello,test,success,32,1629
+lkeLvhNoTxg,lkeLvhNoTxg.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/go_lkeLvhNoTxg.pt,go,test,success,110,1629
+FBimL8-ND3E,FBimL8-ND3E.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_FBimL8-ND3E.pt,hello,test,success,42,1629
+FBimL8-ND3E,FBimL8-ND3E.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_FBimL8-ND3E.pt,hello,test,skipped (already processed),,
+FBimL8-ND3E,FBimL8-ND3E.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/no_FBimL8-ND3E.pt,no,test,success,45,1629
+FBimL8-ND3E,FBimL8-ND3E.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/no_FBimL8-ND3E.pt,no,test,skipped (already processed),,
+2TQMVwOkHWw,2TQMVwOkHWw.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_2TQMVwOkHWw.pt,hello,test,success,20,1629
+SJAhRxI7i9c,SJAhRxI7i9c.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/good_SJAhRxI7i9c.pt,good,test,success,107,1629
+SJAhRxI7i9c,SJAhRxI7i9c.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/no_SJAhRxI7i9c.pt,no,test,success,74,1629
+t3jDMiQI5uQ,t3jDMiQI5uQ.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/nice_t3jDMiQI5uQ.pt,nice,test,success,119,1629
+eBkzZg-9hd4,eBkzZg-9hd4.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/what_eBkzZg-9hd4.pt,what,test,success,53,1629
+s2xJgfOn6FA,s2xJgfOn6FA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/big_s2xJgfOn6FA.pt,big,test,success,64,1629
+4bVux9Ni2_0,4bVux9Ni2_0.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_4bVux9Ni2_0.pt,hello,test,success,31,1629
+ktkz1BUzs48,ktkz1BUzs48.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/sister_ktkz1BUzs48.pt,sister,test,success,82,1629
+uE3IDWh0xnA,uE3IDWh0xnA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/sister_uE3IDWh0xnA.pt,sister,test,success,68,1629
+uE3IDWh0xnA,uE3IDWh0xnA.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/boy_uE3IDWh0xnA.pt,boy,test,success,43,1629
+oXzTnqvjnN8,oXzTnqvjnN8.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/teacher_oXzTnqvjnN8.pt,teacher,test,success,35,1629
+gzqjLnXje8g,gzqjLnXje8g.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/happy_gzqjLnXje8g.pt,happy,test,success,86,1629
+s-Km4Ni0Zko,s-Km4Ni0Zko.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/beautiful_s-Km4Ni0Zko.pt,beautiful,test,success,22,1629
+ZgUBU0NNEDU,ZgUBU0NNEDU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_ZgUBU0NNEDU.pt,hello,test,success,41,1629
+ZgUBU0NNEDU,ZgUBU0NNEDU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/like_ZgUBU0NNEDU.pt,like,test,success,140,1629
+ZgUBU0NNEDU,ZgUBU0NNEDU.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/happy_ZgUBU0NNEDU.pt,happy,test,success,81,1629
+RMUydgQr9TE,RMUydgQr9TE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/hello_RMUydgQr9TE.pt,hello,test,success,66,1629
+RMUydgQr9TE,RMUydgQr9TE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/no_RMUydgQr9TE.pt,no,test,success,69,1629
+RMUydgQr9TE,RMUydgQr9TE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/no_RMUydgQr9TE.pt,no,test,skipped (already processed),,
+RMUydgQr9TE,RMUydgQr9TE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/no_RMUydgQr9TE.pt,no,test,skipped (already processed),,
+RMUydgQr9TE,RMUydgQr9TE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/go_RMUydgQr9TE.pt,go,test,success,43,1629
+RMUydgQr9TE,RMUydgQr9TE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/what_RMUydgQr9TE.pt,what,test,success,47,1629
+RMUydgQr9TE,RMUydgQr9TE.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/like_RMUydgQr9TE.pt,like,test,success,62,1629
+g5KHrQrZRmY,g5KHrQrZRmY.mp4,/content/drive/MyDrive/sign2speech/processed/keypoints/test/big_g5KHrQrZRmY.pt,big,test,success,36,1629

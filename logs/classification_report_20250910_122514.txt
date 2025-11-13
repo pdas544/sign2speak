@@ -1,0 +1,24 @@
+Classification Report:
+              precision    recall  f1-score   support
+
+       hello       0.85      1.00      0.92        11
+         yes       1.00      0.93      0.97        15
+          no       0.71      0.83      0.77         6
+     teacher       0.92      1.00      0.96        11
+   beautiful       0.93      1.00      0.97        14
+         boy       1.00      0.94      0.97        16
+        nice       0.67      0.67      0.67         6
+        like       0.73      0.80      0.76        10
+         big       0.88      0.82      0.85        17
+      friend       0.79      0.79      0.79        14
+       happy       0.82      0.69      0.75        13
+          go       0.83      0.67      0.74        15
+        good       0.83      0.56      0.67         9
+      sister       1.00      1.00      1.00        11
+     brother       1.00      1.00      1.00         9
+ how_are_you       0.75      0.86      0.80        14
+      family       0.81      1.00      0.90        13
+
+    accuracy                           0.86       204
+   macro avg       0.85      0.86      0.85       204
+weighted avg       0.87      0.86      0.86       204

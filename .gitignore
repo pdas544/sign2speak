@@ -4,3 +4,8 @@ processed/keypoints/
 __pycache__/
 videos_top_10_gloss
 selected_videos/
+test_data/
+mp_data/
+audio/
+outputs/
+.vscode/

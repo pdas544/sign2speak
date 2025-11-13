@@ -2,15 +2,15 @@ import json
 import os
 from collections import defaultdict
 
-def create_filtered_json(selected_glosses, output_filename='filtered_annotations_selected_glosses.json'):
+def create_filtered_json(selected_glosses, output_filename='annotations/filtered_annotations_selected_glosses.json'):
     """
     Create a filtered JSON file containing only entries for the selected glosses
     """
     # Define the input files
     json_files = {
-        'train': 'MSASL_train.json',
-        'val': 'MSASL_val.json',
-        'test': 'MSASL_test.json'
+        'train': 'annotations/MSASL_train.json',
+        'val': 'annotations/MSASL_val.json',
+        'test': 'annotations/MSASL_test.json'
     }
     
     # Initialize counters
@@ -49,7 +49,7 @@ def create_filtered_json(selected_glosses, output_filename='filtered_annotations
 
 # Your selected glosses
 selected_glosses = [
-    'teacher', 'happy', 'nice', 'good', 
+    'teacher', 'happy', 'nice', 'good',
     'no', 'go', 'what', 'like', 'hello',
     'white', 'friend', 'big', 'beautiful', 'boy', 'sister'
 ]

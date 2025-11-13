@@ -28,7 +28,9 @@ def analyze_msasl_file(file_path):
 
 def main():
     # List of MS-ASL JSON files
-    json_files = ['MSASL_train.json', 'MSASL_val.json', 'MSASL_test.json']
+    # json_files = ['annotations/MSASL_train.json', 'annotations/MSASL_val.json', 'annotations/MSASL_test.json']
+    json_files = ['annotations/filtered_annotations_selected_glosses.json']
+   
     
     # Check which files exist
     existing_files = [f for f in json_files if os.path.exists(f)]
