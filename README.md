@@ -45,14 +45,23 @@ This project aims to bridge the communication gap between people who use sign la
 # Clone the repository
 git clone https://github.com/yourusername/sign2speak.git
 
+# Make Sure Python is installled, check with the following command:
+python --version
+
+# Create a Virtual Environment
+python -m venv myenv
+
+# Activate the Virtual Environment
+source myenv/bin/activate
+
 # Navigate to the project directory
 cd sign2speak
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Run the analysis script
-python analyze_dataset.py
+# Run the prediction script
+python realtime_prediction.py
 ```
 
 ### Alternative Installation Methods
@@ -64,20 +73,17 @@ python analyze_dataset.py
 ### Basic Usage
 ```python
 # Example of using the model to predict a sign
-from src.deploy import predict_sign
+# Run the file named "realtime_prediction.py"
+python realtime_prediction.py
 
-# Load the model
-model_path = 'best_model.pth'
-keypoints_path = 'processed/test/teacher_abc123.pt'
-glosses = ['teacher', 'happy', 'nice', 'good', 'no', 'go', 'what', 'like', 'hello',
-           'white', 'friend', 'big', 'beautiful', 'boy', 'sister']
-
-sign, confidence = predict_sign(model_path, keypoints_path, glosses)
-print(f"Predicted sign: {sign} with confidence: {confidence:.2f}")
 ```
 
+**It opens the attached/integrated webcam which waits for the sign language**
+**Once the sign language is captured, it is recognized and gets translated into english and hindi audio in the audio directory**
+
+
 ### Advanced Usage
-- **Custom Model Training**: Modify the `model.py` file to create a custom model architecture.
+- **Custom Model Training**: Execute the file extract_keypoints_lstm.py -> Opens the Integrated/Attached Camera and captures 
 - **Data Augmentation**: Use the `KeypointAugmentation` class to augment keypoints for better training.
 - **Evaluation**: Run the `evaluate.py` script to evaluate the model's performance.
 
