@@ -64,10 +64,6 @@ pip install -r requirements.txt
 python realtime_prediction.py
 ```
 
-### Alternative Installation Methods
-- **Docker**: Use the provided Dockerfile to set up a containerized environment.
-- **Virtual Environment**: Create a virtual environment and install dependencies.
-
 ## 🎯 Usage
 
 ### Basic Usage
@@ -132,16 +128,13 @@ sign2speak/
 - Write clean, well-commented code
 - Submit a pull request
 
-## 📝 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👥 Authors & Contributors
 - **Maintainers**: Priyabrata Das
-- **Contributors**: [List of contributors]
 
 ## 🐛 Issues & Support
-- Report issues on the [GitHub Issues page](https://github.com/yourusername/sign2speak/issues)
-- Get help on the [GitHub Discussions page](https://github.com/yourusername/sign2speak/discussions)
+- Report issues on the [GitHub Issues page](https://github.com/pdas544/sign2speak/issues)
+- Get help on the [GitHub Discussions page](https://github.com/pdas544/sign2speak/discussions)
 
 ## 🗺️ Roadmap
 - **Future Improvements**:
@@ -152,7 +145,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Badges:**
-[![Build Status](https://github.com/yourusername/sign2speak/workflows/CI/badge.svg)](https://github.com/yourusername/sign2speak/actions)
+[![Build Status](https://github.com/pdas544/sign2speak/workflows/CI/badge.svg)](https://github.com/pdas544/sign2speak/actions)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Stars](https://img.shields.io/github/stars/yourusername/sign2speak)](https://github.com/yourusername/sign2speak/stargazers)
-[![Forks](https://img.shields.io/github/forks/yourusername/sign2speak)](https://github.com/yourusername/sign2speak/network/members)
+[![Stars](https://img.shields.io/github/stars/pdas544/sign2speak)](https://github.com/pdas544/sign2speak/stargazers)
+[![Forks](https://img.shields.io/github/forks/pdas544/sign2speak)](https://github.com/pdas544/sign2speak/network/members)
