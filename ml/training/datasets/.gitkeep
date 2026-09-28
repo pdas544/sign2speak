@@ -1,0 +1,5 @@
+# ml/training/datasets/
+# Raw dataset files (.npy keypoints) are collected by test_action_recognition.py
+# and live under test_data/ (per-action/per-sequence directory).
+# This directory is reserved for dataset utilities such as augmentation,
+# split management, or metadata generation scripts.

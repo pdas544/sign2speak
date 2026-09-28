@@ -7,6 +7,7 @@ from tensorflow.keras.layers import LSTM, Dense, Dropout, Conv1D, MaxPooling1D
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 from tensorflow.keras.optimizers import Adam
 import matplotlib.pyplot as plt
+from test_action_recognition import SignLanguageDetector
 from sklearn.metrics import confusion_matrix, classification_report
 import seaborn as sns
 from datetime import datetime
@@ -333,7 +334,7 @@ class ActionRecognitionModel:
 
 def main():
     # Example usage
-    from test_action_recognition import SignLanguageDetector
+    
 
     detector = SignLanguageDetector()
     actions = detector.actions

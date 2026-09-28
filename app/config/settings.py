@@ -67,6 +67,9 @@ class Settings:
     templates_dir: str
     static_dir: str
 
+    model_name: str
+    model_registry_path: str
+
     @staticmethod
     def from_env() -> "Settings":
         environment = os.getenv("APP_ENV", "development")
@@ -94,6 +97,11 @@ class Settings:
             max_upload_size_mb=_get_int("MAX_UPLOAD_SIZE_MB", 25),
             templates_dir=os.getenv("TEMPLATES_DIR", str(BASE_DIR / "app" / "views" / "templates")),
             static_dir=os.getenv("STATIC_DIR", str(BASE_DIR / "app" / "views" / "static")),
+            model_name=os.getenv("MODEL_NAME", ""),
+            model_registry_path=os.getenv(
+                "MODEL_REGISTRY_PATH",
+                str(BASE_DIR / "models" / "registry" / "registry.json"),
+            ),
         )
 
         settings.ensure_runtime_dirs()

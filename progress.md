@@ -1,0 +1,83 @@
+# Refactor Progress
+
+## Completed
+- [x] Create app config package
+- [x] Create settings module ([app/config/settings.py](app/config/settings.py))
+- [x] Create logging module ([app/config/logging.py](app/config/logging.py))
+- [x] Create media controller ([app/controllers/media_controller.py](app/controllers/media_controller.py))
+- [x] Create health controller ([app/controllers/health_controller.py](app/controllers/health_controller.py))
+- [x] Create inference controller ([app/controllers/inference_controller.py](app/controllers/inference_controller.py))
+- [x] Create controllers init/registry ([app/controllers/__init__.py](app/controllers/__init__.py))
+- [x] Create Flask app entrypoint ([app/main.py](app/main.py))
+
+## Services Directory
+- [x] Create services directory ([app/services](app/services))
+- [x] Create media service ([app/services/media_service.py](app/services/media_service.py))
+- [x] Create inference service ([app/services/inference_service.py](app/services/inference_service.py))
+- [x] Create translation service ([app/services/translation_service.py](app/services/translation_service.py))
+- [x] Create tts service ([app/services/tts_service.py](app/services/tts_service.py))
+- [x] Create capture service ([app/services/capture_service.py](app/services/capture_service.py))
+
+## Repositories Directory
+- [x] Create repositories directory ([app/repositories](app/repositories))
+- [x] Create model repository ([app/repositories/model_repository.py](app/repositories/model_repository.py))
+- [x] Create audio repository ([app/repositories/audio_repository.py](app/repositories/audio_repository.py))
+
+## Models Directory
+- [x] Create models directory ([app/models](app/models))
+- [x] Create request models ([app/models/request_models.py](app/models/request_models.py))
+- [x] Create response models ([app/models/response_models.py](app/models/response_models.py))
+
+## Views Directory
+- [x] Extract shared styles ([app/views/static/css/shared.css](app/views/static/css/shared.css))
+- [x] Extract index page styles ([app/views/static/css/index.css](app/views/static/css/index.css))
+- [x] Extract result page styles ([app/views/static/css/result.css](app/views/static/css/result.css))
+- [x] Extract recognition page JS ([app/views/static/js/app.js](app/views/static/js/app.js))
+- [x] Wire Flask static/template folders ([app/main.py](app/main.py))
+
+## ML Directory
+- [x] Create ml root directory ([ml](ml))
+- [x] Create training directory ([ml/training](ml/training))
+- [x] Create shared training utilities ([ml/training/common.py](ml/training/common.py))
+- [x] Create CNN-LSTM training entry script ([ml/training/train_cnn_lstm.py](ml/training/train_cnn_lstm.py))
+- [x] Create LSTM training entry script ([ml/training/train_lstm.py](ml/training/train_lstm.py))
+- [x] Create transformer training entry script ([ml/training/train_transformer.py](ml/training/train_transformer.py))
+- [x] Create datasets placeholder ([ml/training/datasets/.gitkeep](ml/training/datasets/.gitkeep))
+- [x] Create evaluation directory ([ml/evaluation](ml/evaluation))
+- [x] Create single-model evaluation script ([ml/evaluation/evaluate_model.py](ml/evaluation/evaluate_model.py))
+- [x] Create multi-model comparison script ([ml/evaluation/compare_models.py](ml/evaluation/compare_models.py))
+- [x] Create evaluation package init ([ml/evaluation/__init__.py](ml/evaluation/__init__.py))
+- [x] Create preprocessing directory ([ml/preprocessing](ml/preprocessing))
+- [x] Create preprocessing package init ([ml/preprocessing/__init__.py](ml/preprocessing/__init__.py))
+- [x] Create augmentation utilities ([ml/preprocessing/augment.py](ml/preprocessing/augment.py))
+- [x] Create keypoint extraction wrapper ([ml/preprocessing/extract_keypoints.py](ml/preprocessing/extract_keypoints.py))
+- [x] Create dataset builder script ([ml/preprocessing/build_dataset.py](ml/preprocessing/build_dataset.py))
+
+
+## Project Scaffold (post-ML)
+- [x] Create canonical data directories ([data/raw](data/raw), [data/processed](data/processed), [data/keypoints](data/keypoints))
+- [x] Create test structure ([tests/unit](tests/unit), [tests/integration](tests/integration), [tests/e2e](tests/e2e))
+- [x] Create scripts directory ([scripts](scripts))
+- [x] Create split requirements directory ([requirements](requirements))
+- [x] Add requirements manifests ([requirements/base.txt](requirements/base.txt), [requirements/api.txt](requirements/api.txt), [requirements/training.txt](requirements/training.txt), [requirements/dev.txt](requirements/dev.txt))
+- [x] Create cleanup audit file ([safe-to-remove.md](safe-to-remove.md))
+
+## Multi-model Backend
+- [x] Create backend abstraction base ([app/services/inference_backends/base.py](app/services/inference_backends/base.py))
+- [x] Create backends package init ([app/services/inference_backends/__init__.py](app/services/inference_backends/__init__.py))
+- [x] Create TensorFlow backend ([app/services/inference_backends/tf_backend.py](app/services/inference_backends/tf_backend.py))
+- [x] Create PyTorch backend ([app/services/inference_backends/torch_backend.py](app/services/inference_backends/torch_backend.py))
+- [x] Create model registry seed file ([models/registry/registry.json](models/registry/registry.json))
+- [x] Create model registry service ([app/services/model_registry_service.py](app/services/model_registry_service.py))
+
+## Modified Files (multi-model refactor)
+- [x] Integrate CNN-LSTM training with preprocessing datasets (`--dataset-mode auto|processed|legacy`) ([ml/training/train_cnn_lstm.py](ml/training/train_cnn_lstm.py))
+- [x] Add `model_name` + `model_registry_path` to Settings ([app/config/settings.py](app/config/settings.py))
+- [x] Refactor InferenceService to use registry + backends ([app/services/inference_service.py](app/services/inference_service.py))
+- [x] Refactor InferenceController; add `/inference/models` + `/inference/models/active` ([app/controllers/inference_controller.py](app/controllers/inference_controller.py))
+- [x] Update root `/` to render `index.html`; move old route map to `/routes` ([app/main.py](app/main.py))
+
+## Notes
+- Progress file must be updated whenever a new directory or file is created.
+- Active model is set in `models/registry/registry.json` (key: `active_model`) or overridden via `MODEL_NAME` env var.
+- To train and register a new CNN-LSTM model: `python -m ml.training.train_cnn_lstm --model-name my_model --set-active`

@@ -1,5 +1,22 @@
 # Codebase Analysis and Architecture Recommendations
 
+## 0) Implementation Status (April 2026)
+
+- Flask MVC structure is implemented under `app/` with controllers, services, repositories, models, and views.
+- Multi-model inference is implemented with a registry at `models/registry/registry.json` and backend abstraction under `app/services/inference_backends/`.
+- `ml/evaluation/` is implemented with:
+  - `evaluate_model.py` (single-model evaluation over metadata + keypoint files)
+  - `compare_models.py` (leaderboard-style comparison across registered models)
+- `ml/preprocessing/` is implemented with:
+  - `extract_keypoints.py` (wrapper for legacy extraction flow)
+  - `augment.py` (sequence augmentation helpers)
+  - `build_dataset.py` (split-before-augmentation dataset builder)
+- `ml/training/train_cnn_lstm.py` now supports dataset source modes:
+  - `--dataset-mode auto`
+  - `--dataset-mode processed`
+  - `--dataset-mode legacy`
+- Root UI route is active (`GET /` renders `index.html`), and API route index is available at `GET /routes`.
+
 ## 1) Current Codebase Analysis (what exists now)
 
 ### Strengths
@@ -79,11 +96,18 @@ sign2speak_data/
 │   └── main.py                      # application entrypoint
 ├── ml/
 │   ├── training/
+│   │   ├── common.py
+│   │   ├── train_cnn_lstm.py
 │   │   ├── train_lstm.py
 │   │   ├── train_transformer.py
 │   │   └── datasets/
 │   ├── evaluation/
+│   │   ├── evaluate_model.py
+│   │   └── compare_models.py
 │   └── preprocessing/
+│       ├── extract_keypoints.py
+│       ├── augment.py
+│       └── build_dataset.py
 ├── models/                          # model artifacts only
 ├── data/
 │   ├── raw/
@@ -235,6 +259,19 @@ Create one dedicated page at `/`:
 - Containerization and deployment profile.
 
 ---
+
+## 8) Updated training/evaluation commands
+
+- Build processed dataset:
+  - `python -m ml.preprocessing.build_dataset --augment-copies 1 --sequence-length 30`
+- Run keypoint extraction through new preprocessing entrypoint:
+  - `python -m ml.preprocessing.extract_keypoints`
+- Train CNN+LSTM with auto dataset source:
+  - `python -m ml.training.train_cnn_lstm --dataset-mode auto --set-active`
+- Evaluate one registered model:
+  - `python -m ml.evaluation.evaluate_model --model-name cnn_lstm_default --split test`
+- Compare all registered models:
+  - `python -m ml.evaluation.compare_models --all-models --split test`
 
 ## 8) Additional suggestions
 

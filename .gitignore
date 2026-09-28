@@ -9,3 +9,4 @@ mp_data/
 audio/
 outputs/
 .vscode/
+logs/app.log*

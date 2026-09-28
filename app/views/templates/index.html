@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ app_name }} — Sign Language Recognition</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/shared.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+</head>
+<body>
+
+<header>
+  <h1><span>Sign</span>2Speak</h1>
+  <div>
+    <span id="health-dot"></span>
+    <span id="health-label">Checking...</span>
+  </div>
+</header>
+
+<main>
+  <div id="error-banner" role="alert"></div>
+
+  <!-- Camera + controls -->
+  <div id="camera-panel" class="card">
+    <div id="video-wrapper">
+      <video id="webcam" autoplay playsinline muted></video>
+      <canvas id="canvas-overlay"></canvas>
+      <span id="status-badge" class="idle">Idle</span>
+    </div>
+    <div id="controls">
+      <button id="btn-start">▶ Start Recognition</button>
+      <button id="btn-stop" disabled>■ Stop</button>
+    </div>
+  </div>
+
+  <!-- Right panel -->
+  <div id="right-panel">
+
+    <!-- Prediction -->
+    <div class="card">
+      <div class="panel-title">Prediction</div>
+      <div id="prediction-gloss">—</div>
+      <div id="prediction-sub">Perform a sign to begin</div>
+      <div id="confidence-row">
+        <div id="confidence-bar-wrap">
+          <div id="confidence-bar"></div>
+        </div>
+        <span id="confidence-value">—</span>
+      </div>
+    </div>
+
+    <!-- Audio -->
+    <div class="card">
+      <div class="panel-title">Audio Output</div>
+      <div class="audio-row">
+        <div class="audio-item">
+          <span class="audio-lang">🇬🇧 English</span>
+          <div id="audio-en-wrap"><p class="audio-placeholder">No audio yet</p></div>
+        </div>
+        <div class="audio-item">
+          <span class="audio-lang">🇮🇳 Hindi</span>
+          <div id="audio-hi-wrap"><p class="audio-placeholder">No audio yet</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- History -->
+    <div class="card">
+      <div class="panel-title">Recent Signs</div>
+      <p id="history-empty">No signs recognized yet</p>
+      <ul id="history-list" aria-label="Recognition history"></ul>
+    </div>
+
+  </div>
+</main>
+
+<footer>{{ app_name }} &mdash; Real-time Sign Language Recognition &amp; Translation</footer>
+
+<script>window.S2S_CONFIG = { maxSeqLength: {{ max_seq_length }} };</script>
+<script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</body>
+</html>

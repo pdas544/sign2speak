@@ -1,0 +1,32 @@
+{
+  "active_model": "cnn_lstm_default",
+  "models": {
+    "cnn_lstm_default": {
+      "display_name": "CNN-LSTM (default, TensorFlow)",
+      "framework": "tf",
+      "model_path": "models/action_model_cnn_lstm_new.h5",
+      "labels": [
+        "hello", "yes", "no", "teacher", "beautiful", "boy", "nice",
+        "like", "big", "friend", "happy", "go", "good", "sister",
+        "brother", "how_are_you", "family"
+      ],
+      "sequence_length": 30,
+      "input_features": 1662,
+      "description": "Original production CNN+LSTM model trained on mp_data dataset",
+      "trained_at": null
+    },
+    "transformer_v1": {
+      "display_name": "Transformer (PyTorch)",
+      "framework": "pytorch",
+      "model_path": "outputs/models/model_transformer.pth",
+      "labels": [
+        "teacher", "happy", "nice", "good", "no", "go", "what",
+        "like", "hello", "white", "friend", "big", "beautiful", "boy", "sister"
+      ],
+      "sequence_length": 30,
+      "input_features": 1629,
+      "description": "Transformer model trained on WLASL/MSASL subset",
+      "trained_at": null
+    }
+  }
+}
