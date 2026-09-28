@@ -1,5 +1,5 @@
 {
-  "active_model": "tcn_uniform_noface_v3",
+  "active_model": "tcn_v2",
   "models": {
     "cnn_lstm_default": {
       "display_name": "CNN-LSTM (default, TensorFlow)",
