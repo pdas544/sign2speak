@@ -40,6 +40,8 @@ class TorchBackend(InferenceBackend):
         self._torch = None
         self._device = "cpu"
         self._loaded = False
+        self._mask_face = False
+        self._input_features = 1629
 
     # ------------------------------------------------------------------ #
     # Lifecycle                                                            #
@@ -69,6 +71,8 @@ class TorchBackend(InferenceBackend):
         arch = str(model_config.get("arch") or "transformer").lower()
         hyper = dict(model_config.get("hyperparams") or {})
         arch_defaults = ARCH_DEFAULTS.get(arch, ARCH_DEFAULTS["transformer"])
+        self._mask_face = bool(hyper.get("mask_face", False))
+        self._input_features = int(model_config.get("input_features", 1629))
 
         logger.info("TorchBackend: loading arch=%s model from %s (device=%s)",
                     arch, model_path, self._device)
@@ -106,8 +110,16 @@ class TorchBackend(InferenceBackend):
         if not self._loaded or self._model is None:
             raise RuntimeError("TorchBackend: model not loaded — call load() first")
 
+        if getattr(self, "_mask_face", False):
+            # Declared pose+hands mask (registry hyperparams mask_face=true).
+            from app.services.keypoint_service import NOFACE_VIDEO_FEATURES
+
+            keypoints = np.asarray(
+                keypoints[:, :NOFACE_VIDEO_FEATURES], dtype=np.float32
+            )
+
         torch = self._torch or _require_torch()
-        tensor = torch.from_numpy(keypoints).unsqueeze(0).float().to(self._device)
+        tensor = torch.from_numpy(np.asarray(keypoints)).unsqueeze(0).float().to(self._device)
 
         with torch.no_grad():
             outputs = self._model(tensor)

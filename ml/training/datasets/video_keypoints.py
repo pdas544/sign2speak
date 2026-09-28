@@ -38,6 +38,12 @@ DEFAULT_METADATA = PROJECT_ROOT / "processed" / "metadata.csv"
 SEQUENCE_LENGTH = 30
 INPUT_FEATURES = 1629
 
+# Column layout per frame: pose(0:99) | left_hand(99:162) | right_hand(162:225) | face(225:1629)
+POSE_DIM = 99
+HANDS_DIM = 126
+FACE_START = POSE_DIM + HANDS_DIM  # 225
+NOFACE_FEATURES = FACE_START
+
 # Canonical label order for all v2 comparison models (sorted = deterministic).
 VIDEO_LABELS: list[str] = [
     "beautiful", "big", "boy", "friend", "go", "good", "happy",
@@ -62,12 +68,29 @@ def _fix_features(seq: np.ndarray, input_features: int = INPUT_FEATURES) -> np.n
     return seq.astype(np.float32)
 
 
+def _sample_temporal(seq: np.ndarray, sequence_length: int, sampler: str) -> np.ndarray:
+    """Reduce variable-length clip to fixed length: recent window or uniform grid."""
+    if sampler == "uniform":
+        n = seq.shape[0]
+        if n == sequence_length:
+            return seq
+        if n > sequence_length:
+            idx = np.linspace(0, n - 1, sequence_length).round().astype(int)
+            return seq[idx]
+        return pad_or_truncate(seq, target_length=sequence_length)
+    if sampler == "last":
+        return pad_or_truncate(seq, target_length=sequence_length)
+    raise ValueError(f"Unknown sampler '{sampler}'. Choices: last, uniform.")
+
+
 def load_sequence(
     path: str | Path,
     sequence_length: int = SEQUENCE_LENGTH,
     input_features: int = INPUT_FEATURES,
+    sampler: str = "last",
+    mask_face: bool = False,
 ) -> np.ndarray:
-    """Load one clip (.pt or .npy) and normalize to (sequence_length, input_features)."""
+    """Load one clip (.pt or .npy) and normalize to (sequence_length, features)."""
     path = Path(path)
     if not path.is_absolute():
         path = PROJECT_ROOT / path
@@ -88,7 +111,14 @@ def load_sequence(
         raise ValueError(f"Unsupported feature file extension: {path.suffix}")
 
     arr = _fix_features(np.asarray(arr, dtype=np.float32), input_features)
-    return pad_or_truncate(arr, target_length=sequence_length).astype(np.float32)
+    arr = _sample_temporal(arr, sequence_length, sampler)
+    if mask_face:
+        if arr.shape[1] < FACE_START:
+            raise ValueError(
+                f"Cannot mask face: only {arr.shape[1]} features (< {FACE_START})"
+            )
+        arr = arr[:, :FACE_START]
+    return arr.astype(np.float32)
 
 
 def read_split(
@@ -141,13 +171,20 @@ def build_arrays(
     sequence_length: int = SEQUENCE_LENGTH,
     input_features: int = INPUT_FEATURES,
     labels: list[str] | None = None,
+    sampler: str = "last",
+    mask_face: bool = False,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, list[str]]:
     """Load all three splits as float32 arrays. Returns (Xtr, ytr, Xva, yva, Xte, yte, labels)."""
     labels = list(labels or VIDEO_LABELS)
+    features = NOFACE_FEATURES if mask_face else input_features
 
     def _split_arrays(split: str) -> tuple[np.ndarray, np.ndarray]:
         paths, indices, _ = read_split(metadata_path, split, labels)
-        X = np.stack([load_sequence(p, sequence_length, input_features) for p in paths])
+        X = np.stack([
+            load_sequence(p, sequence_length, input_features, sampler, mask_face)
+            for p in paths
+        ])
+        assert X.shape[1:] == (sequence_length, features), f"bad batch shape {X.shape}"
         return X.astype(np.float32), np.asarray(indices, dtype=np.int64)
 
     X_train, y_train = _split_arrays("train")
@@ -170,6 +207,8 @@ class VideoKeypointDataset:
         labels: list[str] | None = None,
         sequence_length: int = SEQUENCE_LENGTH,
         input_features: int = INPUT_FEATURES,
+        sampler: str = "last",
+        mask_face: bool = False,
     ) -> None:
         try:
             import torch
@@ -179,7 +218,9 @@ class VideoKeypointDataset:
         self._torch = torch
         self._base = _TorchDataset
         self.sequence_length = sequence_length
-        self.input_features = input_features
+        self.input_features = NOFACE_FEATURES if mask_face else input_features
+        self.sampler = sampler
+        self.mask_face = mask_face
         self.labels = list(labels or VIDEO_LABELS)
         self.paths, indices, _ = read_split(metadata_path, split, self.labels)
         self.targets = list(indices)
@@ -189,7 +230,10 @@ class VideoKeypointDataset:
         return len(self.paths)
 
     def __getitem__(self, idx: int):
-        seq = load_sequence(self.paths[idx], self.sequence_length, self.input_features)
+        seq = load_sequence(
+            self.paths[idx], self.sequence_length, self.input_features,
+            self.sampler, self.mask_face,
+        )
         return (
             self._torch.from_numpy(seq),
             self._torch.tensor(self.targets[idx], dtype=self._torch.long),
@@ -202,6 +246,8 @@ def create_dataloaders(
     labels: list[str] | None = None,
     num_workers: int = 0,
     shuffle_train: bool = True,
+    sampler: str = "last",
+    mask_face: bool = False,
 ):
     """Return (train_loader, val_loader, test_loader) over fixed-length clips."""
     try:
@@ -209,9 +255,10 @@ def create_dataloaders(
     except ImportError as exc:
         raise ImportError("PyTorch is required for create_dataloaders") from exc
     labels = list(labels or VIDEO_LABELS)
-    train_ds = VideoKeypointDataset(metadata_path, "train", labels)
-    val_ds = VideoKeypointDataset(metadata_path, "val", labels)
-    test_ds = VideoKeypointDataset(metadata_path, "test", labels)
+    kwargs = {"labels": labels, "sampler": sampler, "mask_face": mask_face}
+    train_ds = VideoKeypointDataset(metadata_path, "train", **kwargs)
+    val_ds = VideoKeypointDataset(metadata_path, "val", **kwargs)
+    test_ds = VideoKeypointDataset(metadata_path, "test", **kwargs)
     return (
         DataLoader(train_ds, batch_size=batch_size, shuffle=shuffle_train, num_workers=num_workers),
         DataLoader(val_ds, batch_size=batch_size, shuffle=False, num_workers=num_workers),

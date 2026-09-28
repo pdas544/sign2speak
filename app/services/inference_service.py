@@ -104,12 +104,14 @@ class InferenceService:
         if self._backend is None:
             raise RuntimeError("Inference backend is not initialized")
 
-        from app.services.keypoint_service import assert_compatible
+        from app.services.keypoint_service import serving_check
         from app.services.model_registry_service import ModelRegistryService
 
         # Fail loudly on layout mismatch (VIDEO_1629 vs WEBCAM_1662) instead
         # of silently truncating/padding. ValueError -> HTTP 400 upstream.
-        assert_compatible(
+        # Face-masked models accept the full 1629-d frame; the backend
+        # applies the declared mask (see serving_check).
+        serving_check(
             int(keypoints.shape[1]),
             ModelRegistryService().active_model_config(),
         )

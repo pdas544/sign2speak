@@ -10,3 +10,4 @@ audio/
 outputs/
 .vscode/
 logs/app.log*
+processed/datasets/

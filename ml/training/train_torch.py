@@ -34,6 +34,7 @@ from ml.training.common import create_run_dir, register_model, write_manifest  #
 from ml.training.arch_factory import ARCHES, ARCH_DEFAULTS, build_model  # noqa: E402
 from ml.training.datasets.video_keypoints import (  # noqa: E402
     INPUT_FEATURES,
+    NOFACE_FEATURES,
     VIDEO_LABELS,
     build_arrays,
 )
@@ -77,6 +78,12 @@ def main() -> None:
     parser.add_argument("--num-layers", type=int, default=None)
     parser.add_argument("--dropout", type=float, default=None)
     parser.add_argument("--nhead", type=int, default=8, help="transformer heads")
+    parser.add_argument("--augment-copies", type=int, default=0,
+                        help="train-only augmented replicas per clip (0 = off)")
+    parser.add_argument("--sampler", choices=("last", "uniform"), default="last",
+                        help="last = most-recent 30 frames; uniform = 30 evenly spaced")
+    parser.add_argument("--mask-face", action="store_true",
+                        help="drop face block -> pose+hands features only")
     args = parser.parse_args()
 
     defaults = ARCH_DEFAULTS[args.arch]
@@ -91,11 +98,34 @@ def main() -> None:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"[Training] arch={args.arch} device={device} seed={args.seed}")
     print(f"[Training] hidden={hidden_size} layers={num_layers} "
-          f"dropout={dropout} lr={lr} epochs={args.epochs}")
+          f"dropout={dropout} lr={lr} epochs={args.epochs} "
+          f"augment_copies={args.augment_copies} sampler={args.sampler} "
+          f"mask_face={args.mask_face}")
 
-    print("[Training] Loading unified video dataset (30x1629, deduped)...")
-    X_train, y_train, X_val, y_val, X_test, y_test, labels = build_arrays()
+    features = NOFACE_FEATURES if args.mask_face else INPUT_FEATURES
+    print("[Training] Loading unified video dataset "
+          f"(30x{features}, deduped, sampler={args.sampler})...")
+    X_train, y_train, X_val, y_val, X_test, y_test, labels = build_arrays(
+        sampler=args.sampler, mask_face=args.mask_face,
+    )
     print(f"[Training] train={X_train.shape} val={X_val.shape} test={X_test.shape}")
+
+    if args.augment_copies > 0:
+        from ml.preprocessing.augment import augment_sequence
+
+        rng = np.random.default_rng(args.seed)
+        aug_X = [X_train]
+        aug_y = [y_train]
+        for _ in range(args.augment_copies):
+            aug_X.append(np.stack(
+                [augment_sequence(seq, rng=rng) for seq in X_train]
+            ).astype(np.float32))
+            aug_y.append(y_train.copy())
+        X_train = np.concatenate(aug_X, axis=0)
+        y_train = np.concatenate(aug_y, axis=0)
+        print(f"[Training] augmented train={X_train.shape} "
+              f"({args.augment_copies} copies, train-only)")
+
     train_loader, val_loader, test_loader = make_loaders(
         X_train, y_train, X_val, y_val, X_test, y_test, args.batch_size
     )
@@ -103,7 +133,7 @@ def main() -> None:
     model = build_model(
         args.arch, hidden_size=hidden_size, num_layers=num_layers,
         dropout=dropout, nhead=args.nhead,
-        num_classes=len(labels), input_features=INPUT_FEATURES,
+        num_classes=len(labels), input_features=features,
     ).to(device)
     params = sum(p.numel() for p in model.parameters())
     print(f"[Training] params={params:,}")
@@ -148,11 +178,13 @@ def main() -> None:
     write_manifest(
         run_dir, model_name=args.model_name, framework="pytorch",
         model_path=serving_path, labels=labels, sequence_length=30,
-        input_features=INPUT_FEATURES,
+        input_features=features,
         description=f"PyTorch {args.arch} trained on unified video keypoints",
         extra={
             "arch": args.arch, "hidden_size": hidden_size, "num_layers": num_layers,
             "dropout": dropout, "lr": lr, "seed": args.seed, "params": params,
+            "augment_copies": args.augment_copies, "sampler": args.sampler,
+            "mask_face": args.mask_face,
             "test_accuracy": reports["accuracy"], "test_f1_macro": reports["f1_macro"],
             "best_val_acc": history["best_val_acc"],
             "stopped_epoch": history["stopped_epoch"],
@@ -161,7 +193,7 @@ def main() -> None:
     register_model(
         args.model_name, display_name=f"{args.arch.upper()} (PyTorch, video v2)",
         framework="pytorch", model_path=str(serving_path.relative_to(PROJECT_ROOT)),
-        labels=labels, sequence_length=30, input_features=INPUT_FEATURES,
+        labels=labels, sequence_length=30, input_features=features,
         description=f"PyTorch {args.arch} on unified video keypoints",
         set_active=args.set_active,
         arch=args.arch,
@@ -169,6 +201,8 @@ def main() -> None:
             "hidden_size": hidden_size, "num_layers": num_layers,
             "dropout": dropout, "nhead": args.nhead, "lr": lr,
             "batch_size": args.batch_size, "seed": args.seed,
+            "augment_copies": args.augment_copies, "sampler": args.sampler,
+            "mask_face": args.mask_face,
         },
         metrics={
             "test_accuracy": reports["accuracy"],

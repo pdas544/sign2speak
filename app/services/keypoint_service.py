@@ -32,6 +32,11 @@ VIDEO_FEATURES = 1629
 WEBCAM_FEATURES = 1662
 SEQUENCE_LENGTH = 30
 
+# Face-masked video layout: pose(99) + hands(126) = 225-d. Declared explicitly
+# per-model via registry hyperparams {"mask_face": true}; never inferred.
+NOFACE_VIDEO_FEATURES = 225
+FACE_START_COL = 225
+
 
 def _flat(landmarks, count: int, dims: int) -> np.ndarray:
     """Flatten MediaPipe landmarks (or zeros when absent) to (count*dims,)."""
@@ -103,3 +108,36 @@ def assert_compatible(feature_dim: int, model_config: dict) -> None:
             f"but model '{name}' expects {expected}. "
             "Check the keypoint layout (VIDEO_1629 vs WEBCAM_1662) before predicting."
         )
+
+
+def serving_check(feature_dim: int, model_config: dict) -> None:
+    """
+    Entry-point dim check for serving (InferenceService.predict).
+
+    Face-masked models (registry hyperparams mask_face=true) accept the full
+    1629-d video frame — the backend applies the declared column mask loudly
+    (see apply_declared_mask). Anything else must match exactly.
+    """
+    hyper = model_config.get("hyperparams") or {}
+    if hyper.get("mask_face"):
+        if feature_dim != VIDEO_FEATURES:
+            name = model_config.get("display_name") or "masked model"
+            raise ValueError(
+                f"Keypoint dim mismatch: serving produced {feature_dim} features "
+                f"but masked model '{name}' expects the full {VIDEO_FEATURES}-d "
+                f"video frame (mask to {NOFACE_VIDEO_FEATURES}-d is applied inside)."
+            )
+        return
+    assert_compatible(feature_dim, model_config)
+
+
+def apply_declared_mask(keypoints: np.ndarray, model_config: dict) -> np.ndarray:
+    """Apply the registry-declared column mask (currently only pose+hands)."""
+    hyper = model_config.get("hyperparams") or {}
+    if hyper.get("mask_face"):
+        logger.info(
+            "Applying declared mask pose+hands: %s -> %s cols",
+            keypoints.shape[1], NOFACE_VIDEO_FEATURES,
+        )
+        return np.asarray(keypoints[:, :FACE_START_COL], dtype=np.float32)
+    return keypoints
