@@ -83,16 +83,28 @@ def _normalize_for_model(
     seq: np.ndarray,
     sequence_length: int,
     input_features: int,
+    sampler: str = "last",
 ) -> np.ndarray:
-    # Align feature dimension first.
+    # Align feature dimension first. NOTE: for face-masked models (225-d)
+    # this truncation is exact only because the video layout orders blocks
+    # as [pose, hands, face]; the serving path uses the explicit declared
+    # mask instead (see keypoint_service.apply_declared_mask).
     if seq.shape[1] > input_features:
         seq = seq[:, :input_features]
     elif seq.shape[1] < input_features:
         pad_cols = input_features - seq.shape[1]
         seq = np.pad(seq, ((0, 0), (0, pad_cols)), mode="constant")
 
-    # Align temporal length by keeping the most recent frames.
-    if seq.shape[0] >= sequence_length:
+    # Align temporal length. Must mirror training: 'last' keeps the most
+    # recent frames, 'uniform' takes evenly spaced frames (see
+    # video_keypoints._sample_temporal). Mismatching this silently
+    # under-reports accuracy (observed 65% -> 49% on tcn_uniform_v1).
+    if seq.shape[0] == sequence_length:
+        pass
+    elif seq.shape[0] > sequence_length and sampler == "uniform":
+        idx = np.linspace(0, seq.shape[0] - 1, sequence_length).round().astype(int)
+        seq = seq[idx]
+    elif seq.shape[0] >= sequence_length:
         seq = seq[-sequence_length:]
     else:
         pad_rows = sequence_length - seq.shape[0]
@@ -168,6 +180,7 @@ def evaluate_model(
     labels: list[str] = list(model_config.get("labels", []))
     sequence_length = int(model_config.get("sequence_length", 30))
     input_features = int(model_config.get("input_features", 1662))
+    sampler = str((model_config.get("hyperparams") or {}).get("sampler", "last"))
 
     if not labels:
         raise ValueError(f"No labels configured for model '{model_name}'")
@@ -192,7 +205,9 @@ def evaluate_model(
             import time as _time
 
             seq = _load_keypoints(sample.file_path)
-            seq = _normalize_for_model(seq, sequence_length=sequence_length, input_features=input_features)
+            seq = _normalize_for_model(seq, sequence_length=sequence_length,
+                                       input_features=input_features,
+                                       sampler=sampler)
             _t0 = _time.perf_counter()
             pred_label, confidence = backend.predict(seq)
             latencies_ms.append((_time.perf_counter() - _t0) * 1000.0)
@@ -281,6 +296,7 @@ def evaluate_model(
         "samples_skipped": skipped,
         "sequence_length": sequence_length,
         "input_features": input_features,
+        "sampler": sampler,
         "accuracy": acc,
         "f1_macro": f1_macro,
         "predict_ms_p50": predict_ms_p50,
