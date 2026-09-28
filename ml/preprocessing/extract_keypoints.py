@@ -58,6 +58,11 @@ def _build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Run extract-keypoints-full.py as __main__ (includes its post-analysis prints)",
     )
+    # Pass-through to extract-keypoints-full.py (consumed via sys.argv by runpy):
+    parser.add_argument("--annotations", default="filtered_annotations_selected_glosses.json")
+    parser.add_argument("--videos-dir", default="selected_videos")
+    parser.add_argument("--output-dir", default="processed")
+    parser.add_argument("--no-append", action="store_true")
     return parser
 
 

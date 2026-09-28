@@ -116,7 +116,10 @@ the legacy serving model; **(C)** is an untouched reserve.
 
 ### (A) Video keypoints — comparison dataset (WL-ASL lineage, 1629-d)
 
-- **Source**: `selected_videos/` — 15 glosses, **518 videos** (13–43 per gloss, mean ~35).
+- **Source**: `selected_videos/` (518 videos) + `videos/` reserve (278 matched, 14 dupes).
+  **531 → 809 unique clips**: train **516** / val **158** / test **135**.
+  Best model `tcn_uniform_noface_v2`: test **83.7%** / F1 0.81 (overall gate PASS;
+  worst-gloss gate FAIL on good/go/hello — see progress.md Round 4).
 - **Keypoints**: `processed/keypoints/{train,val,test}/*.pt` via `extract-keypoints-full.py`
   (MediaPipe Holistic, layout `[pose99 xyz, lh63, rh63, face1404]` — pose **present**,
   visibility channel absent).

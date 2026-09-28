@@ -115,8 +115,31 @@ Unified trainer: `python -m ml.training.train_torch --arch {lstm,gru,cnn_lstm,tc
 | tcn_uniform_noface_v1 | **69.8%** | 0.70 | 1.3ms | 1.8MB |
 | transformer_uniform_noface_v1 | 68.6% | 0.67 | 1.1ms | 11.8MB |
 
+### Round 3 — uniform + noface combo (test acc, n=86)
+| Model | Acc | F1 | p50 | Size |
+|---|---|---|---|---|
+| tcn_uniform_noface_v1 | **69.8%** | 0.70 | 1.3ms | 1.8MB |
+| transformer_uniform_noface_v1 | 68.6% | 0.67 | 1.1ms | 11.8MB |
+
 Stacking works: uniform sampling × face removal × augmentation compose
 (47.7% → 65.1% → 69.8%). Still 10 pts short of the 80% gate.
+
+### Round 4 — videos/ expansion (278 new clips, 531 → 809 unique)
+- Step 0 (per-class analysis of 69.8% model): 6/15 glosses perfect; weak =
+  good 0.20, like 0.33, go 0.40, hello 0.50 (high-conf confusions → hello/no,
+  like/happy), happy 0.62. Mixed scarcity + representation errors.
+- Steps 1–2: [scripts/build_video_annotations.py](scripts/build_video_annotations.py)
+  matched `videos/` files to WLASL YouTube ids (deduped 14 overlap, stratified
+  splits for unlisted crawls) → [annotations/videos_15gloss.json](annotations/videos_15gloss.json)
+  (278 rows); `extract-keypoints-full.py` parameterized (`--annotations/--videos-dir/--output-dir`,
+  append-merge, explicit `video_id`) — 278/278 success, 0 failed.
+- Dataset now: train 516 / val 158 / test 135 (`go` 6→11, `like` 28→53 train).
+- Step 3a (TCN uniform+noface, aug ×3): `tcn_uniform_noface_v2` → **83.7%** / F1 0.81.
+- Step 3b (same, aug ×6): `tcn_uniform_noface_v3` → 83.0% — diminishing returns, ×3 is the sweet spot.
+- Head-to-head on new test (n=135): v2 83.7% > v3 83.0% > v1 79.3% (old model rescored).
+- **Gate verdict**: overall ≥0.80 PASS, worst-gloss ≥0.70 FAIL —
+  good 0.33, go 0.40, hello 0.60 (`like` fixed 0.33→1.00 by new data).
+  Ship-blocked for good/go/hello pending targeted collection or scope trim.
 Eval harness is sampler-aware (`evaluate_model` reads registry hyperparams; incident:
 uniform model scored 49% before the fix vs true 65%).
 
