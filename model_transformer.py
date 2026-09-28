@@ -12,7 +12,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 from tqdm import tqdm
-from TTS.api import TTS
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -422,9 +421,10 @@ def predict_sign(model, keypoints):
         
         return gloss, outputs.softmax(dim=1).cpu().numpy()
 
-# TTS Integration (Coqui TTS)
+# TTS Integration (Coqui TTS, imported lazily — optional dependency)
 def text_to_speech(text, output_path="outputs/output.wav"):
     try:
+        from TTS.api import TTS
 
         
         # Initialize TTS

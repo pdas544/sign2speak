@@ -184,13 +184,18 @@ def evaluate_model(
     y_true: list[str] = []
     y_pred: list[str] = []
     rows: list[dict[str, Any]] = []
+    latencies_ms: list[float] = []
 
     skipped = 0
     for idx, sample in enumerate(samples, start=1):
         try:
+            import time as _time
+
             seq = _load_keypoints(sample.file_path)
             seq = _normalize_for_model(seq, sequence_length=sequence_length, input_features=input_features)
+            _t0 = _time.perf_counter()
             pred_label, confidence = backend.predict(seq)
+            latencies_ms.append((_time.perf_counter() - _t0) * 1000.0)
 
             y_true.append(sample.label)
             y_pred.append(pred_label)
@@ -255,6 +260,17 @@ def evaluate_model(
 
     _save_confusion_matrix(cm, labels, run_dir / "confusion_matrix.png")
 
+    lat = np.asarray(latencies_ms, dtype=np.float64)
+    predict_ms_p50 = float(np.median(lat)) if lat.size else math.nan
+    predict_ms_p95 = float(np.percentile(lat, 95)) if lat.size else math.nan
+    try:
+        artifact_mb = round(
+            (PROJECT_ROOT / str(model_config.get("model_path", ""))).stat().st_size
+            / (1024 * 1024), 3,
+        )
+    except OSError:
+        artifact_mb = math.nan
+
     summary = {
         "model_name": model_name,
         "framework": model_config.get("framework"),
@@ -267,12 +283,31 @@ def evaluate_model(
         "input_features": input_features,
         "accuracy": acc,
         "f1_macro": f1_macro,
+        "predict_ms_p50": predict_ms_p50,
+        "predict_ms_p95": predict_ms_p95,
+        "artifact_mb": artifact_mb,
         "labels_count": len(labels),
         "output_dir": str(run_dir),
         "evaluated_at": datetime.now(timezone.utc).isoformat(),
     }
 
     (run_dir / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+
+    # Write back headline metrics onto the registry entry (best-effort).
+    try:
+        from ml.training.common import update_model_metrics
+
+        update_model_metrics(model_name, {
+            "test_accuracy": acc,
+            "test_f1_macro": f1_macro,
+            "predict_ms_p50": predict_ms_p50,
+            "predict_ms_p95": predict_ms_p95,
+            "artifact_mb": artifact_mb,
+            "eval_run_id": run_dir.name,
+            "evaluated_at": summary["evaluated_at"],
+        })
+    except Exception as exc:
+        print(f"[Evaluation] Warning: registry write-back failed: {exc}")
 
     print("\n[Evaluation] Completed")
     print(json.dumps(summary, indent=2))

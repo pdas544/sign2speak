@@ -82,6 +82,9 @@ def compare_models(
                 "samples_skipped",
                 "accuracy",
                 "f1_macro",
+                "predict_ms_p50",
+                "predict_ms_p95",
+                "artifact_mb",
                 "output_dir",
             ],
         )
@@ -97,6 +100,9 @@ def compare_models(
                     "samples_skipped": row.get("samples_skipped"),
                     "accuracy": row.get("accuracy"),
                     "f1_macro": row.get("f1_macro"),
+                    "predict_ms_p50": row.get("predict_ms_p50"),
+                    "predict_ms_p95": row.get("predict_ms_p95"),
+                    "artifact_mb": row.get("artifact_mb"),
                     "output_dir": row.get("output_dir"),
                 }
             )
@@ -107,6 +113,9 @@ def compare_models(
             f"{idx:>2}. {row['model_name']:<24} "
             f"acc={row['accuracy']:.4f} "
             f"f1_macro={row['f1_macro']:.4f} "
+            f"p50={row.get('predict_ms_p50', float('nan')):.1f}ms "
+            f"p95={row.get('predict_ms_p95', float('nan')):.1f}ms "
+            f"size={row.get('artifact_mb', float('nan'))}MB "
             f"(n={row['samples_successful']})"
         )
 
