@@ -190,8 +190,20 @@ def main() -> None:
             "stopped_epoch": history["stopped_epoch"],
         },
     )
+    # Unique, informative display name (registry keys alone are cryptic and
+    # arch-only names collide across runs — see the 7× "TCN (PyTorch, video v2)" incident).
+    _tags = []
+    if args.sampler == "uniform":
+        _tags.append("uniform")
+    if args.mask_face:
+        _tags.append("noface")
+    if args.augment_copies:
+        _tags.append(f"augx{args.augment_copies}")
+    _tags.append(f"h{hidden_size}x{num_layers}")
+    display_name = f"{args.arch.upper()} · {args.model_name} · {'+'.join(_tags)}"
+
     register_model(
-        args.model_name, display_name=f"{args.arch.upper()} (PyTorch, video v2)",
+        args.model_name, display_name=display_name,
         framework="pytorch", model_path=str(serving_path.relative_to(PROJECT_ROOT)),
         labels=labels, sequence_length=30, input_features=features,
         description=f"PyTorch {args.arch} on unified video keypoints",
