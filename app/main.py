@@ -41,6 +41,14 @@ def create_app() -> Flask:
             max_seq_length=settings.max_seq_length,
         )
 
+    @app.get("/probe")
+    def probe() -> str:
+        return render_template(
+            "probe.html",
+            app_name=settings.app_name,
+            max_seq_length=settings.max_seq_length,
+        )
+
     @app.get("/routes")
     def routes() -> tuple[object, int]:
         """Debug endpoint — lists all available API routes."""

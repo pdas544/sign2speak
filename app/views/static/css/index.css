@@ -151,6 +151,29 @@ button:disabled { opacity: 0.35; cursor: not-allowed; }
   padding: 16px 0;
 }
 
+/* ---- Model bar ---- */
+#model-bar {
+  display: flex; align-items: center; gap: 12px;
+  max-width: 1280px; width: 100%; margin: 16px auto 0;
+  padding: 10px 18px; font-size: 0.85rem;
+}
+#model-bar label { font-weight: 600; }
+#model-select {
+  background: var(--bg); color: var(--text);
+  border: 1px solid var(--border); border-radius: 6px;
+  padding: 6px 10px; font-size: 0.85rem; max-width: 320px;
+}
+#model-hint { color: var(--text-muted); }
+#probe-link { margin-left: auto; font-size: 0.85rem; }
+
+/* ---- Gloss chips ---- */
+#gloss-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+#gloss-chips .chip {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 20px; padding: 3px 12px; font-size: 0.78rem;
+}
+.muted { font-size: 0.78rem; color: var(--text-muted); margin-top: 8px; }
+
 @media (max-width: 860px) {
   main { grid-template-columns: 1fr; }
   #error-banner { grid-column: 1; }

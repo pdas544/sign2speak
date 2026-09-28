@@ -173,6 +173,12 @@ def predict() -> tuple[Response, int]:
             "confidence_percent": round(confidence * 100.0, 2),
             "threshold": settings.prediction_threshold,
             "accepted": confidence >= settings.prediction_threshold,
+            "model": model_name,
+            "feature_dim": int(adapted.shape[1]),
+            "hands": {
+                "l": round(hand_stats["hand_l"], 4),
+                "r": round(hand_stats["hand_r"], 4),
+            },
             "audio": audio,
             "timestamp": datetime.now(timezone.utc).isoformat(),
         }), 200

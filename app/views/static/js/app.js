@@ -33,8 +33,7 @@ const historyList = document.getElementById('history-list');
 const historyEmpty= document.getElementById('history-empty');
 
 // ---- Health check ----
-async function checkHealth() {
-  try {
+async function checkHealth() {  try {
     const res = await fetch('/health');
     const dot = document.getElementById('health-dot');
     const lbl = document.getElementById('health-label');
@@ -52,6 +51,70 @@ async function checkHealth() {
 }
 checkHealth();
 setInterval(checkHealth, 30000);
+
+// ---- Model selector + supported-gloss chips ----
+async function loadModels() {
+  const sel = document.getElementById('model-select');
+  const hint = document.getElementById('model-hint');
+  try {
+    const res = await fetch('/inference/models');
+    if (!res.ok) throw new Error('models unavailable');
+    const data = await res.json();
+    sel.innerHTML = '';
+    (data.models || []).forEach(m => {
+      const opt = document.createElement('option');
+      opt.value = m.name;
+      opt.textContent = `${m.display_name || m.name} (${(m.labels || []).length} signs)`;
+      if (m.is_active) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    const active = (data.models || []).find(m => m.is_active);
+    if (active) hint.textContent = `${(active.labels || []).length} signs · ${active.framework || ''}`;
+    sel.onchange = switchModel;
+  } catch (e) {
+    hint.textContent = 'Model list unavailable';
+  }
+}
+
+async function switchModel() {
+  const sel = document.getElementById('model-select');
+  const hint = document.getElementById('model-hint');
+  try {
+    const res = await fetch('/inference/models/active', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model_name: sel.value })
+    });
+    if (!res.ok) throw new Error('switch failed');
+    await loadLabels();
+    const active = sel.options[sel.selectedIndex].text;
+    hint.textContent = active;
+  } catch (e) {
+    showError('Model switch failed: ' + e.message);
+  }
+}
+
+async function loadLabels() {
+  const wrap = document.getElementById('gloss-chips');
+  const count = document.getElementById('gloss-count');
+  try {
+    const res = await fetch('/inference/labels');
+    if (!res.ok) throw new Error('labels unavailable');
+    const data = await res.json();
+    wrap.innerHTML = '';
+    (data.labels || []).forEach(g => {
+      const chip = document.createElement('span');
+      chip.className = 'chip';
+      chip.textContent = g;
+      wrap.appendChild(chip);
+    });
+    count.textContent = data.count;
+  } catch {
+    wrap.innerHTML = '<p class="audio-placeholder">Labels unavailable</p>';
+  }
+}
+loadModels();
+loadLabels();
 
 // ---- UI helpers ----
 function setStatus(state) {

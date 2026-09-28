@@ -17,6 +17,13 @@
   </div>
 </header>
 
+<div id="model-bar" class="card">
+  <label for="model-select">Model:</label>
+  <select id="model-select" aria-label="Active recognition model"></select>
+  <span id="model-hint"></span>
+  <a href="/probe" id="probe-link">Handedness probe →</a>
+</div>
+
 <main>
   <div id="error-banner" role="alert"></div>
 
@@ -69,6 +76,15 @@
       <div class="panel-title">Recent Signs</div>
       <p id="history-empty">No signs recognized yet</p>
       <ul id="history-list" aria-label="Recognition history"></ul>
+    </div>
+
+    <!-- Supported signs -->
+    <div class="card">
+      <div class="panel-title">Recognized signs (<span id="gloss-count">–</span>)</div>
+      <div id="gloss-chips" aria-label="Supported glosses"></div>
+      <p class="muted">Only these signs are recognized by the active model.
+      Others (e.g. <em>brother</em>, <em>yes</em> on the 15-gloss video models)
+      will be misclassified — switch model above for a different vocabulary.</p>
     </div>
 
   </div>

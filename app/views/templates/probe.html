@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ app_name }} — Handedness Probe</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/shared.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+</head>
+<body>
+
+<header>
+  <h1><span>Sign</span>2Speak Probe</h1>
+  <div><a href="/">← Recognition</a></div>
+</header>
+
+<main style="grid-template-columns: 1fr 380px;">
+  <div id="error-banner" role="alert"></div>
+
+  <div id="camera-panel" class="card">
+    <div id="video-wrapper">
+      <video id="webcam" autoplay playsinline muted></video>
+      <canvas id="canvas-overlay"></canvas>
+      <span id="status-badge" class="idle">Idle</span>
+    </div>
+    <div id="controls">
+      <select id="true-gloss" aria-label="Sign being performed"></select>
+      <button id="btn-start">▶ Start</button>
+      <button id="btn-stop" disabled>■ Stop &amp; Log</button>
+    </div>
+    <p class="muted">Perform the selected sign <strong>3× per hand</strong>:
+      first with your <strong>right hand only</strong>, then <strong>left hand only</strong>,
+      then both. Note which physical hand you used in the Hand column via the buttons.</p>
+    <div id="controls">
+      <button id="btn-hand-r">Used RIGHT hand</button>
+      <button id="btn-hand-l">Used LEFT hand</button>
+      <button id="btn-hand-both">Used BOTH</button>
+    </div>
+  </div>
+
+  <div id="right-panel">
+    <div class="card">
+      <div class="panel-title">Probe log (<span id="probe-count">0</span>)</div>
+      <div id="last-reading">No readings yet</div>
+      <ul id="probe-list" aria-label="Probe readings"></ul>
+      <button id="btn-export">Export JSON</button>
+      <button id="btn-clear">Clear</button>
+    </div>
+    <div class="card">
+      <div class="panel-title">Active model</div>
+      <p id="probe-model">—</p>
+    </div>
+  </div>
+</main>
+
+<footer>{{ app_name }} &mdash; Handedness diagnostic probe</footer>
+
+<script>window.S2S_CONFIG = { maxSeqLength: {{ max_seq_length }} };</script>
+<script src="{{ url_for('static', filename='js/probe.js') }}" defer></script>
+</body>
+</html>
