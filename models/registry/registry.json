@@ -392,11 +392,11 @@
         "test_f1_macro": 0.6065826181615656,
         "best_val_acc": 0.6238532110091743,
         "params": 1183247,
-        "predict_ms_p50": 1.878813000075752,
-        "predict_ms_p95": 2.74509174778359,
+        "predict_ms_p50": 1.7416125010640826,
+        "predict_ms_p95": 2.927682246081531,
         "artifact_mb": 4.542,
-        "eval_run_id": "20260928_152102",
-        "evaluated_at": "2026-09-28T15:21:02.707916+00:00"
+        "eval_run_id": "20260928_154111",
+        "evaluated_at": "2026-09-28T15:41:11.878146+00:00"
       }
     },
     "cnn_lstm_torch_v2": {
@@ -747,6 +747,106 @@
         "artifact_mb": 3.034,
         "eval_run_id": "20260928_152105",
         "evaluated_at": "2026-09-28T15:21:05.763400+00:00"
+      }
+    },
+    "tcn_uniform_noface_v1": {
+      "display_name": "TCN (PyTorch, video v2)",
+      "framework": "pytorch",
+      "model_path": "outputs/models/tcn_uniform_noface_v1.pth",
+      "labels": [
+        "beautiful",
+        "big",
+        "boy",
+        "friend",
+        "go",
+        "good",
+        "happy",
+        "hello",
+        "like",
+        "nice",
+        "no",
+        "sister",
+        "teacher",
+        "what",
+        "white"
+      ],
+      "sequence_length": 30,
+      "input_features": 225,
+      "description": "PyTorch tcn on unified video keypoints",
+      "trained_at": "2026-09-28T15:35:19.925244+00:00",
+      "arch": "tcn",
+      "hyperparams": {
+        "hidden_size": 128,
+        "num_layers": 4,
+        "dropout": 0.2,
+        "nhead": 8,
+        "lr": 0.001,
+        "batch_size": 16,
+        "seed": 42,
+        "augment_copies": 3,
+        "sampler": "uniform",
+        "mask_face": true
+      },
+      "metrics": {
+        "test_accuracy": 0.6976744186046512,
+        "test_f1_macro": 0.6977610693400168,
+        "best_val_acc": 0.6697247706422018,
+        "params": 464399,
+        "predict_ms_p50": 1.3205150025896728,
+        "predict_ms_p95": 1.8493547504476737,
+        "artifact_mb": 1.8,
+        "eval_run_id": "20260928_154110",
+        "evaluated_at": "2026-09-28T15:41:10.951481+00:00"
+      }
+    },
+    "transformer_uniform_noface_v1": {
+      "display_name": "TRANSFORMER (PyTorch, video v2)",
+      "framework": "pytorch",
+      "model_path": "outputs/models/transformer_uniform_noface_v1.pth",
+      "labels": [
+        "beautiful",
+        "big",
+        "boy",
+        "friend",
+        "go",
+        "good",
+        "happy",
+        "hello",
+        "like",
+        "nice",
+        "no",
+        "sister",
+        "teacher",
+        "what",
+        "white"
+      ],
+      "sequence_length": 30,
+      "input_features": 225,
+      "description": "PyTorch transformer on unified video keypoints",
+      "trained_at": "2026-09-28T15:38:38.720330+00:00",
+      "arch": "transformer",
+      "hyperparams": {
+        "hidden_size": 256,
+        "num_layers": 3,
+        "dropout": 0.1,
+        "nhead": 8,
+        "lr": 0.0001,
+        "batch_size": 16,
+        "seed": 42,
+        "augment_copies": 3,
+        "sampler": "uniform",
+        "mask_face": true
+      },
+      "metrics": {
+        "test_accuracy": 0.686046511627907,
+        "test_f1_macro": 0.6691632903074551,
+        "best_val_acc": 0.6422018348623854,
+        "params": 1806352,
+        "predict_ms_p50": 1.0552970015851315,
+        "predict_ms_p95": 1.9369252513570245,
+        "artifact_mb": 11.796,
+        "eval_run_id": "20260928_154111",
+        "evaluated_at": "2026-09-28T15:41:11.404667+00:00"
       }
     }
   }

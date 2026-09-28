@@ -81,3 +81,48 @@
 - Progress file must be updated whenever a new directory or file is created.
 - Active model is set in `models/registry/registry.json` (key: `active_model`) or overridden via `MODEL_NAME` env var.
 - To train and register a new CNN-LSTM model: `python -m ml.training.train_cnn_lstm --model-name my_model --set-active`
+
+## PyTorch Comparison Matrix (video lineage, 15 glosses, 336/109/86 clips)
+
+Unified trainer: `python -m ml.training.train_torch --arch {lstm,gru,cnn_lstm,tcn,transformer} --model-name X`
+(factory: [ml/training/arch_factory.py](ml/training/arch_factory.py), loop: [ml/training/torch_common.py](ml/training/torch_common.py)).
+
+### Round 1 — no augmentation, last-30 sampler (test acc, n=86)
+| Model | Acc | F1 | p50 | Size |
+|---|---|---|---|---|
+| transformer_v1 (legacy artifact) | 47.7% | 0.43 | 1.6ms | 13.2MB |
+| transformer_v2 | 44.2% | 0.38 | 1.3ms | 13.2MB |
+| tcn_v1 | 41.9% | 0.37 | 2.2ms | 4.5MB |
+| cnn_lstm_torch_v1 | 38.4% | 0.33 | 0.8ms | 4.9MB |
+| lstm_baseline_v1 | 12.8% | 0.04 | 5.3ms | 27MB |
+| gru_v1 | 5.8% | 0.01 | 7.5ms | 20MB |
+
+### Round 2 — `--augment-copies 3` + sampling/mask variants (test acc, n=86)
+| Model | Acc | F1 | Variant |
+|---|---|---|---|
+| tcn_uniform_v1 | **65.1%** | 0.61 | uniform-30 sampler |
+| tcn_noface_v1 | 52.3% | 0.52 | face-masked (225-d), explicit serving adapter |
+| transformer_v3 | 46.5% | 0.41 | aug only |
+| lstm_noface_v1 | 38.4% | 0.33 | masked (was 12.8% unmasked) |
+| cnn_lstm_torch_v2 | 37.2% | 0.33 | aug only |
+| tcn_v2 | 36.1% | 0.32 | aug only, last-30 |
+| gru_128x2_v1 | 26.7% | 0.25 | small (was 5.8%) |
+| lstm_128x2_v1 / lstm_128x1_v1 | 14% / 12% | — | small still collapses |
+
+### Round 3 — uniform + noface combo (test acc, n=86)
+| Model | Acc | F1 | p50 | Size |
+|---|---|---|---|---|
+| tcn_uniform_noface_v1 | **69.8%** | 0.70 | 1.3ms | 1.8MB |
+| transformer_uniform_noface_v1 | 68.6% | 0.67 | 1.1ms | 11.8MB |
+
+Stacking works: uniform sampling × face removal × augmentation compose
+(47.7% → 65.1% → 69.8%). Still 10 pts short of the 80% gate.
+Eval harness is sampler-aware (`evaluate_model` reads registry hyperparams; incident:
+uniform model scored 49% before the fix vs true 65%).
+
+### Serving status
+- Generic `TorchBackend` (arch dispatch) + `serving_check` dim guard in `predict()`
+  (mismatch → HTTP 400, verified). Masked models serve via declared pose+hands mask.
+- Flask-verified: `tcn_v1` real clip → 200; masked smoke model → 200.
+- Registry: 16 models. Active stays `cnn_lstm_default` (webcam TF) until a video
+  model passes the gates (acc ≥ 0.80, worst-gloss recall ≥ 0.70).
