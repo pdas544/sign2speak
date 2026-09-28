@@ -31,6 +31,8 @@ print(c.get('/inference/labels').get_json()['count'])  # 17 (TF default)
 4. **`evaluate_model._normalize_for_model()` silently truncates/pads feature dims.** A 1629-vs-1662 comparison through it is meaningless — check dims first (`keypoint_service.assert_compatible`).
 5. **Registry over settings.** Active model = `models/registry/registry.json:active_model`, overridable via `MODEL_NAME` env. `trained_at:null` = pre-registry artifact, untrusted. `Settings.model_path` default (transformer `.pth`) disagrees with registry default (TF `.h5`) — registry wins at runtime.
 6. **`train_cnn_lstm --dataset-mode auto` falls back to legacy** (`test_data/`) when `processed/datasets/cnn_lstm/` is absent — which is the current state. Don't mistake a legacy run for a video-data run; check the logged `Dataset mode:` line.
+7. **Eval must mirror training sampling.** `_normalize_for_model` defaults to last-30; uniform-trained models score ~16 pts low unless `sampler` is read from registry hyperparams (incident documented in progress.md Round 2).
+8. **`extract-keypoints-full.py` append-merges `metadata.csv`** (dedupe on video_id+file_path). Never run with `--no-append` unless rebuilding from scratch. New annotation rows go in `annotations/*.json`, matched by YouTube id (WLASL's own `video_id` is an internal int — use the URL).
 7. **`.gitignore` hides `videos/`, `mp_data/`, `test_data/`, `outputs/`, `audio/`, `processed/keypoints/`.** Data and artifacts never commit. `git status` showing only code changes is expected.
 
 ## Environment
