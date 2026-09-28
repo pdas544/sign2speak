@@ -153,3 +153,14 @@ uniform model scored 49% before the fix vs true 65%).
   verified identical predictions on 1629-direct vs 1662-converted inputs).
   UI `/` unchanged (Start/Stop → prediction + EN/HI audio players).
 - Registry: 18 models. Previous default was `cnn_lstm_default` (webcam TF).
+
+### Live-webcam fix (quality gate recalibration)
+- Symptom (logs 22:20–22:26): legit signing got `422` (motion 0.004–0.006 vs
+  min 0.0060) or low-conf predictions; live `nonzero_ratio` ~0.12 vs 0.96 train.
+- Root cause: gate metrics were computed on raw 1662-d frames, which are 86%
+  dead face zeros for the masked model — motion diluted ~7× below the threshold
+  (train-motion p50 is 0.0032 full-dim vs 0.033 masked-225).
+- Fix: `predict()` adapts via `InferenceService.prepare()` first, gate runs on
+  model-ready features (`_min_motion_for` per layout, `_hand_block_stats`
+  L/R split for mirror-swap diagnosis, model name in log lines).
+- Verified: v3 zeros→422, motion→200, faint→200-low-conf, TF path unchanged.

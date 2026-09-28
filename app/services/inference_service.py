@@ -90,12 +90,27 @@ class InferenceService:
         self._load_backend_if_needed()
         return self._backend.labels()  # type: ignore[union-attr]
 
+    def prepare(self, keypoints: np.ndarray) -> tuple[np.ndarray, dict[str, Any]]:
+        """
+        Adapt serving keypoints for the active model.
+
+        Returns (model_ready_array, active_model_config). Raises ValueError
+        on layout mismatch (HTTP 400 upstream).
+        """
+        self._load_backend_if_needed()
+        from app.services.keypoint_service import adapt_for_model
+        from app.services.model_registry_service import ModelRegistryService
+
+        config = ModelRegistryService().active_model_config()
+        return adapt_for_model(keypoints, config), config
+
     def predict(self, keypoints: np.ndarray) -> tuple[str, float]:
         """
         Run sign-language inference.
 
         Args:
-            keypoints: Float32 array (sequence_length, input_features).
+            keypoints: Float32 array (sequence_length, feature_dim) in any
+                serving layout — adapted internally via prepare().
 
         Returns:
             (predicted_gloss, confidence)
@@ -104,17 +119,7 @@ class InferenceService:
         if self._backend is None:
             raise RuntimeError("Inference backend is not initialized")
 
-        from app.services.keypoint_service import adapt_for_model
-        from app.services.model_registry_service import ModelRegistryService
-
-        # Adapt serving keypoints to the active model (exact passthrough,
-        # documented 1662->1629 conversion, or declared face mask).
-        # Anything else raises ValueError -> HTTP 400 upstream.
-        keypoints = adapt_for_model(
-            keypoints,
-            ModelRegistryService().active_model_config(),
-        )
-
+        keypoints, _ = self.prepare(keypoints)
         return self._backend.predict(keypoints)
 
     def switch_model(self, model_name: str) -> None:
