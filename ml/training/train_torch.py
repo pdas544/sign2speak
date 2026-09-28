@@ -31,21 +31,12 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from ml.training.common import create_run_dir, register_model, write_manifest  # noqa: E402
+from ml.training.arch_factory import ARCHES, ARCH_DEFAULTS, build_model  # noqa: E402
 from ml.training.datasets.video_keypoints import (  # noqa: E402
     INPUT_FEATURES,
     VIDEO_LABELS,
     build_arrays,
 )
-
-ARCHES = ("lstm", "gru", "cnn_lstm", "tcn", "transformer")
-
-ARCH_DEFAULTS = {
-    "lstm": {"lr": 1e-3, "hidden_size": 256, "num_layers": 3, "dropout": 0.3},
-    "gru": {"lr": 1e-3, "hidden_size": 256, "num_layers": 3, "dropout": 0.3},
-    "cnn_lstm": {"lr": 1e-3, "hidden_size": 256, "num_layers": 2, "dropout": 0.3},
-    "tcn": {"lr": 1e-3, "hidden_size": 128, "num_layers": 4, "dropout": 0.2},
-    "transformer": {"lr": 1e-4, "hidden_size": 256, "num_layers": 3, "dropout": 0.1},
-}
 
 
 def set_seeds(seed: int) -> None:
@@ -54,49 +45,6 @@ def set_seeds(seed: int) -> None:
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
-
-
-def build_model(arch: str, *, hidden_size: int, num_layers: int, dropout: float,
-                nhead: int, num_classes: int, input_features: int):
-    """Instantiate one comparison arch. All take (batch, 30, 1629) -> logits."""
-    if arch == "lstm":
-        from model_lstm import ASLKeypointLSTM
-
-        return ASLKeypointLSTM(input_size=input_features, hidden_size=hidden_size,
-                               num_layers=num_layers, num_classes=num_classes,
-                               dropout=dropout)
-    if arch == "gru":
-        from model_gru import ASLKeypointGRU
-
-        return ASLKeypointGRU(input_size=input_features, hidden_size=hidden_size,
-                              num_layers=num_layers, num_classes=num_classes,
-                              dropout=dropout)
-    if arch == "cnn_lstm":
-        from model_cnn_lstm_torch import CNNKeypointLSTM
-
-        return CNNKeypointLSTM(input_size=input_features, hidden_size=hidden_size,
-                               num_layers=num_layers, num_classes=num_classes,
-                               dropout=dropout)
-    if arch == "tcn":
-        from model_tcn import KeypointTCN
-
-        channels = tuple([hidden_size] * num_layers)
-        return KeypointTCN(input_size=input_features, num_classes=num_classes,
-                           channels=channels, dropout=dropout)
-    if arch == "transformer":
-        from model_transformer import Config, SignLanguageTransformer
-
-        config = Config()
-        config.input_features = input_features
-        config.num_classes = num_classes
-        config.d_model = hidden_size
-        config.num_encoder_layers = num_layers
-        config.nhead = nhead
-        config.dropout = dropout
-        config.gloss_to_idx = {g: i for i, g in enumerate(VIDEO_LABELS)}
-        config.idx_to_gloss = {i: g for g, i in config.gloss_to_idx.items()}
-        return SignLanguageTransformer(config)
-    raise ValueError(f"Unknown arch '{arch}'. Choices: {ARCHES}")
 
 
 def make_loaders(X_train, y_train, X_val, y_val, X_test, y_test, batch_size: int):

@@ -1,9 +1,10 @@
 """
 app/services/inference_backends/torch_backend.py
 ──────────────────────────────────────────────────
-PyTorch Transformer inference backend.
+PyTorch inference backend (generic).
 
-Loads a .pth state-dict into SignLanguageTransformer and runs prediction
+Loads a .pth state-dict into the arch recorded in the registry entry
+(lstm|gru|cnn_lstm|tcn|transformer) and runs prediction
 on a (sequence_length, input_features) keypoint array.
 """
 
@@ -46,19 +47,18 @@ class TorchBackend(InferenceBackend):
 
     def load(self, model_config: dict) -> None:
         """
-        Load a PyTorch .pth state-dict into SignLanguageTransformer.
+        Load a PyTorch .pth state-dict into the arch recorded in the registry.
 
         Args:
             model_config: Registry entry containing:
                 - model_path (str): path to .pth file
                 - labels (list[str]): ordered label list
+                - arch (str): one of lstm|gru|cnn_lstm|tcn|transformer
+                  (absent = legacy transformer_v1 entry)
+                - hyperparams (dict, optional): hidden_size/num_layers/
+                  dropout/nhead used at training time
         """
-        try:
-            from model_transformer import Config, SignLanguageTransformer
-        except ImportError as exc:
-            raise ImportError(
-                "model_transformer.py must be importable from the project root"
-            ) from exc
+        from ml.training.arch_factory import ARCH_DEFAULTS, build_model
 
         torch = _require_torch()
         self._torch = torch
@@ -66,16 +66,24 @@ class TorchBackend(InferenceBackend):
         model_path: str = model_config["model_path"]
         self._labels = list(model_config["labels"])
 
-        config = Config()
-        # Override num_classes in case the registry label count differs from Config default
-        config.num_classes = len(self._labels)
-        config.gloss_to_idx = {g: i for i, g in enumerate(self._labels)}
-        config.idx_to_gloss = {i: g for g, i in config.gloss_to_idx.items()}
+        arch = str(model_config.get("arch") or "transformer").lower()
+        hyper = dict(model_config.get("hyperparams") or {})
+        arch_defaults = ARCH_DEFAULTS.get(arch, ARCH_DEFAULTS["transformer"])
 
-        logger.info("TorchBackend: loading model from %s (device=%s)", model_path, self._device)
+        logger.info("TorchBackend: loading arch=%s model from %s (device=%s)",
+                    arch, model_path, self._device)
 
-        model = SignLanguageTransformer(config).to(self._device)
-        state = torch.load(model_path, map_location=self._device)
+        model = build_model(
+            arch,
+            hidden_size=int(hyper.get("hidden_size", arch_defaults["hidden_size"])),
+            num_layers=int(hyper.get("num_layers", arch_defaults["num_layers"])),
+            dropout=float(hyper.get("dropout", arch_defaults["dropout"])),
+            nhead=int(hyper.get("nhead", 8)),
+            num_classes=len(self._labels),
+            input_features=int(model_config.get("input_features", 1629)),
+            labels=self._labels,
+        ).to(self._device)
+        state = torch.load(model_path, map_location=self._device, weights_only=True)
         model.load_state_dict(state)
         model.eval()
 
