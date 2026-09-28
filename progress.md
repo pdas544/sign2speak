@@ -147,5 +147,9 @@ uniform model scored 49% before the fix vs true 65%).
 - Generic `TorchBackend` (arch dispatch) + `serving_check` dim guard in `predict()`
   (mismatch → HTTP 400, verified). Masked models serve via declared pose+hands mask.
 - Flask-verified: `tcn_v1` real clip → 200; masked smoke model → 200.
-- Registry: 16 models. Active stays `cnn_lstm_default` (webcam TF) until a video
-  model passes the gates (acc ≥ 0.80, worst-gloss recall ≥ 0.70).
+- **API/interface phase: active model is `tcn_uniform_noface_v3` (83.0%, 225-d masked).**
+  `InferenceService.predict` adapts inputs via `keypoint_service.adapt_for_model`
+  (exact passthrough, documented 1662→1629 conversion, declared face mask —
+  verified identical predictions on 1629-direct vs 1662-converted inputs).
+  UI `/` unchanged (Start/Stop → prediction + EN/HI audio players).
+- Registry: 18 models. Previous default was `cnn_lstm_default` (webcam TF).

@@ -37,6 +37,78 @@ SEQUENCE_LENGTH = 30
 NOFACE_VIDEO_FEATURES = 225
 FACE_START_COL = 225
 
+# WEBCAM_1662 block boundaries: [pose132 xyzv | face1404 | lh63 | rh63]
+_POSE_N = 33
+_FACE_N = 468
+_HAND_N = 21
+
+
+def webcam_to_video_frame(frame1662: np.ndarray) -> np.ndarray:
+    """
+    Convert one WEBCAM_1662 frame to VIDEO_1629.
+
+    Exact where defined: pose xyz values are copied verbatim, visibility is
+    dropped (video lineage never had it), blocks reordered
+    [pose,face,lh,rh] -> [pose,lh,rh,face]. The reverse (1629 -> 1662) is
+    NOT defined — visibility cannot be invented — and raises.
+    """
+    vec = np.asarray(frame1662, dtype=np.float32).reshape(-1)
+    if vec.shape[0] != WEBCAM_FEATURES:
+        raise ValueError(f"webcam frame must be {WEBCAM_FEATURES}-d, got {vec.shape}")
+    pose = vec[0:_POSE_N * 4].reshape(_POSE_N, 4)[:, :3].reshape(-1)  # drop visibility
+    face = vec[_POSE_N * 4:_POSE_N * 4 + _FACE_N * 3]
+    lh_start = _POSE_N * 4 + _FACE_N * 3
+    lh = vec[lh_start:lh_start + _HAND_N * 3]
+    rh = vec[lh_start + _HAND_N * 3:lh_start + 2 * _HAND_N * 3]
+    out = np.concatenate([pose, lh, rh, face])
+    assert out.shape == (VIDEO_FEATURES,), f"converted shape {out.shape}"
+    return out
+
+
+def adapt_for_model(keypoints: np.ndarray, model_config: dict) -> np.ndarray:
+    """
+    Adapt a serving keypoint batch to what the active model consumes.
+
+    - Exact dim match -> passthrough.
+    - WEBCAM_1662 input + VIDEO_1629 model -> explicit documented conversion.
+    - Face-masked model + full 1629-d frame -> declared column mask.
+    - Anything else -> ValueError (HTTP 400 upstream), never silent truncation.
+    """
+    arr = np.asarray(keypoints, dtype=np.float32)
+    if arr.ndim != 2:
+        raise ValueError("Expected keypoints with shape (sequence_length, feature_dim)")
+    dim = int(arr.shape[1])
+    expected = int(model_config.get("input_features", 0) or 0)
+    name = model_config.get("display_name") or "active model"
+    hyper = model_config.get("hyperparams") or {}
+    masked = bool(hyper.get("mask_face", False))
+
+    if masked:
+        if dim == NOFACE_VIDEO_FEATURES:
+            return arr
+        if dim == VIDEO_FEATURES:
+            logger.info("adapt: applying declared pose+hands mask for '%s'", name)
+            return np.asarray(arr[:, :FACE_START_COL], dtype=np.float32)
+        if dim == WEBCAM_FEATURES:
+            logger.info("adapt: 1662->1629 conversion + declared mask for '%s'", name)
+            conv = np.stack([webcam_to_video_frame(row) for row in arr])
+            return np.asarray(conv[:, :FACE_START_COL], dtype=np.float32)
+        raise ValueError(
+            f"Keypoint dim mismatch: serving produced {dim} features but masked "
+            f"model '{name}' needs a 1629-d (or pre-masked 225-d) frame."
+        )
+
+    if expected and dim == expected:
+        return arr
+    if expected == VIDEO_FEATURES and dim == WEBCAM_FEATURES:
+        logger.info("adapt: 1662->1629 conversion for '%s'", name)
+        return np.stack([webcam_to_video_frame(row) for row in arr])
+    raise ValueError(
+        f"Keypoint dim mismatch: serving produced {dim} features "
+        f"but model '{name}' expects {expected}. "
+        "Check the keypoint layout (VIDEO_1629 vs WEBCAM_1662) before predicting."
+    )
+
 
 def _flat(landmarks, count: int, dims: int) -> np.ndarray:
     """Flatten MediaPipe landmarks (or zeros when absent) to (count*dims,)."""
