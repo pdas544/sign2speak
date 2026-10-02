@@ -231,19 +231,39 @@ class FallbackMediaProcessor:
 
 media_processor: Any | None = None
 media_processor_error: str | None = None
+media_processor_kind: str = "uninitialized"
 
 
 def _get_media_processor() -> Any:
+    """Holistic primary (matches training extractor) with tiered fallback.
+
+    Tiers: MediaService (holistic) -> MediaProcessor (pose+hands) ->
+    FallbackMediaProcessor (zeros). Revert to the old live path by returning
+    MediaProcessor() in the first branch.
+    """
     global media_processor
     global media_processor_error
+    global media_processor_kind
     if media_processor is None:
         try:
-            media_processor = MediaProcessor()
+            from app.services.media_service import MediaService
+
+            media_processor = MediaService()
             media_processor_error = None
-        except Exception as exc:
-            logger.exception("Failed to initialize MediaProcessor; using fallback processor")
-            media_processor_error = "Media processor unavailable; using fallback keypoints."
-            media_processor = FallbackMediaProcessor()  # type: ignore[assignment]
+            media_processor_kind = "mediapipe_holistic"
+        except Exception:
+            logger.exception("Holistic unavailable; trying Pose+Hands processor")
+            try:
+                media_processor = MediaProcessor()
+                media_processor_error = (
+                    "Holistic unavailable; using Pose+Hands keypoints."
+                )
+                media_processor_kind = "mediapipe_pose_hands"
+            except Exception:
+                logger.exception("Failed to initialize MediaProcessor; using fallback processor")
+                media_processor_error = "Media processor unavailable; using fallback keypoints."
+                media_processor = FallbackMediaProcessor()  # type: ignore[assignment]
+                media_processor_kind = "fallback"
     return media_processor
 
 
@@ -282,7 +302,7 @@ def media_health() -> tuple[Response, int]:
     payload = {
         "status": "ok" if media_processor_error is None else "degraded",
         "service": "media",
-        "processor": "mediapipe_pose_hands" if media_processor_error is None else "fallback",
+        "processor": media_processor_kind,
         "warning": media_processor_error,
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }

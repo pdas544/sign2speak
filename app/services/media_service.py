@@ -32,6 +32,7 @@ class MediaService:
     def __init__(self) -> None:
         mp = _require_mediapipe()
         self._mp_holistic = mp.solutions.holistic
+        self._mp_drawing = mp.solutions.drawing_utils
         self._holistic = self._mp_holistic.Holistic(
             static_image_mode=False,
             min_detection_confidence=0.5,
@@ -49,6 +50,7 @@ class MediaService:
         boxes = self.extract_boxes(results, image.shape)
 
         visualized = image.copy()
+        self._draw_landmarks(visualized, results)
         for label, (xmin, ymin, xmax, ymax) in boxes:
             cv2.rectangle(visualized, (xmin, ymin), (xmax, ymax), (0, 255, 0), 2)
             cv2.putText(
@@ -77,6 +79,21 @@ class MediaService:
                 for label, bbox in boxes
             ],
         }
+
+    def _draw_landmarks(self, image: np.ndarray, results: Any) -> None:
+        """Skeleton overlay (keeps the UI preview parity with the old live path)."""
+        if results.pose_landmarks is not None:
+            self._mp_drawing.draw_landmarks(
+                image, results.pose_landmarks, self._mp_holistic.POSE_CONNECTIONS
+            )
+        for hand_landmarks in (
+            results.left_hand_landmarks,
+            results.right_hand_landmarks,
+        ):
+            if hand_landmarks is not None:
+                self._mp_drawing.draw_landmarks(
+                    image, hand_landmarks, self._mp_holistic.HAND_CONNECTIONS
+                )
 
     def extract_keypoints(self, results: Any) -> list[float]:
         # Single source of truth: 1662-d WEBCAM layout.
