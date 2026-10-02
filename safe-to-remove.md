@@ -2,6 +2,19 @@
 
 > Updated after root cleanup (Sept 2026). All entries below were deleted from
 > the repo root; recoverable via `git log` / `git restore` if needed.
+>
+> Second wave (Oct 2026): legacy dirs/files below, same recoverability.
+> `videos_all/` explicitly kept for future use. Gitignored data dirs
+> (`videos/`, `selected_videos/`, `test_data/`, `mp_data/`, `outputs/`,
+> `processed/{keypoints,train,val,test}/`) are load-bearing and untouched —
+> deleting those would be permanent (not in git).
+
+## Removed — Legacy Directories/Files (Oct 2026, zero references verified)
+
+- `src/` (dataload, deploy, evaluate, model, training — superseded, unimported)
+- `annotations/MSASL_{train,val,test}.json` (only stale README/registry-string refs)
+- `class_distribution.png`, `wsasl_gloss_video_counts.png` (unreferenced artifacts)
+- `videos_top_10_gloss/` (was empty; plain removal, nothing lost)
 
 ## Removed — Low Risk (legacy one-off utilities / scratch)
 
