@@ -38,6 +38,8 @@
       <button id="btn-start">▶ Start Recognition</button>
       <button id="btn-stop" disabled>■ Stop</button>
     </div>
+    <p class="muted">Tip: just press Start and sign — recording stops automatically
+    when your hands settle. Stop is a manual override.</p>
   </div>
 
   <!-- Right panel -->
@@ -93,6 +95,6 @@
 <footer>{{ app_name }} &mdash; Real-time Sign Language Recognition &amp; Translation</footer>
 
 <script>window.S2S_CONFIG = { maxSeqLength: {{ max_seq_length }} };</script>
-<script src="{{ url_for('static', filename='js/app.js') }}?v=2" defer></script>
+<script src="{{ url_for('static', filename='js/app.js') }}?v=3" defer></script>
 </body>
 </html>

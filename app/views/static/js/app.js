@@ -9,12 +9,20 @@ const MAX_FRAMES        = window.S2S_CONFIG.maxSeqLength;
 const CAPTURE_BUFFER_MULTIPLIER = 3;
 const CAPTURE_INTERVAL_MS = 200;
 const MAX_HISTORY       = 10;
+// Auto-stop: finalize when hands settle (motion-end detection). Thresholds in
+// mean-abs-diff units over raw 1662-d frames; rest state sits near ~0.001,
+// genuine signing windows measured 0.006+ on adapted features.
+const MOTION_IDLE_THRESHOLD = 0.0035;
+const IDLE_FRAMES_REQUIRED  = 5;   // ~1s of stillness ends capture
+const MIN_AUTO_FRAMES       = 10;  // need motion history before auto-stop arms
 
 let stream          = null;
 let captureInterval = null;
 let keypointBuffer  = [];
 let isRunning       = false;
 let historyItems    = [];
+let idleCount       = 0;
+let autoStopped     = false;
 
 const video       = document.getElementById('webcam');
 const canvas      = document.getElementById('canvas-overlay');
@@ -268,9 +276,46 @@ async function captureAndSendFrame() {
       keypointBuffer.push(data.keypoints);
       const maxBufferedFrames = MAX_FRAMES * CAPTURE_BUFFER_MULTIPLIER;
       if (keypointBuffer.length > maxBufferedFrames) keypointBuffer.shift();
+      checkAutoStop();
     }
   } catch (e) {
     showError('Frame processing error: ' + e.message);
+  }
+}
+
+// ---- Auto-stop on motion-end ----
+function frameMotion() {
+  const n = keypointBuffer.length;
+  if (n < 2) return Infinity; // not enough history: never idle
+  return meanAbsDiff(keypointBuffer[n - 1], keypointBuffer[n - 2]);
+}
+
+function checkAutoStop() {
+  if (!isRunning || autoStopped) return;
+  if (keypointBuffer.length < Math.max(MAX_FRAMES, MIN_AUTO_FRAMES)) {
+    idleCount = 0;
+    return;
+  }
+  if (frameMotion() < MOTION_IDLE_THRESHOLD) {
+    idleCount += 1;
+  } else {
+    idleCount = 0;
+  }
+  if (idleCount >= IDLE_FRAMES_REQUIRED) {
+    autoStopped = true;
+    stopAndPredict('Auto-stopped: hands settled.');
+  }
+}
+
+async function stopAndPredict(note) {
+  isRunning = false;
+  clearInterval(captureInterval);
+  stopWebcam();
+  btnStart.disabled = false;
+  btnStop.disabled  = true;
+  await runPrediction();
+  if (note && !errorBanner.classList.contains('visible')) {
+    subEl.textContent += ` (${note})`;
   }
 }
 
@@ -352,6 +397,8 @@ btnStart.addEventListener('click', async () => {
   }
 
   keypointBuffer = [];
+  idleCount = 0;
+  autoStopped = false;
   isRunning = true;
   btnStart.disabled = true;
   btnStop.disabled  = false;
@@ -361,10 +408,6 @@ btnStart.addEventListener('click', async () => {
 });
 
 btnStop.addEventListener('click', async () => {
-  isRunning = false;
-  clearInterval(captureInterval);
-  stopWebcam();
-  btnStart.disabled = false;
-  btnStop.disabled  = true;
-  await runPrediction();
+  autoStopped = true; // manual stop wins over a pending auto-stop
+  await stopAndPredict(null);
 });
