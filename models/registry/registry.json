@@ -892,11 +892,11 @@
         "test_f1_macro": 0.8097836949987488,
         "best_val_acc": 0.7974683544303798,
         "params": 464399,
-        "predict_ms_p50": 1.3353840040508658,
-        "predict_ms_p95": 2.014271100051701,
+        "predict_ms_p50": 1.6171850002137944,
+        "predict_ms_p95": 2.583193700593256,
         "artifact_mb": 1.8,
-        "eval_run_id": "20260928_162733",
-        "evaluated_at": "2026-09-28T16:27:34.376986+00:00"
+        "eval_run_id": "20261007_051902",
+        "evaluated_at": "2026-10-07T05:19:02.871139+00:00"
       }
     },
     "tcn_uniform_noface_v3": {
@@ -942,11 +942,65 @@
         "test_f1_macro": 0.8034637984827738,
         "best_val_acc": 0.8037974683544303,
         "params": 464399,
-        "predict_ms_p50": 1.428049996320624,
-        "predict_ms_p95": 1.9712896013516001,
+        "predict_ms_p50": 2.0352219999040244,
+        "predict_ms_p95": 3.0753630999242887,
         "artifact_mb": 1.8,
-        "eval_run_id": "20260928_162734",
-        "evaluated_at": "2026-09-28T16:27:34.904647+00:00"
+        "eval_run_id": "20261007_051903",
+        "evaluated_at": "2026-10-07T05:19:03.534885+00:00"
+      }
+    },
+    "tcn_uniform_noface_v4": {
+      "display_name": "TCN · tcn_uniform_noface_v4 · uniform+noface+augx3+h128x4",
+      "framework": "pytorch",
+      "model_path": "outputs/models/tcn_uniform_noface_v4.pth",
+      "labels": [
+        "beautiful",
+        "big",
+        "boy",
+        "friend",
+        "go",
+        "good",
+        "happy",
+        "hello",
+        "like",
+        "nice",
+        "no",
+        "sister",
+        "teacher",
+        "what",
+        "white"
+      ],
+      "sequence_length": 30,
+      "input_features": 225,
+      "description": "PyTorch tcn on unified video keypoints",
+      "trained_at": "2026-10-07T05:18:40.652565+00:00",
+      "arch": "tcn",
+      "hyperparams": {
+        "hidden_size": 128,
+        "num_layers": 4,
+        "dropout": 0.2,
+        "nhead": 8,
+        "lr": 0.001,
+        "batch_size": 16,
+        "seed": 42,
+        "augment_copies": 3,
+        "sampler": "uniform",
+        "mask_face": true,
+        "augment": {
+          "rotation_deg": 7.0,
+          "translate": 0.05
+        }
+      },
+      "metrics": {
+        "test_accuracy": 0.8740740740740741,
+        "test_f1_macro": 0.8288622713622714,
+        "best_val_acc": 0.8291139240506329,
+        "params": 464399,
+        "predict_ms_p50": 1.5690540003561182,
+        "predict_ms_p95": 2.470347200141987,
+        "artifact_mb": 1.8,
+        "eval_run_id": "20261007_051901",
+        "evaluated_at": "2026-10-07T05:19:02.264270+00:00"
       }
     }
   }

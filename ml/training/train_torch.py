@@ -185,6 +185,7 @@ def main() -> None:
             "dropout": dropout, "lr": lr, "seed": args.seed, "params": params,
             "augment_copies": args.augment_copies, "sampler": args.sampler,
             "mask_face": args.mask_face,
+            "augment": {"rotation_deg": 7.0, "translate": 0.05},
             "test_accuracy": reports["accuracy"], "test_f1_macro": reports["f1_macro"],
             "best_val_acc": history["best_val_acc"],
             "stopped_epoch": history["stopped_epoch"],
@@ -215,6 +216,7 @@ def main() -> None:
             "batch_size": args.batch_size, "seed": args.seed,
             "augment_copies": args.augment_copies, "sampler": args.sampler,
             "mask_face": args.mask_face,
+            "augment": {"rotation_deg": 7.0, "translate": 0.05},
         },
         metrics={
             "test_accuracy": reports["accuracy"],

@@ -39,6 +39,45 @@ def random_scale(sequence: np.ndarray, low: float = 0.95, high: float = 1.05, rn
     return (sequence * factor).astype(np.float32)
 
 
+def _as_joint_triplets(sequence: np.ndarray) -> tuple[np.ndarray, int]:
+    """Reshape (T, F) flat xyz rows to (T, J, 3); leftover cols untouched."""
+    x = np.asarray(sequence, dtype=np.float32)
+    n_joints = x.shape[1] // 3
+    return x.reshape(x.shape[0], n_joints, 3), x.shape[1] - n_joints * 3
+
+
+def rotate_sequence(sequence: np.ndarray, max_degrees: float = 7.0, rng: np.random.Generator | None = None) -> np.ndarray:
+    """In-plane rotation about the per-frame signer centroid (camera roll/tilt).
+
+    One angle is sampled per SEQUENCE and applied to all frames so motion
+    coherence is preserved. Small angles only: 2D rotation approximates true
+    viewpoint change; large angles fabricate impossible skeletons.
+    """
+    gen = rng or np.random.default_rng()
+    theta = np.radians(float(gen.uniform(-max_degrees, max_degrees)))
+    cos_t, sin_t = float(np.cos(theta)), float(np.sin(theta))
+    x = np.asarray(sequence, dtype=np.float32).copy()
+    pts, _ = _as_joint_triplets(x)
+    xy = pts[:, :, :2]
+    center = xy.mean(axis=1, keepdims=True)
+    centered = xy - center
+    pts[:, :, 0] = centered[..., 0] * cos_t - centered[..., 1] * sin_t + center[..., 0]
+    pts[:, :, 1] = centered[..., 0] * sin_t + centered[..., 1] * cos_t + center[..., 1]
+    return x.astype(np.float32)
+
+
+def translate_sequence(sequence: np.ndarray, max_shift: float = 0.05, rng: np.random.Generator | None = None) -> np.ndarray:
+    """Uniform x/y shift per sequence (camera framing shifts)."""
+    gen = rng or np.random.default_rng()
+    dx = float(gen.uniform(-max_shift, max_shift))
+    dy = float(gen.uniform(-max_shift, max_shift))
+    x = np.asarray(sequence, dtype=np.float32).copy()
+    pts, _ = _as_joint_triplets(x)
+    pts[:, :, 0] += dx
+    pts[:, :, 1] += dy
+    return x.astype(np.float32)
+
+
 def temporal_jitter(sequence: np.ndarray, max_shift: int = 2, rng: np.random.Generator | None = None) -> np.ndarray:
     """Shift a sequence in time with zero-padding, preserving shape."""
     gen = rng or np.random.default_rng()
@@ -61,16 +100,21 @@ def augment_sequence(
     scale_low: float = 0.95,
     scale_high: float = 1.05,
     max_time_shift: int = 2,
+    max_rotation_deg: float = 7.0,
+    max_translate: float = 0.05,
     rng: np.random.Generator | None = None,
 ) -> np.ndarray:
     """
     Compose a lightweight augmentation pipeline.
 
-    Order: scale -> temporal shift -> noise.
+    Order: scale -> rotate -> translate -> temporal shift -> noise.
+    Geometric transforms use one sample per sequence (motion coherence).
     """
     gen = rng or np.random.default_rng()
     x = np.asarray(sequence, dtype=np.float32)
     x = random_scale(x, low=scale_low, high=scale_high, rng=gen)
+    x = rotate_sequence(x, max_degrees=max_rotation_deg, rng=gen)
+    x = translate_sequence(x, max_shift=max_translate, rng=gen)
     x = temporal_jitter(x, max_shift=max_time_shift, rng=gen)
     x = add_gaussian_noise(x, std=noise_std, rng=gen)
     return x.astype(np.float32)

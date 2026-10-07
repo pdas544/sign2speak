@@ -137,9 +137,11 @@ Stacking works: uniform sampling × face removal × augmentation compose
 - Step 3a (TCN uniform+noface, aug ×3): `tcn_uniform_noface_v2` → **83.7%** / F1 0.81.
 - Step 3b (same, aug ×6): `tcn_uniform_noface_v3` → 83.0% — diminishing returns, ×3 is the sweet spot.
 - Head-to-head on new test (n=135): v2 83.7% > v3 83.0% > v1 79.3% (old model rescored).
-- **Gate verdict**: overall ≥0.80 PASS, worst-gloss ≥0.70 FAIL —
-  good 0.33, go 0.40, hello 0.60 (`like` fixed 0.33→1.00 by new data).
-  Ship-blocked for good/go/hello pending targeted collection or scope trim.
+### Round 5 — geometric augmentation (rotation ±7° centroid-centered + translate ±0.05)
+`ml/preprocessing/augment.py`: `rotate_sequence` (single angle/sequence, rigid),
+`translate_sequence`; wired into `augment_sequence` (scale→rotate→translate→shift→noise).
+` tcn_uniform_noface_v4` (same recipe + geo-aug): **87.4%** / F1 0.83.
+Per-gloss: hello fixed, what 0.75; good 0.33 / go 0.40 unchanged (representation, not scarcity).
 Eval harness is sampler-aware (`evaluate_model` reads registry hyperparams; incident:
 uniform model scored 49% before the fix vs true 65%).
 
