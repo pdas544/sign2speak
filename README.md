@@ -80,8 +80,7 @@ python realtime_prediction.py
 
 ### Advanced Usage
 - **Custom Model Training**: Execute the file extract_keypoints_lstm.py -> Opens the Integrated/Attached Camera and captures 
-- **Data Augmentation**: Use the `KeypointAugmentation` class to augment keypoints for better training.
-- **Evaluation**: Run the `evaluate.py` script to evaluate the model's performance.
+
 
 ## 📁 Project Structure
 ```
@@ -119,18 +118,11 @@ sign2speak/
 └── README.md
 ```
 
-## 🔧 Configuration
-- **Configuration Files**: Modify `config.json` for model parameters and other settings.
-
-## 🤝 Contributing
-- Fork the repository
-- Create a new branch for your feature or bug fix
-- Write clean, well-commented code
-- Submit a pull request
 
 
 ## 👥 Authors & Contributors
 - **Maintainers**: Priyabrata Das
+
 
 ## 🐛 Issues & Support
 - Report issues on the [GitHub Issues page](https://github.com/pdas544/sign2speak/issues)

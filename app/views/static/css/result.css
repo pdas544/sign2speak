@@ -1,0 +1,125 @@
+/* ============================================================
+   result.css — styles specific to the result summary page
+   ============================================================ */
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  gap: 24px;
+}
+
+/* ---- Header link ---- */
+header a {
+  font-size: 0.88rem;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid var(--accent);
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+header a:hover { background: var(--accent); color: #fff; }
+
+/* ---- Card overrides ---- */
+.card {
+  padding: 28px 32px;
+  width: 100%;
+  max-width: 560px;
+}
+.panel-title { margin-bottom: 14px; }
+
+/* ---- Prediction display ---- */
+.result-gloss {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent);
+  word-break: break-word;
+  line-height: 1.1;
+}
+
+.result-meta {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.4px;
+}
+.badge.accepted { background: #0e3326; color: var(--success); border: 1px solid var(--success); }
+.badge.rejected { background: #3b1010; color: var(--danger); border: 1px solid var(--danger); }
+
+/* ---- Confidence bar ---- */
+.confidence-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+.conf-bar-wrap {
+  flex: 1; height: 8px;
+  background: var(--border);
+  border-radius: 4px; overflow: hidden;
+}
+.conf-bar {
+  height: 100%;
+  border-radius: 4px;
+}
+.conf-value { font-size: 0.85rem; min-width: 48px; text-align: right; }
+
+.timestamp { font-size: 0.78rem; color: var(--text-muted); margin-top: 10px; }
+
+/* ---- Audio grid ---- */
+.audio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+@media (max-width: 520px) { .audio-grid { grid-template-columns: 1fr; } }
+
+.audio-item { gap: 6px; }
+
+/* ---- Action buttons ---- */
+.actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.btn-primary {
+  flex: 1;
+  padding: 12px 20px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.btn-primary:hover { opacity: 0.85; }
+
+.btn-outline {
+  flex: 1;
+  padding: 12px 20px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }

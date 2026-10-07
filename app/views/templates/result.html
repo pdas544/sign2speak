@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ app_name }} — Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/shared.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}" />
+</head>
+<body>
+
+<header>
+  <h1><span>Sign</span>2Speak</h1>
+  <a href="/">← New Recognition</a>
+</header>
+
+<main>
+
+  <!-- Prediction result -->
+  <div class="card">
+    <div class="panel-title">Recognized Sign</div>
+
+    <div class="result-gloss">{{ predicted_gloss }}</div>
+
+    <div class="result-meta">
+      {% if accepted %}
+        <span class="badge accepted">✓ Accepted</span>
+      {% else %}
+        <span class="badge rejected">✗ Low Confidence</span>
+      {% endif %}
+    </div>
+
+    <div class="confidence-row">
+      <div class="conf-bar-wrap">
+        <div class="conf-bar"
+          style="width: {{ confidence_percent }}%;
+                 background: {% if confidence_percent >= 70 %}var(--success){% elif confidence_percent >= 50 %}var(--warn){% else %}var(--danger){% endif %};">
+        </div>
+      </div>
+      <span class="conf-value">{{ confidence_percent }}%</span>
+    </div>
+
+    <div class="timestamp">{{ timestamp }}</div>
+  </div>
+
+  <!-- Bilingual audio -->
+  <div class="card">
+    <div class="panel-title">Audio Output</div>
+    <div class="audio-grid">
+
+      <div class="audio-item">
+        <span class="audio-lang">🇬🇧 English</span>
+        {% if audio_en %}
+          <audio controls autoplay src="/inference/audio/{{ audio_en }}"></audio>
+        {% else %}
+          <p class="audio-placeholder">Audio unavailable</p>
+        {% endif %}
+      </div>
+
+      <div class="audio-item">
+        <span class="audio-lang">🇮🇳 Hindi</span>
+        {% if audio_hi %}
+          <audio controls src="/inference/audio/{{ audio_hi }}"></audio>
+        {% else %}
+          <p class="audio-placeholder">Audio unavailable</p>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="card">
+    <div class="actions">
+      <a class="btn-primary" href="/">Try Another Sign</a>
+      <a class="btn-outline" href="/inference/labels">View All Signs</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>{{ app_name }} &mdash; Real-time Sign Language Recognition &amp; Translation</footer>
+
+</body>
+</html>

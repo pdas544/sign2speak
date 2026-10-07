@@ -1,16 +1,24 @@
-import pyttsx3
 import os
 from datetime import datetime
-from deep_translator import GoogleTranslator
 
 class TTSHelper:
     def __init__(self, audio_dir="audio", target_lang="hindi"):
-        self.engine = pyttsx3.init()
-        self.engine.setProperty('rate', 150)  # Speed of speech
-        self.engine.setProperty('volume', 0.9)  # Volume (0.0 to 1.0)
-        
-        # Initialize translator
-        self.translator = GoogleTranslator(source='auto', target=target_lang)
+        try:
+            import pyttsx3
+            self.engine = pyttsx3.init()
+            self.engine.setProperty('rate', 150)  # Speed of speech
+            self.engine.setProperty('volume', 0.9)  # Volume (0.0 to 1.0)
+        except Exception as e:
+            print(f"TTS engine unavailable (pyttsx3 missing or init failed): {e}")
+            self.engine = None
+
+        # Initialize translator lazily — offline/headless boot must not fail
+        try:
+            from deep_translator import GoogleTranslator
+            self.translator = GoogleTranslator(source='auto', target=target_lang)
+        except Exception as e:
+            print(f"Translator unavailable (deep-translator missing): {e}")
+            self.translator = None
         self.target_lang = target_lang
         
         # Create audio directory if it doesn't exist
@@ -23,8 +31,10 @@ class TTSHelper:
 
     def translate_text(self, text):
         """Translate text to target language with caching"""
-       
- 
+        if self.translator is None:
+            print(f"Translator unavailable, returning original text: {text}")
+            return text
+
         try:
             print(f"Attempting to translate: {text}")
             translation = self.translator.translate(text)
@@ -44,6 +54,9 @@ class TTSHelper:
 
     def save_to_file(self, word):
         """Save speech to an audio file in both English and Hindi"""
+        if self.engine is None:
+            print("TTS engine unavailable, skipping audio generation")
+            return None
         try:
             # Generate unique filename using timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -70,4 +83,8 @@ class TTSHelper:
 
     def shutdown(self):
         """Clean shutdown of TTS engine"""
-        self.engine.stop()
+        try:
+            if self.engine is not None:
+                self.engine.stop()
+        except Exception:
+            pass

@@ -105,16 +105,21 @@ def find_video_file(video_id, gloss, base_dir="selected_videos"):
     
     return None
 
-def extract_keypoints_with_splits():
+def extract_keypoints_with_splits(annotations_path='filtered_annotations_selected_glosses.json',
+                                    videos_base_dir='selected_videos',
+                                    base_output_dir='processed',
+                                    append_existing=True):
     """
-    Main function to extract keypoints from videos while preserving split information
+    Main function to extract keypoints from videos while preserving split information.
+
+    Args:
+        annotations_path: JSON with rows {text, split, url[, video_id, signer_id]}.
+        videos_base_dir: directory of <gloss>/ subfolders with {video_id}_*.mp4 files.
+        base_output_dir: where keypoints/<split>/ + metadata.csv live.
+        append_existing: merge with existing metadata.csv (dedupe on
+            video_id+file_path) instead of overwriting it.
     """
     # Paths and parameters
-    annotations_path = 'filtered_annotations_selected_glosses.json'
-    videos_base_dir = 'selected_videos'
-    base_output_dir = 'processed'
-    
-    # Create output directories for each split
     splits = ['train', 'val', 'test']
     for split in splits:
         os.makedirs(os.path.join(base_output_dir, split), exist_ok=True)
@@ -137,9 +142,10 @@ def extract_keypoints_with_splits():
         gloss = item.get('text', 'unknown')
         split = item.get('split', 'train')
         url = item.get('url', '')
-        
-        # Extract video ID from URL
-        video_id = extract_video_id_from_url(url)
+
+        # Prefer an explicit video_id (unlisted crawls have no parsable URL);
+        # fall back to YouTube-URL parsing for legacy annotation files.
+        video_id = item.get('video_id') or extract_video_id_from_url(url)
         if not video_id:
             print(f"Could not extract video ID from URL: {url}")
             unmatched_videos.append(f"URL: {url}, Gloss: {gloss}")
@@ -213,10 +219,20 @@ def extract_keypoints_with_splits():
                 'status': f'failed ({str(e)})'
             })
     
-    # Save metadata
-    metadata_df = pd.DataFrame(metadata)
+    # Save metadata (append-merge by default so multi-source extractions accumulate)
     metadata_path = os.path.join(base_output_dir, 'metadata.csv')
-    metadata_df.to_csv(metadata_path, index=False)
+    if append_existing and os.path.exists(metadata_path):
+        existing_df = pd.read_csv(metadata_path)
+        combined = pd.concat([existing_df, pd.DataFrame(metadata)], ignore_index=True)
+        before = len(combined)
+        combined = combined.drop_duplicates(subset=['video_id', 'file_path'], keep='first')
+        print(f"Append-merge: {len(existing_df)} existing + {len(metadata)} new "
+              f"-> {len(combined)} rows ({before - len(combined)} dupes dropped)")
+        combined.to_csv(metadata_path, index=False)
+        metadata_df = combined
+    else:
+        metadata_df = pd.DataFrame(metadata)
+        metadata_df.to_csv(metadata_path, index=False)
     
     # Save list of unmatched videos
     if unmatched_videos:
@@ -250,8 +266,23 @@ def extract_keypoints_with_splits():
     return metadata_df
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Extract keypoints preserving splits")
+    parser.add_argument("--annotations", default="filtered_annotations_selected_glosses.json")
+    parser.add_argument("--videos-dir", default="selected_videos")
+    parser.add_argument("--output-dir", default="processed")
+    parser.add_argument("--no-append", action="store_true",
+                        help="overwrite metadata.csv instead of append-merging")
+    cli = parser.parse_args()
+
     # Run the extraction
-    metadata = extract_keypoints_with_splits()
+    metadata = extract_keypoints_with_splits(
+        annotations_path=cli.annotations,
+        videos_base_dir=cli.videos_dir,
+        base_output_dir=cli.output_dir,
+        append_existing=not cli.no_append,
+    )
     
     # Additional analysis
     print("\n=== Additional Analysis ===")
