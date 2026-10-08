@@ -78,6 +78,20 @@ def translate_sequence(sequence: np.ndarray, max_shift: float = 0.05, rng: np.ra
     return x.astype(np.float32)
 
 
+def swap_hands(sequence: np.ndarray) -> np.ndarray:
+    """Swap left/right hand blocks (handedness-invariance training).
+
+    Layouts: 225 [pose99,lh63,rh63] | 1629 [pose99,lh63,rh63,face1404].
+    Probe finding (Oct 2026): MediaPipe handedness is unstable run-to-run
+    (same physical hand lands in L on one attempt, R on the next), so no
+    static mirror toggle can fix it — the model must see both assignments.
+    """
+    x = np.asarray(sequence, dtype=np.float32).copy()
+    if x.shape[1] in (225, 1629):
+        x[:, 99:162], x[:, 162:225] = x[:, 162:225].copy(), x[:, 99:162].copy()
+    return x
+
+
 def temporal_jitter(sequence: np.ndarray, max_shift: int = 2, rng: np.random.Generator | None = None) -> np.ndarray:
     """Shift a sequence in time with zero-padding, preserving shape."""
     gen = rng or np.random.default_rng()
@@ -102,12 +116,14 @@ def augment_sequence(
     max_time_shift: int = 2,
     max_rotation_deg: float = 7.0,
     max_translate: float = 0.05,
+    hand_swap_prob: float = 0.5,
     rng: np.random.Generator | None = None,
 ) -> np.ndarray:
     """
     Compose a lightweight augmentation pipeline.
 
-    Order: scale -> rotate -> translate -> temporal shift -> noise.
+    Order: scale -> rotate -> translate -> temporal shift -> noise,
+    plus random left/right hand swap (handedness invariance).
     Geometric transforms use one sample per sequence (motion coherence).
     """
     gen = rng or np.random.default_rng()
@@ -115,6 +131,8 @@ def augment_sequence(
     x = random_scale(x, low=scale_low, high=scale_high, rng=gen)
     x = rotate_sequence(x, max_degrees=max_rotation_deg, rng=gen)
     x = translate_sequence(x, max_shift=max_translate, rng=gen)
+    if float(gen.random()) < hand_swap_prob:
+        x = swap_hands(x)
     x = temporal_jitter(x, max_shift=max_time_shift, rng=gen)
     x = add_gaussian_noise(x, std=noise_std, rng=gen)
     return x.astype(np.float32)

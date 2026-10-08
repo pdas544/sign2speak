@@ -142,6 +142,17 @@ Stacking works: uniform sampling × face removal × augmentation compose
 `translate_sequence`; wired into `augment_sequence` (scale→rotate→translate→shift→noise).
 ` tcn_uniform_noface_v4` (same recipe + geo-aug): **87.4%** / F1 0.83.
 Per-gloss: hello fixed, what 0.75; good 0.33 / go 0.40 unchanged (representation, not scarcity).
+
+### Round 6 — handedness probe verdict + invariant model (Oct 2026)
+- Probe (`/probe` JSON, 16 rows: true gloss + used hand + L/R energies): **no systematic
+  mirror swap — handedness is UNSTABLE run-to-run** (same physical right hand landed
+  in L on one `boy` attempt, R on the next). A static mirror toggle would fix some
+  attempts and break others → rejected.
+- Fix: `swap_hands()` augmentation (swap lh/rh blocks, p=0.5) in `augment_sequence`.
+- Proof: `tcn_uniform_noface_v5` — clean test 80.7%, **hand-swapped test 81.5%**,
+  vs v4 collapse 87.4% → 20.7% under swap. v5 is the live model despite lower clean score.
+- **Active model: `tcn_uniform_noface_v5`.** Probe also confirmed: `friend` fixed
+  (0.84 both-hands), `white`-magnet persists on some one-hand attempts.
 Eval harness is sampler-aware (`evaluate_model` reads registry hyperparams; incident:
 uniform model scored 49% before the fix vs true 65%).
 
