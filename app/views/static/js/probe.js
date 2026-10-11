@@ -3,7 +3,10 @@
 
    Same capture flow as app.js, plus true-label logging and JSON export.
    Each logged row: {ts, model, true_gloss, used_hand, predicted_gloss,
-   confidence, accepted, hand_l, hand_r, feature_dim}
+   confidence, accepted, hand_l, hand_r, feature_dim,
+   keypoints, keypoint_layout, seq_len}
+   keypoints = exact WEBCAM_1662 window sent to /inference/predict
+   (rounded to 5 decimals), so rows are replayable as a regression set.
    ============================================================ */
 
 const MAX_FRAMES = window.S2S_CONFIG.maxSeqLength;
@@ -112,11 +115,14 @@ async function stopAndLog() {
   }
   setStatus('processing');
   clearError();
+  const window = bestWindow(keypointBuffer, MAX_FRAMES);
+  // Round to 5 decimals: 30x1662 floats stay ~0.5MB/row instead of ~0.9MB.
+  const rounded = window.map(f => f.map(v => Math.round(v * 1e5) / 1e5));
   try {
     const res = await fetch('/inference/predict', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ keypoints: bestWindow(keypointBuffer, MAX_FRAMES), generate_audio: false })
+      body: JSON.stringify({ keypoints: window, generate_audio: false })
     });
     const data = await res.json();
     const row = {
@@ -130,6 +136,9 @@ async function stopAndLog() {
       hand_l: (data.hands && data.hands.l) ?? null,
       hand_r: (data.hands && data.hands.r) ?? null,
       feature_dim: data.feature_dim ?? null,
+      keypoints: rounded,
+      keypoint_layout: 'WEBCAM_1662',
+      seq_len: rounded.length,
       error: data.error || null
     };
     probeRows.unshift(row);

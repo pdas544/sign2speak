@@ -153,6 +153,10 @@ Per-gloss: hello fixed, what 0.75; good 0.33 / go 0.40 unchanged (representation
   vs v4 collapse 87.4% → 20.7% under swap. v5 is the live model despite lower clean score.
 - **Active model: `tcn_uniform_noface_v5`.** Probe also confirmed: `friend` fixed
   (0.84 both-hands), `white`-magnet persists on some one-hand attempts.
+- Probe capture upgrade: `/probe` rows now store the exact WEBCAM_1662 predict
+  window (5-decimal, +layout tag); `ml/evaluation/replay_probe.py` replays exports
+  as a live regression set. Round-trip check proved the 1662→225 serving path is
+  exact (no skew); remaining errors are model gaps, not plumbing.
 Eval harness is sampler-aware (`evaluate_model` reads registry hyperparams; incident:
 uniform model scored 49% before the fix vs true 65%).
 
