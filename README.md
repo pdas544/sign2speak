@@ -1,4 +1,4 @@
-# Sign2Speak (Current State — Sept 2026)
+# Sign2Speak
 
 Real-time sign-language → English + Hindi speech. Flask MVC app + `ml/` training pipeline.
 Smoked-tested: `GET /health ok`, `GET /inference/labels 17 labels`,
